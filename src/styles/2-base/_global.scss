@@ -1,0 +1,23 @@
+@import "../1-helpers/variables";
+@import "../2-base/typography";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 12px;
+    background-color: $main-color;
+    font-family: $default-font;
+}
+
+.page {
+    //min-height: 100vh;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}

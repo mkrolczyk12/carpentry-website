@@ -1,14 +1,11 @@
 module.exports = {
   siteMetadata: {
     title: "ZagorowskiuslugiStolarskie",
+    description: "This sentence has to be replaced",
+    author: "mkrolczyk12",
+    siteUrl: "https://needstobetheproductionurl.com",
   },
   plugins: [
-    {
-      resolve: "gatsby-source-datocms",
-      options: {
-        apiToken: "",
-      },
-    },
     "gatsby-plugin-sass",
     "gatsby-plugin-sharp",
     "gatsby-plugin-sitemap",
