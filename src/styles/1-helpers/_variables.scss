@@ -1,5 +1,6 @@
-/* important page variables */
-$default-layout-size: 100%;
+// ********************
+// BREAKPOINTS
+// ********************
 $breakpoints: ( //
     sm: (min-width: 576px),
     md: (min-width: 768px),
@@ -8,5 +9,17 @@ $breakpoints: ( //
     xxl: (min-width: 1400px),
 );
 
-/* Website colors */
-$main-color: #8aade5;
+// ********************
+// Color Variables
+// ********************
+$black: #000; // Black used for quick-info background
+$white: #fff; // White used for menu background
+$orange: #FBAD05;
+$brown: #331305;
+
+// site variables
+$default-text-size: 12px;
+$important-text-size: 20px;
+// mobile
+$default-mobile-margin: 10px;
+$default-mobile-padding: 10px;

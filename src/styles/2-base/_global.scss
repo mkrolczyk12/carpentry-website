@@ -8,13 +8,9 @@
 }
 
 html {
-    font-size: 12px;
-    background-color: $main-color;
+    font-size: $default-text-size;
+    background-color: $brown;
     font-family: $default-font;
-}
-
-.page {
-    //min-height: 100vh;
 }
 
 a {

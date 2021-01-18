@@ -1,0 +1,105 @@
+@import "../1-helpers/variables";
+@import "../2-base/typography";
+
+/* Local variables */
+$menu-logo-size: 3 * $default-text-size;
+$hamburger-menu-size: 30px;
+$display: "false";
+
+.menu {
+    $grid-style: "flex";
+    display: flex;
+    padding: $default-mobile-padding;
+    background-color: $white;
+    font-family: $special-font;
+    letter-spacing: 1.2;
+
+    &--open {
+        $grid-style: "grid";
+        display: grid;
+        grid-template-columns: minmax(250px, 6fr) 1fr;
+        grid-template-rows: auto auto;
+        grid-template-areas:
+            "logo hamburgerMenu"
+            "menu menu";
+    }
+
+    &__open {
+        margin-top: 20px;
+        grid-area: menu;
+    }
+
+    &__logo {
+        margin-left: $default-mobile-margin;
+
+        @if($display=="grid") {
+            grid-area: logo;
+        }
+
+        @else {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            flex-grow: 5;
+        }
+    }
+
+    &__title {
+        font-size: $menu-logo-size;
+    }
+
+    &__description {
+        color: $orange;
+        margin-left: 25%;
+    }
+
+    &__links {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__link-item {
+        text-transform: uppercase;
+        margin: $default-mobile-margin / 2;
+
+        &:last-of-type {
+            color: $orange;
+            width: fit-content;
+            padding: $default-mobile-margin;
+            align-self: center;
+            border: 2px solid $orange;
+            font-size: $important-text-size;
+        }
+
+        &--active {
+            width: fit-content;
+            border-left: 2px solid $orange;
+            margin-left: 0;
+            padding-left: 4px;
+        }
+    }
+
+    &__hamburger-menu {
+        font-size: $hamburger-menu-size;
+        margin: auto;
+
+        @if($display=="grid") {
+            grid-area: hamburgerMenu;
+        }
+
+        @else {
+            display: flex;
+            flex-grow: 1;
+            justify-content: center;
+        }
+    }
+
+    &__hamburger-menu-icon {
+        color: $orange;
+
+        &:hover {
+            cursor: pointer;
+            color: darken($orange, 10%);
+        }
+    }
+}

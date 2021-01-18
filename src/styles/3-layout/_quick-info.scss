@@ -1,0 +1,36 @@
+@import "../1-helpers/variables";
+@import "../2-base/typography";
+
+
+.quick-info {
+    display: flex;
+    min-height: 40px;
+    background-color: $black;
+
+    &__list {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        margin: auto $default-mobile-margin;
+        justify-content: flex-start;
+    }
+
+    &__item {
+        display: flex;
+        font: $special-font;
+        color: $white;
+        margin: auto 0;
+
+        &--mobile {
+            display: none;
+        }
+    }
+
+    &__img {
+        margin: auto 8px;
+    }
+
+    &__info {
+        //
+    }
+}

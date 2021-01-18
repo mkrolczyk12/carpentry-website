@@ -1,0 +1,31 @@
+.home {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: minmax(100px, auto) repeat(7, auto);
+    grid-template-areas:
+        "menu"
+        "start"
+        "meet_me"
+        "offert"
+        "question"
+        "realizations"
+        "quick_query"
+        "footer";
+    // container
+    min-height: 1vh;
+
+    &__header {
+        grid-area: menu;
+        display: flex;
+        flex-direction: column;
+
+        & .quick-info {
+            flex-grow: 1;
+        }
+
+        & .menu {
+            background-color: $white;
+            flex-grow: 3;
+        }
+    }
+}
