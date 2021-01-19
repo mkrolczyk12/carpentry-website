@@ -15,6 +15,9 @@ $display: "false";
     letter-spacing: 1.2;
 
     &--open {
+        position: fixed;
+        width: 100%;
+        z-index: 1;
         $grid-style: "grid";
         display: grid;
         grid-template-columns: minmax(250px, 6fr) 1fr;
@@ -102,4 +105,11 @@ $display: "false";
             color: darken($orange, 10%);
         }
     }
+}
+
+#sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
 }

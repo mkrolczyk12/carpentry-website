@@ -13,3 +13,15 @@
         @error 'Given "#{$breakpoint}" breakpoint does not exist';
     }
 }
+
+@mixin highlighted-text($given-color) {
+    @content;
+
+    @if($given-color) {
+        color: $given-color;
+    }
+
+    @else {
+        color: $orange;
+    }
+}
