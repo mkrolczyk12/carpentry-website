@@ -35,7 +35,7 @@ const HomeStart = () => {
               <h1 className="home__start-main-title">Usługi <b className="highlighted-text">Stolarskie</b></h1>
               <h2 className="home__start-sub-text">Tu jest miejsce na inny tekst</h2>
               <p className="home__start-invite-text">Zapraszamy</p>
-              <a className="home__action-button"  onClick="#">
+              <a className="home__action-button"  href="#meetMe">
                   <FontAwesomeIcon className="#" icon={faAngleDown}/>
               </a>
             </div> 

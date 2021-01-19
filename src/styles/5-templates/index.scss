@@ -54,7 +54,6 @@
         text-transform: uppercase;
         letter-spacing: 1px;
         text-align: center;
-        ////////////////
         margin-bottom: $default-mobile-margin;
 
         .highlighted-text {
@@ -90,7 +89,55 @@
     }
 
     &__meet-me {
-        //
+        min-height: 100vh;
+        background-color: $white;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__meet-me-image {
+        height: 50%;
+    }
+
+    &__meet-me-content {
+        height: 50%;
+        display: flex;
+        flex-direction: column;
+        margin: $default-mobile-margin;
+    }
+
+    &__meet-me-title {
+        align-self: flex-start;
+        font-size: $first-category-title-size;
+        text-transform: uppercase;
+        letter-spacing: 1.2;
+        margin-top: $default-mobile-margin;
+        color: $orange;
+    }
+
+    &__meet-me-subtitle {
+        font-size: $second-category-title-size;
+        margin-left: $default-mobile-margin;
+        margin-bottom: $default-mobile-margin;
+    }
+
+    &__meet-me-text {
+        margin: $default-mobile-margin 0;
+        text-justify: auto;
+    }
+
+    &__meet-me-action-space {
+        width: 100%;
+        flex-grow: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .action-button {
+            background-color: $white;
+            color: $orange;
+            border: 2px solid $orange;
+        }
     }
 
     &__offer {

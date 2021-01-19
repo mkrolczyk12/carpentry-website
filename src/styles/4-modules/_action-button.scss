@@ -1,0 +1,12 @@
+@import "../1-helpers/variables";
+@import "../2-base/typography";
+
+.action-button {
+    display: flex; // to put button content at center
+    justify-content: center; // horizontal
+    align-items: center; // vertical
+    height: 25%;
+    width: 50%;
+    font-weight: $default-bold;
+    text-transform: uppercase;
+}

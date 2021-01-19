@@ -6,6 +6,7 @@ import "../styles/main.scss"
 import QuickInfo from "./components/quick-info/QuickInfo"
 import Menu from "./components/menu/Menu"
 import HomeStart from "./home/home-start/HomeStart"
+import MeetMe from "./home/meet-me/MeetMe"
 
 
 const IndexPage = () => {
@@ -16,9 +17,7 @@ const IndexPage = () => {
         <Menu />
       </header>
       <HomeStart/>
-      <div className="home__meet-me">
-        <h1>meet-me</h1>
-      </div>
+      <MeetMe/>
       <div className="home__offer">
         <h1>offer</h1>
       </div>

@@ -21,7 +21,6 @@ const Header = (props) => {
 
     function handleScroll() {
         if(window.pageYOffset > MENU_SIZE && !scrolledPage) {
-            console.log("teraz")
             setScrolledPage(true);
         } else if(window.pageYOffset <= MENU_SIZE && scrolledPage) {
             setScrolledPage(false);
