@@ -20,8 +20,4 @@
     @if($given-color) {
         color: $given-color;
     }
-
-    @else {
-        color: $orange;
-    }
 }

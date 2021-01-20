@@ -7,6 +7,8 @@ import QuickInfo from "./components/quick-info/QuickInfo"
 import Menu from "./components/menu/Menu"
 import HomeStart from "./home/home-start/HomeStart"
 import MeetMe from "./home/meet-me/MeetMe"
+import Offer from "./home/offer/Offer"
+import Contact from "./components/contact/Contact"
 
 
 const IndexPage = () => {
@@ -18,12 +20,10 @@ const IndexPage = () => {
       </header>
       <HomeStart/>
       <MeetMe/>
-      <div className="home__offer">
-        <h1>offer</h1>
-      </div>
-      <div className="home__question">
-        <h1>question</h1>
-      </div>
+      <Offer/>
+      <Contact 
+        parentClassName="home__contact"
+      />
       <div className="home__realizations">
         <h1>realizations</h1>
       </div>
