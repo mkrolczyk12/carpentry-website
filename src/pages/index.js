@@ -2,14 +2,17 @@ import * as React from "react"
 
 import "../styles/main.scss"
 
-// Components
-import QuickInfo from "./components/quick-info/QuickInfo"
-import Menu from "./components/menu/Menu"
+// Home components
 import HomeStart from "./home/home-start/HomeStart"
 import MeetMe from "./home/meet-me/MeetMe"
 import Offer from "./home/offer/Offer"
-import Contact from "./components/contact/Contact"
 import Realizations from "./home/realizations/Realizations"
+import QuickQuery from "./home/quick-query/QuickQuery"
+
+// Common compontents
+import QuickInfo from "./components/quick-info/QuickInfo"
+import Menu from "./components/menu/Menu"
+import Contact from "./components/contact/Contact"
 
 const IndexPage = () => {
   return (
@@ -25,9 +28,7 @@ const IndexPage = () => {
         parentClassName="home__contact"
       />
       <Realizations/>
-      <div className="home__quick-query">
-        <h1>quick-query</h1>
-      </div>
+      <QuickQuery/>
       <footer className="home__footer">
         <h1>footer</h1>
       </footer>

@@ -1,0 +1,53 @@
+@import "../1-helpers/variables";
+@import "../2-base/typography";
+
+
+.contact-form {
+    background-color: $white;
+
+    &__fieldset {
+        //
+    }
+
+    &__name {
+        //
+    }
+
+    &__surname {
+        //
+    }
+
+    &__email {
+        //
+    }
+
+    &__phone {
+        //
+    }
+
+    &__message {
+        //
+    }
+
+    &__checkbox {
+        //
+    }
+
+    &__checkbox-label {
+        //
+    }
+
+    &__action-space {
+        width: 100%;
+        flex-grow: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .action-button {
+            background-color: $white;
+            color: $orange;
+            border: 2px solid $orange;
+        }
+    }
+}
