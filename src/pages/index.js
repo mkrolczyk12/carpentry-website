@@ -9,7 +9,7 @@ import HomeStart from "./home/home-start/HomeStart"
 import MeetMe from "./home/meet-me/MeetMe"
 import Offer from "./home/offer/Offer"
 import Contact from "./components/contact/Contact"
-
+import Realizations from "./home/realizations/Realizations"
 
 const IndexPage = () => {
   return (
@@ -24,9 +24,7 @@ const IndexPage = () => {
       <Contact 
         parentClassName="home__contact"
       />
-      <div className="home__realizations">
-        <h1>realizations</h1>
-      </div>
+      <Realizations/>
       <div className="home__quick-query">
         <h1>quick-query</h1>
       </div>
