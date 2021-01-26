@@ -30,6 +30,7 @@
     "gatsby-transformer-sharp": "^2.10.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "sass": "^1.32.4"
+    "sass": "^1.32.4",
+    "smooth-scroll": "^16.1.3"
   }
 }

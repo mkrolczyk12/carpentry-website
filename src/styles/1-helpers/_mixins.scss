@@ -21,3 +21,19 @@
         color: $given-color;
     }
 }
+
+@mixin form-input-style() {
+    display: block;
+    width: 100%;
+    border: 1px solid #ebebeb;
+    padding: 11px 20px;
+    box-sizing: border-box;
+    font-family: 'Montserrat';
+    font-weight: 500;
+    font-size: 13px;
+    margin-bottom: $default-mobile-margin / 2;
+}
+
+@mixin form-input-focus-style {
+    border: 1px solid $black;
+}

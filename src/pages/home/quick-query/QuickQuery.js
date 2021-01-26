@@ -1,5 +1,5 @@
 import React from 'react'
-import { graphql, useStaticQuery } from "gatsby"
+import { graphql, Link, useStaticQuery } from "gatsby"
 
 // Vendor Components
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -9,6 +9,11 @@ import {
 import BackgroundImage from "gatsby-background-image"
 
 import ContactForm from "../../components/contactForm/ContactForm"
+
+if (typeof window !== "undefined") {
+    // eslint-disable-next-line global-require
+    require("smooth-scroll")('a[href*="#"]')
+}
 
 const QuickQuery = () => {
     const data = useStaticQuery(
@@ -34,15 +39,15 @@ const QuickQuery = () => {
                 fluid={imageData}
             >
                 <div className="home__quick-query-content">
-                    <h1 className="home__quick-query-main-title">Szybkie pytanie</h1>
+                    <h1 className="home__quick-query-main-title">Masz pytanie?</h1>
                     <h2 className="home__quick-query-sub-text">Zapytaj o co tylko chcesz!</h2>
-                    <a className="home__quick-query-action-button"  href="#menu-query-form">
+                    <Link className="home__quick-query-action-button"  to="/#menu-query-form">
                         <FontAwesomeIcon className="#" icon={faAngleDown}/>
-                    </a>
+                    </Link>
                 </div> 
             </BackgroundImage>
             <ContactForm 
-                formId = "#menu-query-form"
+                formId = "menu-query-form"
             />
         </div>
     )

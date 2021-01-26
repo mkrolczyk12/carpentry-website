@@ -20,7 +20,7 @@ const Navbar = () => {
 export default Navbar;
 
 
-const menuData = [
+export const menuData = [
     {
         label: 'Strona główna',
         url: '/'

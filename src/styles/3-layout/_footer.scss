@@ -1,0 +1,66 @@
+@import "../1-helpers/variables";
+@import "../2-base/typography";
+@import "../1-helpers/mixins";
+
+
+.footer {
+    background-color: $brown;
+    height: auto;
+    color: $white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    // align-items: center;
+    &__content {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 3;
+        justify-content: space-evenly;
+        align-items: flex-start;
+        margin-left: $default-mobile-margin * 2;
+    }
+
+    &__section {
+        width: 50%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__section-title {
+        color: $orange;
+        margin-bottom: 5px;
+    }
+
+    &__section-paragraph {
+        color: white;
+        margin-bottom: 5px;
+
+        .highlighted-text {
+            @include highlighted-text($white) {
+                font-weight: $default-bold;
+            }
+        }
+    }
+
+    &__copyright {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex-grow: 1;
+    }
+
+    &__copyright-company {
+        margin-bottom: 5px;
+    }
+
+    &__copyright-author {
+        .highlighted-text {
+            @include highlighted-text($orange);
+        }
+
+        font-size: $default-text-size;
+    }
+}

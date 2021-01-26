@@ -13,6 +13,7 @@ import QuickQuery from "./home/quick-query/QuickQuery"
 import QuickInfo from "./components/quick-info/QuickInfo"
 import Menu from "./components/menu/Menu"
 import Contact from "./components/contact/Contact"
+import Footer from "./components/footer/Footer"
 
 const IndexPage = () => {
   return (
@@ -29,9 +30,7 @@ const IndexPage = () => {
       />
       <Realizations/>
       <QuickQuery/>
-      <footer className="home__footer">
-        <h1>footer</h1>
-      </footer>
+      <Footer parentClassName="home"/>
     </div>
   )
 }
