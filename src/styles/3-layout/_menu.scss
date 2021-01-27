@@ -13,11 +13,13 @@ $display: "false";
     background-color: $white;
     font-family: $special-font;
     letter-spacing: 1.2;
+    z-index: 10;
 
     &--open {
         position: fixed;
+        z-index: 10;
         width: 100%;
-        z-index: 1;
+        z-index: 10;
         $grid-style: "grid";
         display: grid;
         grid-template-columns: minmax(250px, 6fr) 1fr;

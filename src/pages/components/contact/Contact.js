@@ -1,7 +1,7 @@
 import React from 'react'
 
 const Contact = ({parentClassName,
-                title = "Masz pytanie?",
+                title = "Potrzebujesz kontaktu?",
                 buttonContent = "Napisz do mnie",
                 text = "lub zadzwoń",
                 number = "(+48) 502 482 762"}) => {
