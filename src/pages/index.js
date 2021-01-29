@@ -30,7 +30,7 @@ const IndexPage = () => {
       />
       <Realizations/>
       <QuickQuery/>
-      <Footer parentClassName="home"/>
+      <Footer/>
     </div>
   )
 }

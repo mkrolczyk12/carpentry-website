@@ -1,0 +1,23 @@
+.block {
+    border: 1px solid $black;
+    position: relative;
+    display: flex;
+    justify-content: center;
+
+    &__main-text {
+        position: absolute;
+        font-size: $first-category-title-size * 2;
+        margin-top: -25px;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    &__sub-text {
+        position: absolute;
+        align-self: flex-end;
+        margin: $default-mobile-margin;
+        margin-bottom: 40px;
+        text-transform: uppercase;
+        font-size: $second-category-title-size;
+    }
+}

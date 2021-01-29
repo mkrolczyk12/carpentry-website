@@ -16,16 +16,16 @@
 
     &__header {
         grid-area: menu;
-        display: flex;
-        flex-direction: column;
+        position: fixed;
+        z-index: 99;
+        width: 100%;
 
         & .quick-info {
-            flex-grow: 1;
+            //
         }
 
         & .menu {
             background-color: $white;
-            flex-grow: 3;
             z-index: 99;
         }
     }

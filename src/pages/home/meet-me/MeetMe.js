@@ -31,7 +31,7 @@ const MeetMe = () => {
                     aliqua. Ut enim ad minim veniam, quis nostrud exercitation
                 </p>
                 <div className="home__meet-me-action-space">
-                    <a className="action-button" href="/o-nas">Poznaj mnie</a>
+                    <a className="action-button" href="/o-mnie">Poznaj mnie</a>
                 </div>
             </div>
         </div>

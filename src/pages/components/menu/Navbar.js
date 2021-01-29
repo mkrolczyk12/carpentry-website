@@ -26,12 +26,12 @@ export const menuData = [
         url: '/'
     },   
     {
-        label: 'O firmie',
-        url: '/o-firmie'
+        label: 'O mnie',
+        url: '/o-mnie'
     },
     {
-        label: 'Nasza oferta',
-        url: '/nasza-oferta'
+        label: 'Oferta',
+        url: '/oferta'
     },
     {
         label: 'Galeria',

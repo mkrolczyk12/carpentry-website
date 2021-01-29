@@ -13,13 +13,13 @@ $display: "false";
     background-color: $white;
     font-family: $special-font;
     letter-spacing: 1.2;
-    z-index: 10;
+    z-index: 99;
 
     &--open {
         position: fixed;
         z-index: 10;
         width: 100%;
-        z-index: 10;
+        z-index: 99;
         $grid-style: "grid";
         display: grid;
         grid-template-columns: minmax(250px, 6fr) 1fr;
@@ -71,11 +71,6 @@ $display: "false";
 
         &:last-of-type {
             color: $orange;
-            // width: 200px;
-            // height: 50px;
-            // padding: $default-mobile-margin;
-            // align-self: center;
-            // border: 2px solid $orange;
             font-size: $important-text-size;
         }
 

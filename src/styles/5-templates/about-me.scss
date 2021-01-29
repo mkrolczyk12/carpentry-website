@@ -1,0 +1,190 @@
+.about-me {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: minmax(100px, auto) minmax(300px, auto) 100vh repeat(auto, 3);
+    grid-template-areas:
+        'menu'
+        'title'
+        'description'
+        'achievements'
+        'contact'
+        'footer';
+    //container
+    min-height: 100vh;
+
+    &__header {
+        grid-area: menu;
+        position: fixed;
+        z-index: 99;
+        width: 100%;
+
+        & .quick-info {
+            //
+        }
+
+        & .menu {
+            background-color: $white;
+            z-index: 99;
+        }
+    }
+
+    &__title {
+        grid-area: title;
+        min-height: 300px;
+    }
+
+    &__title-image {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding-bottom: 80px;
+        align-items: center;
+    }
+
+    &__title-content-main-text {
+        color: $white;
+        font-size: $first-category-title-size;
+        text-transform: uppercase;
+        font-weight: $default-bold;
+
+        .highlighted-text {
+            color: $orange;
+        }
+    }
+
+    &__description {
+        grid-area: description;
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    &__description-content {
+        height: 30%;
+        margin: $default-mobile-margin;
+        padding: $default-mobile-padding;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__description-title {
+        align-self: flex-start;
+        font-size: $second-category-title-size;
+    }
+
+    &__description-name {
+        align-self: flex-start;
+        font-size: $first-category-title-size;
+        text-transform: uppercase;
+
+        .highlighted-text {
+            color: $orange;
+        }
+    }
+
+    &__description-text {
+        margin: $default-mobile-margin;
+        text-justify: auto;
+        justify-items: center;
+    }
+
+    &__description-image {
+        height: 70%;
+    }
+
+    &__achievements {
+        margin: $default-mobile-margin * 2;
+        grid-area: achievements;
+        min-height: 1000px;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .block {
+            width: 100%;
+            height: 400px;
+        }
+    }
+
+    &__achievements-trait-section {
+        padding-bottom: $default-mobile-padding;
+        min-height: 150px;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+    }
+
+    &__achievements-trait-section-title {
+        align-self: flex-start;
+        text-transform: uppercase;
+        font-size: $first-category-title-size;
+        color: $orange;
+
+    }
+
+    &__achievements-trait-section-text {
+        text-align: justify;
+    }
+
+    &__contact {
+        grid-area: contact;
+        height: 75vh;
+        background-color: $brown;
+        color: $white;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    &__contact-content {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        padding: $default-mobile-margin;
+    }
+
+    &__contact-title {
+        font-size: $first-category-title-size;
+        color: $white;
+        text-transform: uppercase;
+        align-content: center;
+    }
+
+    &__contact-action-space {
+        display: flex;
+        flex-direction: column;
+
+        .action-button {
+            background: inherit;
+            color: $white;
+            border: 2px solid $white;
+            height: inherit;
+            width: inherit;
+        }
+    }
+
+    &__contact-text {
+        color: $white;
+        font-size: $third-category-title-size;
+    }
+
+    &__contact-number {
+        color: $orange;
+        font-weight: $default-bold;
+        font-size: $first-category-title-size;
+    }
+
+    .footer {
+        grid-area: footer;
+        min-height: 500px;
+    }
+}
