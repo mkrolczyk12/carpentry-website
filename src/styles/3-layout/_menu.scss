@@ -2,7 +2,7 @@
 @import "../2-base/typography";
 
 /* Local variables */
-$menu-logo-size: 3 * $default-text-size;
+$menu-logo-size: 2 * $default-text-size;
 $hamburger-menu-size: 30px;
 $display: "false";
 
@@ -22,7 +22,7 @@ $display: "false";
         z-index: 99;
         $grid-style: "grid";
         display: grid;
-        grid-template-columns: minmax(250px, 6fr) 1fr;
+        grid-template-columns: minmax(auto, 6fr) 1fr;
         grid-template-rows: auto auto;
         grid-template-areas:
             "logo hamburgerMenu"
@@ -111,5 +111,5 @@ $display: "false";
     position: fixed;
     top: 0;
     width: 100%;
-    z-index: 1;
+    z-index: 99;
 }

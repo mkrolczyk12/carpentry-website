@@ -18,8 +18,9 @@
         flex-grow: 3;
         justify-content: space-evenly;
         align-items: flex-start;
-        margin-left: $default-mobile-margin * 2;
+        margin-left: 5%;
         font-family: $default-font;
+        font-size: $default-text-size;
     }
 
     &__section {
@@ -56,6 +57,7 @@
 
     &__copyright-company {
         margin-bottom: 5px;
+        text-align: center;
     }
 
     &__copyright-author {

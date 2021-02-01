@@ -68,7 +68,7 @@
     }
 
     &__start-invite-text {
-        font-size: $third-category-title-size;
+        font-size: $second-category-title-size;
         color: $orange;
         text-align: center;
         margin-bottom: $default-mobile-margin;
@@ -159,6 +159,7 @@
 
     &__offer-quick-info-text {
         margin: $default-mobile-margin;
+        font-size: $second-category-title-size;
 
         .highlighted-text {
             @include highlighted-text(inherit) {

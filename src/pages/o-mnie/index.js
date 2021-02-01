@@ -1,5 +1,7 @@
 import React from 'react'
 
+import "../../styles/main.scss"
+
 // About-us components
 import Title from "./title/Title"
 import Description from "./description/Description"
@@ -23,7 +25,7 @@ const AboutMe = () => {
           <Achievements/>
           <Contact
             parentClassName="about-me__contact"
-            title="Porozmawiajmy"
+            title="Pogadajmy"
           />
           <Footer/>
         </div>

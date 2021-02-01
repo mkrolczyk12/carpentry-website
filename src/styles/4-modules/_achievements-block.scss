@@ -1,15 +1,23 @@
-.block {
+.achievements-block {
     border: 1px solid $black;
     position: relative;
     display: flex;
     justify-content: center;
+    margin-top: $default-mobile-margin;
 
     &__main-text {
         position: absolute;
-        font-size: $first-category-title-size * 2;
-        margin-top: -25px;
+        font-size: $first-category-title-size * 3;
+        font-family: $special-font;
+        margin-top: -45px;
         text-transform: uppercase;
         text-align: center;
+        display: flex;
+
+        &-sub-text {
+            font-size: $second-category-title-size;
+            align-self: center;
+        }
     }
 
     &__sub-text {
