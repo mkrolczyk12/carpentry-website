@@ -12,7 +12,7 @@ const Realizations = () => {
             <div className="home__realizations-content">
                 <h1 className="home__realizations-title">Przykładowe realizacje</h1>
                 <section className="home__realizations-gallery">
-                    <ImageGallery items={images} showIndex={true} showPlayButton={false} />;
+                    <ImageGallery items={images} showPlayButton={false} />;
                 </section>
                 <div className="home__realizations-action-space">
                     <a className="action-button" href="/o-nas">Zobacz więcej</a>

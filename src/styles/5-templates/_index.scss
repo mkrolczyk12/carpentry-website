@@ -224,7 +224,7 @@
     }
 
     &__contact {
-        height: 75vh;
+        height: 100vh;
         background-color: $brown;
         color: $white;
         display: flex;
@@ -245,7 +245,7 @@
         font-size: $first-category-title-size;
         color: $white;
         text-transform: uppercase;
-        align-content: center;
+        text-align: center;
     }
 
     &__contact-action-space {
