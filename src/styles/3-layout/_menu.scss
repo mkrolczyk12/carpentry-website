@@ -1,25 +1,22 @@
+@import "../1-helpers/mixins";
 @import "../1-helpers/variables";
 @import "../2-base/typography";
 
 /* Local variables */
-$menu-logo-size: 2 * $default-text-size;
-$hamburger-menu-size: 30px;
 $display: "false";
 
 .menu {
     $grid-style: "flex";
     display: flex;
-    padding: $default-mobile-padding;
+    padding: $xsm_padding;
     background-color: $white;
     font-family: $special-font;
-    letter-spacing: 1.2;
     z-index: 99;
 
     &--open {
         position: fixed;
-        z-index: 10;
-        width: 100%;
         z-index: 99;
+        width: 100%;
         $grid-style: "grid";
         display: grid;
         grid-template-columns: minmax(auto, 6fr) 1fr;
@@ -35,7 +32,7 @@ $display: "false";
     }
 
     &__logo {
-        margin-left: $default-mobile-margin;
+        margin-left: $xsm_margin;
 
         @if($display=="grid") {
             grid-area: logo;
@@ -50,13 +47,16 @@ $display: "false";
     }
 
     &__title {
-        font-size: $menu-logo-size;
+        @include second-category-text-appearance;
+        font-size: $xsm_second-category-text-size;
         text-transform: uppercase;
     }
 
     &__description {
+        @include third-category-text-appearance;
         color: $orange;
         margin-left: 25%;
+        font-size: $xsm_third-category-text-size;
     }
 
     &__links {
@@ -66,12 +66,15 @@ $display: "false";
     }
 
     &__link-item {
+        @include third-category-text-appearance;
         text-transform: uppercase;
-        margin: $default-mobile-margin / 2;
+        margin: $xsm_margin / 2;
+        font-size: $xsm_third-category-text-size;
 
         &:last-of-type {
+            @include third-category-text-appearance;
             color: $orange;
-            font-size: $important-text-size;
+            font-size: $xsm-third-category-text-size * 1.5;
         }
 
         &--active {
@@ -83,7 +86,8 @@ $display: "false";
     }
 
     &__hamburger-menu {
-        font-size: $hamburger-menu-size;
+        @include second-category-text-appearance;
+        font-size: $xsm_second-category-text-size;
         margin: auto;
 
         @if($display=="grid") {

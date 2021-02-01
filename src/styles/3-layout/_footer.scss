@@ -11,16 +11,16 @@
     flex-direction: column;
     justify-content: center;
 
-    // align-items: center;
     &__content {
+        @include third-category-text-appearance;
         display: flex;
         flex-direction: column;
         flex-grow: 3;
         justify-content: space-evenly;
         align-items: flex-start;
         margin-left: 5%;
-        font-family: $default-font;
-        font-size: $default-text-size;
+        font-family: $first-category-text-font;
+        font-size: $xsm_third-category-text-size;
     }
 
     &__section {
@@ -31,18 +31,21 @@
     }
 
     &__section-title {
+        @include second-category-text-appearance;
+        font-size: $xsm_second-category-text-size;
         color: $orange;
         margin-bottom: 5px;
     }
 
     &__section-paragraph {
+        @include third-category-text-appearance;
         color: white;
         margin-bottom: 5px;
+        font-size: $xsm_third-category-text-size;
 
         .highlighted-text {
-            @include highlighted-text($white) {
-                font-weight: $default-bold;
-            }
+            color: $white;
+            font-weight: $default-bold;
         }
     }
 
@@ -52,19 +55,22 @@
         justify-content: center;
         align-items: center;
         flex-grow: 1;
-        font-family: $default-font;
+        font-family: $first-category-text-font;
     }
 
     &__copyright-company {
+        @include third-category-text-appearance;
         margin-bottom: 5px;
         text-align: center;
+        font-size: $xsm_third-category-text-size;
     }
 
     &__copyright-author {
-        .highlighted-text {
-            @include highlighted-text($orange);
-        }
+        @include third-category-text-appearance;
+        font-size: $xsm_third-category-text-size;
 
-        font-size: $default-text-size;
+        .highlighted-text {
+            color: $orange;
+        }
     }
 }

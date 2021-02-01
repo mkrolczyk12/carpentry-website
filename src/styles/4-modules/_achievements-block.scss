@@ -3,29 +3,35 @@
     position: relative;
     display: flex;
     justify-content: center;
-    margin-top: $default-mobile-margin;
+    margin-top: $xsm_margin;
 
     &__main-text {
         position: absolute;
-        font-size: $first-category-title-size * 3;
+        font-size: $xsm_first-category-text-size * 3;
         font-family: $special-font;
-        margin-top: -45px;
+
+        margin-top: -15px;
         text-transform: uppercase;
         text-align: center;
         display: flex;
+        flex-direction: column;
+        justify-content: center;
 
         &-sub-text {
-            font-size: $second-category-title-size;
+            @include second-category-text-appearance;
+            font-size: $xsm_second-category-text-size;
             align-self: center;
         }
     }
 
     &__sub-text {
+        @include second-category-text-appearance;
         position: absolute;
         align-self: flex-end;
-        margin: $default-mobile-margin;
+        margin: $xsm_margin;
         margin-bottom: 40px;
         text-transform: uppercase;
-        font-size: $second-category-title-size;
+        font-size: $xsm_second-category-text-size;
+        text-align: center;
     }
 }

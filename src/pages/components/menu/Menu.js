@@ -10,7 +10,7 @@ import Navbar from './Navbar';
 const Header = (props) => {
     const [menuIsActive, setMenuIsActive] = useState(false);
     const [scrolledPage, setScrolledPage] = useState(false);
-    const MENU_SIZE = 112;
+    const MENU_SIZE = 112; // menu height
 
     useEffect(() => {
         window.addEventListener("scroll", handleScroll)

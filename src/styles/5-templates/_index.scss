@@ -1,3 +1,7 @@
+@import "../1-helpers/mixins";
+@import "../1-helpers/variables";
+@import "../2-base/typography";
+
 .home {
     display: grid;
     grid-template-columns: auto;
@@ -13,6 +17,7 @@
         "footer";
     // container
     min-height: 100vh;
+    width: 100vw;
 
     &__header {
         grid-area: menu;
@@ -43,48 +48,49 @@
     }
 
     &__start-content {
-        margin: $default-mobile-margin;
+        margin: $xsm_margin;
         display: flex;
         flex-direction: column;
         font-family: $special-font;
     }
 
     &__start-main-title {
-        font-size: $first-category-title-size;
+        @include first-category-text-appearance;
+        font-size: $xsm_first-category-text-size;
         color: $white;
-        text-transform: uppercase;
         text-align: center;
-        margin-bottom: $default-mobile-margin;
+        margin-bottom: $xsm_margin;
 
         .highlighted-text {
-            @include highlighted-text($orange);
+            color: $orange;
         }
     }
 
     &__start-sub-text {
-        font-size: $second-category-title-size;
+        @include second-category-text-appearance;
+        font-size: $xsm_second-category-text-size;
         text-align: center;
-        margin-bottom: $default-mobile-margin;
+        margin-bottom: $xsm_margin;
     }
 
     &__start-invite-text {
-        font-size: $second-category-title-size;
+        @include second-category-text-appearance;
+        font-size: $xsm_second-category-text-size;
         color: $orange;
         text-align: center;
-        margin-bottom: $default-mobile-margin;
+        margin-bottom: $xsm_margin;
     }
 
     &__start-action-button {
+        @include second-category-text-appearance;
+        font-size: $xsm_second-category-text-size;
         text-align: center;
-        margin-top: $default-mobile-margin;
+        margin-top: $xsm_margin;
         color: $white;
-        font-size: $second-category-title-size;
 
         &:hover {
             cursor: pointer;
             color: darken($white, 10%);
-            //transition: font-size 1s;
-            //font-size: $first-category-title-size + 10;
         }
     }
 
@@ -103,28 +109,30 @@
         height: 50%;
         display: flex;
         flex-direction: column;
-        margin: $default-mobile-margin;
+        margin: $xsm_margin;
     }
 
     &__meet-me-title {
+        @include first-category-text-appearance;
         align-self: flex-start;
-        font-size: $first-category-title-size;
-        text-transform: uppercase;
-        letter-spacing: 1.2;
-        margin-top: $default-mobile-margin;
+        font-size: $xsm_first-category-text-size;
+        margin-top: $xsm_margin;
         color: $orange;
     }
 
     &__meet-me-subtitle {
-        font-size: $second-category-title-size;
-        margin-left: $default-mobile-margin;
-        margin-bottom: $default-mobile-margin;
+        @include second-category-text-appearance;
+        font-size: $xsm_second-category-text-size;
+        margin-left: $xsm_margin;
+        margin-bottom: $xsm_margin;
     }
 
     &__meet-me-text {
-        margin: $default-mobile-margin 0;
+        @include third-category-text-appearance;
+        margin: $xsm_margin 0;
         text-justify: auto;
         font-family: $special-font;
+        font-size: $xsm_third-category-text-size;
     }
 
     &__meet-me-action-space {
@@ -138,6 +146,8 @@
             background-color: $white;
             color: $orange;
             border: 2px solid $orange;
+            height: 25%;
+            width: 50%;
         }
     }
 
@@ -153,18 +163,18 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        // to change
-        font-size: $third-category-title-size;
     }
 
     &__offer-quick-info-text {
-        margin: $default-mobile-margin;
-        font-size: $second-category-title-size;
+        @include second-category-text-appearance;
+        font-size: $xsm_second-category-text-size;
+        margin: $xsm_margin;
 
         .highlighted-text {
-            @include highlighted-text(inherit) {
-                font-weight: $default-bold;
-            }
+            color: inherit;
+            font-weight: $default-bold;
+            font-size: inherit;
+            font-family: inherit;
         }
     }
 
@@ -189,24 +199,26 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        margin: $default-mobile-margin;
+        margin: $xsm_margin;
     }
 
 
     &__offer-title {
+        @include first-category-text-appearance;
         width: 100%;
-        font-size: $first-category-title-size;
-        text-transform: uppercase;
+        font-size: $xsm_first-category-text-size;
         color: $white;
         text-align: center;
     }
 
     &__offer-text {
+        @include third-category-text-appearance;
         display: flex;
         align-items: center;
         width: 100%;
         flex-grow: 2;
         font-family: $special-font;
+        font-size: $xsm_third-category-text-size;
     }
 
     &__offer-action {
@@ -220,6 +232,9 @@
             background: inherit;
             color: $brown;
             border: 2px solid $brown;
+            font-size: $xsm_third-category-text-size;
+            height: 25%;
+            width: 50%;
         }
     }
 
@@ -238,38 +253,41 @@
         flex-direction: column;
         justify-content: space-evenly;
         align-items: center;
-        padding: $default-mobile-margin;
+        padding: $xsm_margin;
     }
 
     &__contact-title {
-        font-size: $first-category-title-size;
+        @include first-category-text-appearance;
+        font-size: $xsm_first-category-text-size;
         color: $white;
-        text-transform: uppercase;
         text-align: center;
     }
 
     &__contact-action-space {
         display: flex;
         flex-direction: column;
+        width: 50%;
 
         .action-button {
             background: inherit;
             color: $white;
             border: 2px solid $white;
-            height: inherit;
-            width: inherit;
+            font-size: $xsm_third-category-text-size;
         }
     }
 
     &__contact-text {
+        @include second-category-text-appearance;
+        font-size: $xsm_second-category-text-size;
         color: $white;
-        font-size: $third-category-title-size;
     }
 
     &__contact-number {
+        @include first-category-text-appearance;
+        font-size: $xsm_first-category-text-size;
         color: $orange;
         font-weight: $default-bold;
-        font-size: $first-category-title-size;
+        text-align: center;
     }
 
     &__realizations {
@@ -291,21 +309,22 @@
     }
 
     &__realizations-title {
+        @include first-category-text-appearance;
         grid-area: title;
-        text-transform: uppercase;
-        font-size: $first-category-title-size;
-        margin: $default-mobile-margin;
+        font-size: $xsm_first-category-text-size;
+        margin: $xsm_margin;
         color: $black;
+        text-align: center;
     }
 
     &__realizations-gallery {
         grid-area: gallery;
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
-        margin-top: $default-mobile-margin;
-        margin-left: $default-mobile-margin;
-        margin-right: $default-mobile-margin;
-        gap: $default-mobile-margin;
+        margin-top: $xsm_margin;
+        margin-left: $xsm_margin;
+        margin-right: $xsm_margin;
+        gap: $xsm_margin;
 
         .image-gallery {
             justify-content: center;
@@ -321,12 +340,15 @@
         flex-grow: 1;
         display: flex;
         justify-content: center;
-        margin-bottom: $default-mobile-margin;
+        margin-bottom: $xsm_margin;
 
         .action-button {
             background-color: $white;
             color: $orange;
             border: 2px solid $orange;
+            width: 50%;
+            height: 25%;
+            font-size: $xsm_third-category-text-size;
         }
     }
 
@@ -340,7 +362,7 @@
             display: flex;
             flex-direction: row;
             justify-content: center;
-            margin: $default-mobile-padding;
+            margin: $xsm_padding;
             background-color: $white;
         }
     }
@@ -355,31 +377,33 @@
     }
 
     &__quick-query-content {
-        margin: $default-mobile-margin;
+        margin: $xsm_margin;
         display: flex;
         flex-direction: column;
         justify-content: center;
     }
 
     &__quick-query-main-title {
-        font-size: $first-category-title-size;
-        text-transform: uppercase;
+        @include first-category-text-appearance;
+        font-size: $xsm_first-category-text-size;
         font-weight: $default-bold;
         color: $white;
-        margin: $default-mobile-margin;
+        margin: $xsm_margin;
     }
 
     &__quick-query-sub-text {
-        font-size: $second-category-title-size;
-        margin: 0 $default-mobile-margin;
+        @include second-category-text-appearance;
+        font-size: $xsm_second-category-text-size;
+        margin: 0 $xsm_margin;
         color: $orange;
     }
 
     &__quick-query-action-button {
+        @include second-category-text-appearance;
+        font-size: $xsm_second-category-text-size;
         text-align: center;
-        margin-top: $default-mobile-margin;
+        margin-top: $xsm_margin;
         color: $white;
-        font-size: $second-category-title-size;
 
         &:hover {
             cursor: pointer;

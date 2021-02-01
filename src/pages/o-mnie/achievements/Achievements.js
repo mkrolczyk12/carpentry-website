@@ -7,7 +7,7 @@ const Achievements = () => {
     return(
         <div className="about-me__achievements">
             <div className="achievements-block">
-                <h1 className="achievements-block__main-text">56</h1>
+                <h1 className="achievements-block__main-text" style={{marginTop: "-45px"}}>56</h1>
                 <p className="achievements-block__sub-text">Lat doświadczenia</p>
             </div>
             <div className="about-me__achievements-trait-section">

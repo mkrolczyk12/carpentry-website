@@ -4,16 +4,19 @@
 
 .contact-form {
     &__fieldset {
-        margin-top: $default-mobile-margin;
+        @include third-category-text-appearance;
+        margin-top: $xsm_margin;
         height: auto;
         width: 75%;
         display: flex;
         flex-direction: column;
         justify-content: center;
+        font-size: $xsm_third-category-text-size - 10;
     }
 
     &__name {
         @include form-input-style;
+        font-size: inherit;
 
         &:focus {
             @include form-input-focus-style;
@@ -22,6 +25,7 @@
 
     &__surname {
         @include form-input-style;
+        font-size: inherit;
 
         &:focus {
             @include form-input-focus-style;
@@ -30,6 +34,7 @@
 
     &__email {
         @include form-input-style;
+        font-size: inherit;
 
         &:focus {
             @include form-input-focus-style;
@@ -38,6 +43,7 @@
 
     &__phone {
         @include form-input-style;
+        font-size: inherit;
 
         &:focus {
             @include form-input-focus-style;
@@ -46,6 +52,7 @@
 
     &__message {
         @include form-input-style;
+        font-size: inherit;
         min-height: 200px;
         resize: none;
 
@@ -57,23 +64,24 @@
     &__consent {
         display: flex;
         flex-direction: row;
-        margin: $default-mobile-margin 0;
+        font-size: inherit;
+        margin: $xsm_margin 0;
     }
 
     &__checkbox {
         align-self: flex-start;
+        font-size: inherit;
         margin-right: 5px;
     }
 
     &__checkbox-label {
-        text-justify: justify;
-        font-size: $default-text-size;
-        font-family: 'Montserrat';
+        font-size: $xsm_third-category-text-size / 2;
+        font-family: inherit;
     }
 
     &__action-space {
         width: 100%;
-        margin: $default-mobile-margin 0;
+        margin: $xsm_margin 0;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -82,7 +90,9 @@
             background-color: $white;
             color: $orange;
             border: 2px solid $orange;
-            height: inherit;
+            //height: inherit;
+            height: 25%;
+            width: 75%;
         }
     }
 }

@@ -1,5 +1,7 @@
 @import "./variables";
+@import "../2-base/typography";
 
+// media-query mixin
 @mixin media-query($breakpoint) {
     $size: map-get($breakpoints, $breakpoint);
 
@@ -14,14 +16,7 @@
     }
 }
 
-@mixin highlighted-text($given-color) {
-    @content;
-
-    @if($given-color) {
-        color: $given-color;
-    }
-}
-
+// mixin for contact-form component input elements
 @mixin form-input-style() {
     display: block;
     width: 100%;
@@ -31,9 +26,26 @@
     font-family: 'Montserrat';
     font-weight: 500;
     font-size: 13px;
-    margin-bottom: $default-mobile-margin / 2;
+    margin-bottom: $xsm_margin / 2;
 }
-
+// mixin for contact-form component input elements
 @mixin form-input-focus-style {
     border: 1px solid $black;
+}
+
+// mixin for first-category-text-appearance
+@mixin first-category-text-appearance() {
+    font-family: $first-category-text-font;
+    text-transform: uppercase;
+}
+
+// mixin for second-category-text-appearance
+@mixin second-category-text-appearance() {
+    font-family: $second-category-text-font;
+
+}
+
+// mixin for third-category-text-appearance
+@mixin third-category-text-appearance() {
+    font-family: $third-category-text-font;
 }

@@ -12,24 +12,61 @@ $breakpoints: ( //
 // ********************
 // Color Variables
 // ********************
-$black: #000; // Black used for quick-info background
-$white: #fff; // White used for menu background
+$black: #000;
+$white: #fff;
 $orange: #FBAD05;
 $brown: #331305;
 $gray: #707070;
 
-// text variables
-$default-text-size: 12px;
-$important-text-size: 20px;
+// ********************
+// Text variables
+// ********************
+// < sm
+$xsm_first-category-text-size: 11vw;
+$xsm_second-category-text-size: 8vw;
+$xsm_third-category-text-size: 5vw;
+// sm
+$sm_first-category-text-size: 60px;
+$sm_second-category-text-size: 60px;
+$sm_third-category-text-size: 60px;
+// md
+$md_first-category-text-size: 60px;
+$md_second-category-text-size: 60px;
+$md_third-category-text-size: 60px;
+// lg
+$lg_first-category-text-size: 60px;
+$lg_second-category-text-size: 60px;
+$lg_third-category-text-size: 60px;
+// xl
+$xl_first-category-text-size: 60px;
+$xl_second-category-text-size: 60px;
+$xl_third-category-text-size: 60px;
+// xxl
+$xxl_first-category-text-size: 60px;
+$xxl_second-category-text-size: 60px;
+$xxl_third-category-text-size: 60px;
 
-// important title sizes
-$first-category-title-size: 30px;
-$second-category-title-size: 20px;
-$third-category-title-size: 12px;
-
-// mobile
-$default-mobile-margin: 15px;
-$default-mobile-padding: 10px;
+// ********************
+// margins and paddings
+// ********************
+// xsm
+$xsm_margin: 15px;
+$xsm_padding: 10px;
+// sm
+$sm_margin: 15px;
+$sm_padding: 10px;
+// md
+$md_margin: 15px;
+$md_padding: 10px;
+// lg
+$lg_margin: 15px;
+$lg_padding: 10px;
+// xl
+$xl_margin: 15px;
+$xl_padding: 10px;
+// xxl
+$xxl_margin: 15px;
+$xxl_padding: 10px;
 
 // other
 $default-bold: bold;
