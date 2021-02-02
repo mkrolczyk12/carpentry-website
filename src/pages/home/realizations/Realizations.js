@@ -8,7 +8,7 @@ import "react-image-gallery/styles/scss/image-gallery.scss";
 const Realizations = () => {
 
     return(
-        <div className="home__realizations">
+        <section className="home__realizations">
             <div className="home__realizations-content">
                 <h1 className="home__realizations-title">Przykładowe realizacje</h1>
                 <section className="home__realizations-gallery">
@@ -18,7 +18,7 @@ const Realizations = () => {
                     <a className="action-button" href="/o-nas">Zobacz więcej</a>
                 </div>
             </div>
-        </div>
+        </section>
     );
 }
 

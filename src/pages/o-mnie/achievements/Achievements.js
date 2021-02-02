@@ -5,7 +5,7 @@ import React from 'react'
 
 const Achievements = () => {
     return(
-        <div className="about-me__achievements">
+        <section className="about-me__achievements">
             <div className="achievements-block">
                 <h1 className="achievements-block__main-text" style={{marginTop: "-45px"}}>56</h1>
                 <p className="achievements-block__sub-text">Lat doświadczenia</p>
@@ -27,7 +27,7 @@ const Achievements = () => {
                 <h1 className="achievements-block__main-text"><h2 className="achievements-block__main-text-sub-text">Ponad</h2>35</h1>
                 <p className="achievements-block__sub-text">Wykonanych projektów</p>
             </div>
-        </div>
+        </section>
     )
 }
 

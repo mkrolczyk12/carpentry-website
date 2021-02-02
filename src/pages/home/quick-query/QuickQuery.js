@@ -33,7 +33,7 @@ const QuickQuery = () => {
     const imageData = data.indexImage.childImageSharp.fluid
 
     return(
-        <div className="home__quick-query">
+        <section className="home__quick-query">
             <BackgroundImage
                 className="home__quick-query-image"
                 fluid={imageData}
@@ -44,12 +44,12 @@ const QuickQuery = () => {
                     <Link className="home__quick-query-action-button"  to="/#menu-query-form">
                         <FontAwesomeIcon className="#" icon={faAngleDown}/>
                     </Link>
-                </div> 
+                </div>
             </BackgroundImage>
-            <ContactForm 
+            <ContactForm
                 formId = "menu-query-form"
             />
-        </div>
+        </section>
     )
 }
 

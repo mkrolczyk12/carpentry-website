@@ -10,7 +10,7 @@ import Realizations from "./home/realizations/Realizations"
 import QuickQuery from "./home/quick-query/QuickQuery"
 
 // Common compontents
-import QuickInfo from "./components/quick-info/QuickInfo"
+import QuickInfo from "./components/quickInfo/QuickInfo"
 import Menu from "./components/menu/Menu"
 import Contact from "./components/contact/Contact"
 import Footer from "./components/footer/Footer"
@@ -25,8 +25,8 @@ const IndexPage = () => {
       <HomeStart/>
       <MeetMe/>
       <Offer/>
-      <Contact 
-        parentClassName="home__contact"
+      <Contact
+        parentClassName="home"
       />
       <Realizations/>
       <QuickQuery/>

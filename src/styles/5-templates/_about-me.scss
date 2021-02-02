@@ -5,7 +5,7 @@
 .about-me {
     display: grid;
     grid-template-columns: auto;
-    grid-template-rows: minmax(100px, auto) minmax(300px, auto) 100vh repeat(auto, 3);
+    grid-template-rows: minmax(100px, auto) minmax(300px, auto) 100vh repeat(3, auto);
     grid-template-areas:
         'menu'
         'title'
@@ -43,8 +43,7 @@
         height: 100%;
         display: flex;
         flex-direction: column;
-        justify-content: flex-end;
-        padding-bottom: 80px;
+        justify-content: center;
         align-items: center;
     }
 

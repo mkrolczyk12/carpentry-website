@@ -26,7 +26,7 @@ const HomeStart = () => {
     const imageData = data.indexImage.childImageSharp.fluid
 
     return (
-      <div className="home__start">
+      <section className="home__start">
         <BackgroundImage
             className="home__start-image"
             fluid={imageData}
@@ -38,9 +38,9 @@ const HomeStart = () => {
               <a className="home__start-action-button"  href="#meetMe">
                   <FontAwesomeIcon className="#" icon={faAngleDown}/>
               </a>
-            </div> 
+            </div>
         </BackgroundImage>
-      </div>
+      </section>
     )
 }
 

@@ -21,7 +21,7 @@ const Description = () => {
     const imageData = data.indexImage.childImageSharp.fluid
 
     return(
-        <div className="about-me__description">
+        <section className="about-me__description">
             <div className="about-me__description-content">
                 <h2 className="about-me__description-title">Nazywam się</h2>
                 <h1 className="about-me__description-name"><b className="highlighted-text">Radosław Zagórowski</b></h1>
@@ -31,7 +31,7 @@ const Description = () => {
                 </p>
             </div>
             <Img className="about-me__description-image" fluid={imageData} />
-        </div>
+        </section>
     )
 }
 

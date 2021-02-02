@@ -8,7 +8,7 @@ import Description from "./description/Description"
 import Achievements from "./achievements/Achievements"
 
 // Common components
-import QuickInfo from "../components/quick-info/QuickInfo"
+import QuickInfo from "../components/quickInfo/QuickInfo"
 import Menu from "../components/menu/Menu"
 import Contact from '../components/contact/Contact'
 import Footer from "../components/footer/Footer"
@@ -24,7 +24,7 @@ const AboutMe = () => {
           <Description/>
           <Achievements/>
           <Contact
-            parentClassName="about-me__contact"
+            parentClassName="about-me"
             title="Pogadajmy"
           />
           <Footer/>

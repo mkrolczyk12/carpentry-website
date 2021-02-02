@@ -7,16 +7,16 @@ const Contact = ({parentClassName,
                 number = "(+48) 502 482 762"}) => {
 
     return (
-        <div className={parentClassName}>
-            <div className={`${parentClassName}-content`}>
-                <h1 className={`${parentClassName}-title`}>{title}</h1>
-                <div className={`${parentClassName}-action-space`}>
-                    <a className="action-button" href="/o-nas">{buttonContent}</a>
+        <section className={`${parentClassName}__contact`}>
+            <div className={`${parentClassName}__contact-content`}>
+                <h1 className={`${parentClassName}__contact-title`}>{title}</h1>
+                <div className={`${parentClassName}__contact-action-space`}>
+                    <a className="action-button" href="/o-mnie">{buttonContent}</a>
                 </div>
-                <p className={`${parentClassName}-text`}>{text}</p>
-                <p className={`${parentClassName}-number`}>{number}</p>
+                <p className={`${parentClassName}__contact-text`}>{text}</p>
+                <p className={`${parentClassName}__contact-number`}>{number}</p>
             </div>
-        </div>
+        </section>
     )
 }
 

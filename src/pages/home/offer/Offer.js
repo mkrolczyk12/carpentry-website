@@ -21,7 +21,7 @@ const Offer = () => {
     const imageData = data.indexImage.childImageSharp.fluid
 
     return (
-        <div className="home__offer">
+        <section className="home__offer">
             <div className="home__offer-quick-info">
                 <p className="home__offer-quick-info-text">
                     Pracuję na terenie Małopolski
@@ -50,7 +50,7 @@ const Offer = () => {
                     </div>
                 </div>
             </BackgroundImage>
-        </div>
+        </section>
     )
 }
 

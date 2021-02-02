@@ -1,0 +1,188 @@
+@import "../1-helpers/mixins";
+@import "../1-helpers/variables";
+@import "../2-base/typography";
+
+.offer {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: minmax(100px, auto) repeat(2, minmax(300px, auto)) minmax(100vh, auto) auto 100vh minmax(500px, auto);
+  grid-template-areas:
+  'menu'
+  'title'
+  'description'
+  'products'
+  'key-features'
+  'contact'
+  'footer';
+
+  // container
+  min-height: 100vh;
+  min-width: 100vw;
+
+  &__header {
+    grid-area: menu;
+    position: fixed;
+    z-index: 99;
+    width: 100%;
+
+    & .quick-info {
+      //
+    }
+
+    & .menu {
+      background-color: $white;
+      z-index: 99;
+    }
+  }
+
+  &__title {
+    grid-area: title;
+  }
+
+  &__title-image {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__title-content-main-text {
+    @include first-category-text-appearance;
+    color: $white;
+    font-size: $xsm_first-category-text-size;
+    font-weight: $default-bold;
+
+    .highlighted-text {
+      color: $orange;
+    }
+  }
+
+  &__description {
+    grid-area: description;
+  }
+
+  &__description-content {
+    margin: $xsm_margin;
+    padding: $xsm_padding;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  &__description-title {
+    @include second-category-text-appearance;
+    font-size: $xsm_second-category-text-size;
+    align-self: flex-start;
+  }
+
+  &__description-text {
+    @include third-category-text-appearance;
+    font-size: $xsm_third-category-text-size;
+    margin: $xsm_margin 0;
+  }
+
+  &__description-text2 {
+    @include second-category-text-appearance;
+    font-size: $xsm_second-category-text-size;
+  }
+
+  & .offer-gallery {
+    grid-area: products;
+    background-color: pink;
+  }
+
+  &__key-features {
+    grid-area: key-features;
+    background-color: $white;
+  }
+
+  &__key-features-content {
+    margin: $xsm_margin;
+    padding: $xsm_padding;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  &__key-features-content-item {
+    margin: $xsm_margin 0;
+  }
+
+  &__key-features-content-item-title {
+    @include second-category-text-appearance;
+    font-size: $xsm_second-category-text-size;
+    text-transform: uppercase;
+    margin-bottom: $xsm_margin / 3;
+    color: $orange;
+  }
+
+  &__key-features-content-item-description {
+    @include third-category-text-appearance;
+    font-size: $xsm-third-category-text-size;
+  }
+
+  &__contact {
+    grid-area: contact;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: $orange;
+    color: $white;
+  }
+
+  &__contact-content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: $xsm_margin;
+  }
+
+  &__contact-title {
+    @include first-category-text-appearance;
+    font-size: $xsm_first-category-text-size;
+    color: $white;
+    text-align: center;
+  }
+
+  &__contact-action-space {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    height: 25%;
+    justify-content: center;
+    align-items: center;
+
+    .action-button {
+      background: inherit;
+      color: $white;
+      border: 2px solid $white;
+      height: inherit;
+      width: inherit;
+    }
+  }
+
+  &__contact-text {
+    @include second-category-text-appearance;
+    font-size: $xsm_second-category-text-size;
+    color: $white;
+  }
+
+  &__contact-number {
+    @include first-category-text-appearance;
+    font-size: $xsm_first-category-text-size;
+    color: $brown;
+    font-weight: $default-bold;
+    text-align: center;
+  }
+
+  & .footer {
+    grid-area: footer;
+  }
+
+}
