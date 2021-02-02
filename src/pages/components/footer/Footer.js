@@ -27,11 +27,11 @@ const Footer = () => {
                 </div>
             </div>
             <div className="footer__copyright">
-                <h1 className="footer__copyright-company">© 2020 Usługi Stolarskie ZAGÓROWSKI.</h1>
+                <h1 className="footer__copyright-company">© 2021 Usługi Stolarskie ZAGÓROWSKI.</h1>
                 <p className="footer__copyright-author">Projekt i realizacja strony: <b className="highlighted-text">Marcin Królczyk</b></p>
             </div>
         </footer>
     )
-} 
+}
 
 export default Footer

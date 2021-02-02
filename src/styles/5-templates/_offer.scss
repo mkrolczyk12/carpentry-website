@@ -5,7 +5,7 @@
 .offer {
   display: grid;
   grid-template-columns: auto;
-  grid-template-rows: minmax(100px, auto) repeat(2, minmax(300px, auto)) minmax(100vh, auto) auto 100vh minmax(500px, auto);
+  grid-template-rows: minmax(100px, auto) minmax(300px, auto) auto minmax(100vh, auto) auto 100vh minmax(500px, auto);
   grid-template-areas:
   'menu'
   'title'
@@ -61,6 +61,7 @@
 
   &__description {
     grid-area: description;
+    display: flex;
   }
 
   &__description-content {
@@ -91,7 +92,6 @@
 
   & .offer-gallery {
     grid-area: products;
-    background-color: pink;
   }
 
   &__key-features {

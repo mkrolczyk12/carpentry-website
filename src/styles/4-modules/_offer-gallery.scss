@@ -1,0 +1,35 @@
+@import "../1-helpers/variables";
+@import "../1-helpers/mixins";
+@import "../2-base/typography";
+
+.offer-gallery {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+
+  &__item {
+    width: 80vw;
+    margin: $xsm-margin 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &:first-child {
+      margin: 0 0 $xsm_margin 0;
+    }
+  }
+
+  &__item-image {
+    height: 100%;
+    width: 100%;
+  }
+
+  &__item-title {
+    @include third-category-text-appearance;
+    font-size: $xsm_third-category-text-size;
+    margin: 5px 0;
+    text-transform: uppercase;
+    color: $black;
+  }
+}

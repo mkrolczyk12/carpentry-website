@@ -1,3 +1,4 @@
+require('dotenv').config()
 module.exports = {
   siteMetadata: {
     title: "ZagorowskiuslugiStolarskie",
@@ -9,6 +10,14 @@ module.exports = {
     "gatsby-plugin-sass",
     "gatsby-plugin-sharp",
     "gatsby-plugin-sitemap",
+    {
+      resolve: "gatsby-source-datocms",
+      options: {
+        apiToken: process.env.CMS_API_KEY,
+        preview: false,
+        disableLiveReload: false
+      },
+    },
     {
       resolve: "gatsby-plugin-manifest",
       options: {
