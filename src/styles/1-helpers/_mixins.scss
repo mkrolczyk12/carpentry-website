@@ -26,7 +26,7 @@
     font-family: 'Montserrat';
     font-weight: 500;
     font-size: 13px;
-    margin-bottom: $xsm_margin;
+    margin-bottom: $xsm_margin / 2;
 }
 // mixin for contact-form component input elements
 @mixin form-input-focus-style {

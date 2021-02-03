@@ -57,6 +57,7 @@ const QuickQuery = () => {
             <BackgroundImage
                 className="home__quick-query-form-image"
                 fluid={imageData2}
+                style={{opacity: 0.6}}
             >
                 <ContactForm
                     formId = "menu-query-form"
