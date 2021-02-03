@@ -5,7 +5,7 @@
 .about-me {
     display: grid;
     grid-template-columns: auto;
-    grid-template-rows: minmax(100px, auto) minmax(300px, auto) 100vh repeat(3, auto);
+    grid-template-rows: minmax(100px, auto) minmax(30vh, auto) 100vh repeat(3, auto);
     grid-template-areas:
         'menu'
         'title'

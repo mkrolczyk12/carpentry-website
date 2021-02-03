@@ -1,0 +1,155 @@
+@import "../1-helpers/mixins";
+@import "../1-helpers/variables";
+@import "../2-base/typography";
+
+.contact {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: minmax(60px, auto) minmax(30vh, auto) auto auto 50vh minmax(500px, auto);
+  grid-template-areas:
+  'menu'
+  'title'
+  'form'
+  'company-info'
+  'localization'
+  'footer';
+
+  // container
+  min-height: 100vh;
+  min-width: 100vw;
+
+  &__header {
+    grid-area: menu;
+    position: fixed;
+    z-index: 99;
+    width: 100%;
+
+    & .menu {
+      background-color: $white;
+      z-index: 99;
+    }
+  }
+
+  &__title {
+    grid-area: title;
+  }
+
+  &__title-image {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__title-content-main-text {
+    @include first-category-text-appearance;
+    color: $white;
+    font-size: $xsm_first-category-text-size;
+    font-weight: $default-bold;
+
+    .highlighted-text {
+      color: $orange;
+    }
+  }
+
+  & .contact-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: $xsm_margin 0;
+  }
+
+  &__form-image {
+    grid-area: form;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__form-image::before {
+    opacity: $default-background-opacity !important;
+  }
+
+  &__form-image::after {
+    opacity: $default-background-opacity !important;
+  }
+
+  &__company-info {
+    grid-area: company-info;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: $xsm-margin * 2 0;
+  }
+
+  &__company-info-content {
+    display: flex;
+    width: 75%;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    border-bottom: 1px solid $black;
+  }
+
+  &__company-info-content-media {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__company-info-content-media-title {
+    @include second-category-text-appearance;
+    font-size: $xsm_second-category-text-size;
+    margin-bottom: $xsm-margin / 2;
+    text-align: left;
+
+      .highlighted-text {
+        text-transform: uppercase;
+      }
+  }
+
+  &__company-info-content-media-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin: $xsm-margin / 3 0;
+  }
+
+  &__company-info-icon {
+    margin-right: $xsm-margin / 2;
+  }
+
+  &__company-info-text {
+    @include third-category-text-appearance;
+    font-size: $xsm_third-category-text-size / 1.25;
+  }
+
+  &__company-info-other {
+    width: 75%;
+    margin-top: $xsm-margin / 2;
+  }
+
+  &__company-info-content-other-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  &__localization {
+    grid-area: localization;
+
+
+    & .leaflet-container {
+      height: 100%;
+      z-index: 0;
+    }
+  }
+
+  & .footer {
+    grid-area: footer;
+  }
+}

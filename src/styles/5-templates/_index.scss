@@ -5,12 +5,12 @@
 .home {
     display: grid;
     grid-template-columns: auto;
-    grid-template-rows: minmax(100px, auto) 100vh repeat(6, auto);
+    grid-template-rows: minmax(100px, auto) 100vh repeat(2, minmax(100vh, auto)) 100vh minmax(100px, auto) auto minmax(500px, auto);
     grid-template-areas:
         "menu"
         "start"
         "meet_me"
-        "offert"
+        "offer"
         "question"
         "realizations"
         "quick_query"
@@ -36,7 +36,7 @@
     }
 
     &__start {
-        height: 100vh;
+        grid-area: start;
     }
 
     &__start-image {
@@ -95,7 +95,7 @@
     }
 
     &__meet-me {
-        height: 100vh;
+        grid-area: meet_me;
         background-color: $white;
         display: flex;
         flex-direction: column;
@@ -152,7 +152,7 @@
     }
 
     &__offer {
-        height: 100vh;
+        grid-area: offer;
         display: flex;
         flex-direction: column;
     }
@@ -239,7 +239,7 @@
     }
 
     &__contact {
-        height: 100vh;
+        grid-area: question;
         background-color: $brown;
         color: $white;
         display: flex;
@@ -291,7 +291,7 @@
     }
 
     &__realizations {
-        min-height: 100px;
+        grid-area: realizations;
         background-color: darken($white, 2%);
         color: $white;
     }
@@ -353,27 +353,32 @@
     }
 
     &__quick-query {
-        min-height: 100vh;
+        grid-area: quick_query;
         display: flex;
         flex-direction: column;
 
-        .contact-form {
-            height: auto;
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            margin: $xsm_padding;
-            background-color: $white;
-        }
     }
 
     &__quick-query-image {
-        min-height: 300px;
-        height: 50%;
+        min-height: 50vh;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+    }
+
+    &__quick-query-form-image {
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        & .contact-form {
+            height: 100vh;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
     }
 
     &__quick-query-content {
@@ -411,8 +416,8 @@
         }
     }
 
-    .footer {
-        min-height: 500px;
+    & .footer {
+        grid-area: footer;
     }
 
 }

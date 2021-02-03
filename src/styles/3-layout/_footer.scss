@@ -31,8 +31,8 @@
     }
 
     &__section-title {
-        @include second-category-text-appearance;
-        font-size: $xsm_second-category-text-size;
+        @include third-category-text-appearance;
+        font-size: $xsm_third-category-text-size;
         color: $orange;
         margin-bottom: 5px;
     }

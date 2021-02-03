@@ -19,24 +19,32 @@ const QuickQuery = () => {
     const data = useStaticQuery(
         graphql`
         query {
-          indexImage: file(relativePath: { eq: "quick-query-image.jpg" }) {
+          indexImage1: file(relativePath: { eq: "quick-query-image.jpg" }) {
             childImageSharp {
               fluid(maxWidth: 1800, quality: 100) {
                 ...GatsbyImageSharpFluid
               }
             }
           }
+        indexImage2: file(relativePath: { eq: "home-offer-image.jpg" }) {
+            childImageSharp {
+                fluid(maxWidth: 1800, quality: 100) {
+                    ...GatsbyImageSharpFluid
+                }
+            }
+        }
         }
       `
     )
     // set imageData
-    const imageData = data.indexImage.childImageSharp.fluid
+    const imageData1 = data.indexImage1.childImageSharp.fluid
+    const imageData2 = data.indexImage2.childImageSharp.fluid
 
     return(
         <section className="home__quick-query">
             <BackgroundImage
                 className="home__quick-query-image"
-                fluid={imageData}
+                fluid={imageData1}
             >
                 <div className="home__quick-query-content">
                     <h1 className="home__quick-query-main-title">Masz pytanie?</h1>
@@ -46,9 +54,14 @@ const QuickQuery = () => {
                     </Link>
                 </div>
             </BackgroundImage>
-            <ContactForm
-                formId = "menu-query-form"
-            />
+            <BackgroundImage
+                className="home__quick-query-form-image"
+                fluid={imageData2}
+            >
+                <ContactForm
+                    formId = "menu-query-form"
+                />
+            </BackgroundImage>
         </section>
     )
 }
