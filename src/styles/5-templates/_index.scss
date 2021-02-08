@@ -5,9 +5,8 @@
 .home {
     display: grid;
     grid-template-columns: auto;
-    grid-template-rows: minmax(100px, auto) 100vh repeat(2, minmax(100vh, auto)) 100vh minmax(100px, auto) auto minmax(500px, auto);
+    grid-template-rows: 100vh repeat(2, minmax(100vh, auto)) 100vh minmax(100px, auto) auto minmax(500px, auto);
     grid-template-areas:
-        "menu"
         "start"
         "meet_me"
         "offer"
@@ -85,7 +84,7 @@
         @include second-category-text-appearance;
         font-size: $xsm_second-category-text-size;
         text-align: center;
-        margin-top: $xsm_margin;
+        margin-top: $xsm_margin * 2;
         color: $white;
 
         &:hover {
@@ -407,7 +406,7 @@
         @include second-category-text-appearance;
         font-size: $xsm_second-category-text-size;
         text-align: center;
-        margin-top: $xsm_margin;
+        margin-top: $xsm_margin * 3;
         color: $white;
 
         &:hover {

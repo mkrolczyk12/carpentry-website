@@ -14,15 +14,24 @@ import QuickInfo from "./components/quickInfo/QuickInfo"
 import Menu from "./components/menu/Menu"
 import Contact from "./components/contact/Contact"
 import Footer from "./components/footer/Footer"
+import {useState} from "react";
 
 const IndexPage = () => {
+    const [displayHeader, setDisplayHeader] = useState(false)
+
+    function handleHeaderDisplay() {
+        setDisplayHeader(true)
+    }
+
   return (
     <div className="home">
-      <header className="home__header">
-        <QuickInfo/>
-        <Menu />
-      </header>
-      <HomeStart/>
+        {displayHeader && <header className="home__header">
+            <QuickInfo/>
+            <Menu />
+        </header>}
+      <HomeStart
+          handleHeaderDisplay={handleHeaderDisplay}
+      />
       <MeetMe/>
       <Offer/>
       <Contact

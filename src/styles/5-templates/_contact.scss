@@ -50,7 +50,7 @@
     font-weight: $default-bold;
 
     .highlighted-text {
-      color: $orange;
+      color: $white;
     }
   }
 
@@ -60,10 +60,16 @@
     align-items: center;
     margin: $xsm_margin 0;
   }
-
+  &__form-title {
+    @include second-category-text-appearance;
+    font-size: $xsm_second-category-text-size;
+    margin-top: $xsm_margin * 2;
+    text-transform: uppercase;
+  }
   &__form-image {
     grid-area: form;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
   }

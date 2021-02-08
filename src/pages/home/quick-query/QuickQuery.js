@@ -49,7 +49,7 @@ const QuickQuery = () => {
                 <div className="home__quick-query-content">
                     <h1 className="home__quick-query-main-title">Masz pytanie?</h1>
                     <h2 className="home__quick-query-sub-text">Zapytaj o co tylko chcesz!</h2>
-                    <Link className="home__quick-query-action-button"  to="/#menu-query-form">
+                    <Link className="home__quick-query-action-button move-animation"  to="/#menu-query-form">
                         <FontAwesomeIcon className="#" icon={faAngleDown}/>
                     </Link>
                 </div>

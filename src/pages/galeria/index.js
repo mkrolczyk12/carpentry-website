@@ -19,10 +19,6 @@ const Gallery = () => {
             </header>
             <Title/>
             <OfferGallery/>
-            <Contact
-                parentClassName="gallery"
-                title="Kontakt"
-            />
             <Footer/>
         </section>
     )

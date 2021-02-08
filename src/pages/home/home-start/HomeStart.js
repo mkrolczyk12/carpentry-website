@@ -1,4 +1,4 @@
-import React from "react"
+import React, {useEffect} from "react"
 import { graphql, useStaticQuery } from "gatsby"
 
 // Vendor Components
@@ -8,7 +8,13 @@ import {
 } from '@fortawesome/free-solid-svg-icons'
 import BackgroundImage from "gatsby-background-image"
 
-const HomeStart = () => {
+const HomeStart = (props) => {
+    const { handleHeaderDisplay } = props
+
+    useEffect(() => {
+        window.addEventListener('scroll', handleHeaderDisplay)
+    }, [handleHeaderDisplay])
+
     const data = useStaticQuery(
         graphql`
         query {
@@ -35,7 +41,7 @@ const HomeStart = () => {
               <h1 className="home__start-main-title">Usługi <b className="highlighted-text">Stolarskie</b></h1>
               <h2 className="home__start-sub-text">Tu jest miejsce na inny tekst</h2>
               <p className="home__start-invite-text">Zapraszam</p>
-              <a className="home__start-action-button"  href="#meetMe">
+              <a className="home__start-action-button move-animation"  href="#meetMe" onClick={handleHeaderDisplay}>
                   <FontAwesomeIcon className="#" icon={faAngleDown}/>
               </a>
             </div>

@@ -31,6 +31,7 @@ const Form = () => {
             fluid={imageData}
             style={{opacity: 0.6}}
         >
+            <h1 className="contact__form-title">Zapytaj o co chcesz</h1>
             <ContactForm
                 formId="contact-form"
             />
