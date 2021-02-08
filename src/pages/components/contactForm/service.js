@@ -1,5 +1,5 @@
 export function validateNameAndSurname(field) {
-    if(field != '' && field.length > 3) return true
+    if(field != '' && undefined !== field && field.length > 3) return true
     else return false
 }
 
@@ -15,11 +15,11 @@ export function validatePhoneNumber(phone) {
 }
 
 export function validateMessage(message) {
-    if(message != '' && message.length > 10) return true
+    if(message != '' && undefined !== message && message.length > 10) return true
     else return false
 }
 
-export function isFormCorrect(form) {
+export default function isFormCorrect(form) {
     if(validateNameAndSurname(form.name) &&
         validateNameAndSurname(form.surname) &&
         validateEmail(form.email) &&

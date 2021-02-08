@@ -1,5 +1,5 @@
 import React, {useReducer, useState} from 'react'
-import {isFormCorrect, validateNameAndSurname} from "./service";
+import isFormCorrect, {validateEmail,} from "./service";
 
 const initialState = {
     name: '',
