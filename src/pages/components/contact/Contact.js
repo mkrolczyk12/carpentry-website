@@ -11,7 +11,7 @@ const Contact = ({parentClassName,
             <div className={`${parentClassName}__contact-content`}>
                 <h1 className={`${parentClassName}__contact-title`}>{title}</h1>
                 <div className={`${parentClassName}__contact-action-space`}>
-                    <a className="action-button" href="/o-mnie">{buttonContent}</a>
+                    <a className="action-button" href="/kontakt">{buttonContent}</a>
                 </div>
                 <p className={`${parentClassName}__contact-text`}>{text}</p>
                 <p className={`${parentClassName}__contact-number`}>{number}</p>

@@ -46,7 +46,7 @@ const Offer = () => {
                         at Hampden-Sydney College in Virginia
                     </p>
                     <div className="home__offer-action">
-                        <a className="action-button" href="/nasza-oferta">Zobacz ofertę</a>
+                        <a className="action-button" href="/oferta">Zobacz ofertę</a>
                     </div>
                 </div>
             </BackgroundImage>

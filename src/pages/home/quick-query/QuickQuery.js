@@ -1,14 +1,15 @@
 import React from 'react'
 import { graphql, Link, useStaticQuery } from "gatsby"
 
+
+import ContactForm from "../../components/contactForm/ContactForm"
+
 // Vendor Components
+import BackgroundImage from "gatsby-background-image"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
     faAngleDown,
 } from '@fortawesome/free-solid-svg-icons'
-import BackgroundImage from "gatsby-background-image"
-
-import ContactForm from "../../components/contactForm/ContactForm"
 
 if (typeof window !== "undefined") {
     // eslint-disable-next-line global-require

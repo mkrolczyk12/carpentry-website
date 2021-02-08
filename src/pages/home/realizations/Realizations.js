@@ -15,7 +15,7 @@ const Realizations = () => {
                     <ImageGallery items={images} showPlayButton={false} />;
                 </section>
                 <div className="home__realizations-action-space">
-                    <a className="action-button" href="/o-nas">Zobacz więcej</a>
+                    <a className="action-button" href="/galeria">Zobacz więcej</a>
                 </div>
             </div>
         </section>
