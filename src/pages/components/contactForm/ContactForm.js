@@ -57,11 +57,12 @@ const ContactForm = (props) => {
     const { name, surname, email, phone, message } = state
 
     return(
-        <form id={formId} className="contact-form" action="/post" method="post">
+        <form id={formId} name="contact" className="contact-form" method="post" data-netlify="true" data-netlify-honeypot="bot-field">
+            <input type="hidden" name="form-name" value="contact" />
             <fieldset className="contact-form__fieldset">
                 <input name="name" className="contact-form__name" value={name} onChange={handleInputValues} placeholder={namePlaceholder} required/>
                 <input name="surname" className="contact-form__surname" value={surname} onChange={handleInputValues} placeholder={surnamePlaceholder} required/>
-                <input name="email" className="contact-form__email" value={email} onChange={handleInputValues} placeholder={emailPlaceholder} required/>
+                <input type="email" name="email" className="contact-form__email" value={email} onChange={handleInputValues} placeholder={emailPlaceholder} required/>
                 <input name="phone" className="contact-form__phone" value={phone} onChange={handleInputValues} placeholder={phonePlaceholder}/>
                 <textarea name="message" className="contact-form__message" value={message} onChange={handleInputValues} placeholder={messagePlaceholder} required/>
                 <div className="contact-form__consent">
@@ -69,8 +70,9 @@ const ContactForm = (props) => {
                     <label className="contact-form__checkbox-label" htmlFor="consent" required>{consentMessage}</label>
                 </div>
                 {/* Miejsce na google reCaptcha */}
+                {/* onClick={handleSubmit} */}
                 <div className="contact-form__action-space">
-                    <a type="submit" className="action-button" onClick={handleSubmit}>Wyślij</a>
+                    <button type="submit" className="action-button" >Wyślij</button>
                 </div>
             </fieldset>
         </form>
