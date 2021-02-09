@@ -1,5 +1,7 @@
 import React from 'react'
 
+import "../../styles/main.scss"
+
 // Vendor components
 
 // Contact components
@@ -12,8 +14,8 @@ import Localization from "./localization/Localization";
 import Header from "../components/menu/Menu";
 import Footer from "../components/footer/Footer";
 
-
 const Contact = () => {
+
     return (
         <section className="contact">
             <header className="contact__header">

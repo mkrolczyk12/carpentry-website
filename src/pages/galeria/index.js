@@ -1,5 +1,7 @@
 import React from 'react'
 
+import "../../styles/main.scss"
+
 // Gallery components
 import Title from "./title/Title";
 

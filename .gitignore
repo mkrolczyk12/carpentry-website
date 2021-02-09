@@ -5,3 +5,4 @@ public
 
 # ignore env variables files
 .env*
+!.env.sample
