@@ -57,7 +57,7 @@ const ContactForm = (props) => {
     const { name, surname, email, phone, message } = state
 
     return(
-        <form id={formId} name="contact" className="contact-form" method="post" data-netlify="true" data-netlify-honeypot="bot-field" data-netlify-recaptcha="true">
+        <form id={formId} name="contact" className="contact-form" method="post" data-netlify="true" data-netlify-honeypot="bot-field">
             <input type="hidden" name="form-name" value="contact" />
             <fieldset className="contact-form__fieldset">
                 <input name="name" className="contact-form__name" value={name} onChange={handleInputValues} placeholder={namePlaceholder} required/>
@@ -69,7 +69,6 @@ const ContactForm = (props) => {
                     <input type="checkbox" className="contact-form__checkbox" id="consent" checked={permission} onClick={handlePermission}/>
                     <label className="contact-form__checkbox-label" htmlFor="consent" required>{consentMessage}</label>
                 </div>
-                <div data-netlify-recaptcha="true"></div>
                 {/* onClick={handleSubmit} */}
                 <div className="contact-form__action-space">
                     <button type="submit" className="action-button" >Wyślij</button>
