@@ -1,5 +1,5 @@
 export function validateNameAndSurname(field) {
-    if(field != '' && undefined !== field && field.length > 3) return true
+    if(field !== '' && undefined !== field && field.length >= 2) return true
     else return false
 }
 
@@ -9,13 +9,13 @@ export function validateEmail(email) {
 }
 
 export function validatePhoneNumber(phone) {
-    const regex = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im
+    const regex = /(?<!\w)(\(?(\+|00)?48\)?)?[ -]?\d{3}[ -]?\d{3}[ -]?\d{3}(?!\w)/im
     if(phone === "" || regex.test(String(phone))) return true
     else return false
 }
 
 export function validateMessage(message) {
-    if(message != '' && undefined !== message && message.length > 10) return true
+    if(message !== '' && undefined !== message && message.length > 5) return true
     else return false
 }
 
@@ -27,3 +27,12 @@ export default function isFormCorrect(form) {
         validateMessage(form.message)) return true
     else return false
 }
+
+// export function checkIfAnyInputIsFilled(...args) {
+//     for(let atr of args) {
+//         if(atr != '') {
+//             return true
+//         } else continue
+//     }
+//     return false
+// }

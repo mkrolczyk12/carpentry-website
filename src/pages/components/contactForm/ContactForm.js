@@ -1,5 +1,5 @@
-import React, {useReducer, useState} from 'react'
-import isFormCorrect, {validateEmail,} from "./service";
+import React, {useReducer, useState, useEffect} from 'react'
+import isFormCorrect, {validateEmail, validatePhoneNumber, validateMessage} from "./service";
 
 const initialState = {
     name: '',
@@ -27,9 +27,22 @@ const ContactForm = (props) => {
         messagePlaceholder = "Treść wiadomości",
         consentMessage = "Wyrażam zgodę na przetwarzanie przez [nazwa_strony] moich danych zawartych w powyższym formularzu, w celu otrzymania odpowiedzi na zadane pytanie."
     } = props
-
     const [permission, setPermission] = useState(false); // for permission checkbox
     const [state, dispatch] = useReducer(reducer, initialState); // for other form input values
+    const { name, surname, email, phone, message } = state      // useReducer state attribute
+    let formChanged = false;    // for form change event
+
+    useEffect(() => {
+        window.addEventListener('beforeunload', (event) => {
+            if(formChanged) {
+                event.preventDefault()
+                event.returnValue = "Czy na pewno chcesz opuścić tę stronę?"
+            }
+        })
+        return () => {
+            window.removeEventListener('beforeunload', () => (formChanged = false))
+        }
+    }, [])
 
     const handleInputValues = (event) => {
         dispatch({field: event.target.name, value: event.target.value})
@@ -39,45 +52,47 @@ const ContactForm = (props) => {
         setPermission(!permission);
     }
 
-    const handleSubmit = () => {
+    const handleSubmit = (event) => {
         if(!permission) {
-            window.alert("Brak udzielonej zgody.")
+            event.preventDefault()
+            window.alert("Zgoda nie została udzielona.")
         }
         else {
             if(isFormCorrect(state)) {
-                // TODO -> Strzał do API
-                window.alert("dobrze")
+                document.querySelector('.contact-form').submit()
             } else
             {
-                window.alert("Formularz jest źle wypełniony")
+                event.preventDefault()
+                window.alert("Formularz został błędnie wypełniony")
             }
         }
     }
 
-    const { name, surname, email, phone, message } = state
-
     return(
-        <form id={formId} name="contact" className="contact-form" method="post" data-netlify="true" data-netlify-honeypot="bot-field">
+        <form
+        id={formId}
+        name="contact" 
+        className="contact-form" 
+        method="post" 
+        data-netlify="true" 
+        data-netlify-honeypot="bot-field">
             <input type="hidden" name="form-name" value="contact" />
-            <fieldset className="contact-form__fieldset">
-                <input name="name" className="contact-form__name" value={name} onChange={handleInputValues} placeholder={namePlaceholder} required/>
-                <input name="surname" className="contact-form__surname" value={surname} onChange={handleInputValues} placeholder={surnamePlaceholder} required/>
-                <input type="email" name="email" className="contact-form__email" value={email} onChange={handleInputValues} placeholder={emailPlaceholder} required/>
-                <input name="phone" className="contact-form__phone" value={phone} onChange={handleInputValues} placeholder={phonePlaceholder}/>
-                <textarea name="message" className="contact-form__message" value={message} onChange={handleInputValues} placeholder={messagePlaceholder} required/>
+            <fieldset className="contact-form__fieldset" onChange={() => formChanged = true}>
+                <input name="name" className={(name.length !== 0 && name.length < 3) ? "contact-form__name input-error" : "contact-form__name"} value={name} onChange={handleInputValues} placeholder={namePlaceholder} required/>
+                <input name="surname" className={(surname.length !== 0 && surname.length < 3) ? "contact-form__surname input-error" : "contact-form__surname"} value={surname} onChange={handleInputValues} placeholder={surnamePlaceholder} required/>
+                <input name="email" className={(email === '') || (email !==0 && validateEmail(email)) ? "contact-form__email" : "contact-form__email input-error"} value={email} onChange={handleInputValues} placeholder={emailPlaceholder} required/>
+                <input name="phone" className={validatePhoneNumber(phone) ? "contact-form__phone" : "contact-form__phone input-error"} value={phone} onChange={handleInputValues} placeholder={phonePlaceholder}/>
+                <textarea name="message" className={(message === '') || (message !==0 && validateMessage(message)) ? "contact-form__message" : "contact-form__message input-error"} value={message} onChange={handleInputValues} placeholder={messagePlaceholder} required/>
                 <div className="contact-form__consent">
                     <input type="checkbox" className="contact-form__checkbox" id="consent" checked={permission} onClick={handlePermission}/>
                     <label className="contact-form__checkbox-label" htmlFor="consent" required>{consentMessage}</label>
                 </div>
-                {/* onClick={handleSubmit} */}
                 <div className="contact-form__action-space">
-                    <button type="submit" className="action-button" >Wyślij</button>
+                    <button type="submit" className="action-button" onClick={handleSubmit}>Wyślij</button>
                 </div>
             </fieldset>
         </form>
     )
 }
 
-// TODO -> obsługa formularza
-// TODO -> alert czy na pewno chcesz opuścić stronę (jak formularz będzie choć trochę wypełniony)
 export default ContactForm
