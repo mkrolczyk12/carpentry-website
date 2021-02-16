@@ -3,7 +3,7 @@ import { graphql, useStaticQuery } from "gatsby"
 
 import Img from "gatsby-image"
 
-const MeetMe = () => {
+const MeetMe = React.memo(() => {
     const data = useStaticQuery(
         graphql`
         query {
@@ -19,7 +19,6 @@ const MeetMe = () => {
     )
     // set imageData
     const imageData = data.indexImage.childImageSharp.fluid
-
     return (
         <section id="meetMe" className="home__meet-me">
             <Img className="home__meet-me-image" fluid={imageData} />
@@ -36,6 +35,6 @@ const MeetMe = () => {
             </div>
         </section>
     )
-}
+})
 
 export default MeetMe

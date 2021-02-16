@@ -3,11 +3,11 @@ import { graphql, useStaticQuery } from "gatsby"
 
 import BackgroundImage from 'gatsby-background-image'
 
-const Offer = () => {
+const Offer = React.memo(() => {
     const data = useStaticQuery(
         graphql`
         query {
-          indexImage: file(relativePath: { eq: "home-offer-image.jpg" }) {
+          indexImage: file(relativePath: { eq: "quick-query-image.jpg" }) {
             childImageSharp {
               fluid(maxWidth: 1800, quality: 100) {
                 ...GatsbyImageSharpFluid
@@ -32,7 +32,6 @@ const Offer = () => {
             <BackgroundImage
                 className="home__offer-image"
                 fluid={imageData}
-                style={{opacity: 0.6}}
                 >
                 <div className="home__offer-content">
                     <h1 className="home__offer-title">Różnorodna oferta Produktów</h1>
@@ -52,6 +51,6 @@ const Offer = () => {
             </BackgroundImage>
         </section>
     )
-}
+})
 
 export default Offer

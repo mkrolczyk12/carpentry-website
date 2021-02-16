@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Contact = ({parentClassName,
+const Contact = React.memo(({parentClassName,
                 title = "Potrzebujesz kontaktu?",
                 buttonContent = "Napisz do mnie",
                 text = "lub zadzwoń",
@@ -18,6 +18,6 @@ const Contact = ({parentClassName,
             </div>
         </section>
     )
-}
+})
 
 export default Contact

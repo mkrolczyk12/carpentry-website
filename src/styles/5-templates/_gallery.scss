@@ -7,10 +7,10 @@
   grid-template-columns: auto;
   grid-template-rows: minmax(100px, auto) minmax(30vh, auto) minmax(100vh, auto) minmax(500px, auto);
   grid-template-areas:
-  'menu'
-  'title'
-  'products'
-  'footer';
+    'menu'
+    'title'
+    'products'
+    'footer';
 
   //container
   min-height: 100vh;
@@ -47,7 +47,7 @@
 
   &__title-content-main-text {
     @include first-category-text-appearance;
-    color: $brown;
+    color: $white;
     font-size: $xsm_first-category-text-size;
     font-weight: $default-bold;
 

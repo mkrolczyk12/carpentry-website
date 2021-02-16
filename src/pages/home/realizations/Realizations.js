@@ -5,7 +5,7 @@ import { graphql, useStaticQuery} from "gatsby"
 import ImageGallery from 'react-image-gallery';
 import "react-image-gallery/styles/scss/image-gallery.scss";
 
-const Realizations = () => {
+const Realizations = React.memo(() => {
 
     return(
         <section className="home__realizations">
@@ -20,7 +20,7 @@ const Realizations = () => {
             </div>
         </section>
     );
-}
+})
 
 const images = [
     {

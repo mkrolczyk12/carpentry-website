@@ -50,6 +50,7 @@ $display: "false";
         @include second-category-text-appearance;
         font-size: $xsm_second-category-text-size;
         text-transform: uppercase;
+        line-height: normal;
     }
 
     &__description {
@@ -57,6 +58,7 @@ $display: "false";
         color: $orange;
         margin-left: 25%;
         font-size: $xsm_third-category-text-size;
+        line-height: normal;
     }
 
     &__links {
@@ -69,12 +71,14 @@ $display: "false";
         @include third-category-text-appearance;
         text-transform: uppercase;
         margin: $xsm_margin / 2;
+        line-height: normal;
         font-size: $xsm_third-category-text-size;
 
         &:last-of-type {
             @include third-category-text-appearance;
             color: $orange;
             font-size: $xsm-third-category-text-size * 1.5;
+            line-height: inherit;
         }
 
         &--active {

@@ -52,9 +52,6 @@
         font-size: $xsm_first-category-text-size;
         font-weight: $default-bold;
 
-        .highlighted-text {
-            color: $orange;
-        }
     }
 
     &__description {
@@ -138,6 +135,7 @@
     }
 
     &__achievements-trait-section-text {
+        @include third-category-text-appearance;
         text-align: justify;
     }
 

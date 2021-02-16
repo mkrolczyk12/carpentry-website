@@ -1,4 +1,5 @@
-import React from 'react'
+import * as React from 'react'
+import {Suspense} from 'react'
 
 import "../../styles/main.scss"
 
@@ -8,9 +9,9 @@ import Title from "./title/Title";
 // Common components
 import QuickInfo from "../components/quickInfo/QuickInfo";
 import Header from "../components/menu/Menu";
-import OfferGallery from "../components/offerGallery/OfferGallery";
-import Contact from "../components/contact/Contact";
 import Footer from "../components/footer/Footer";
+
+const OfferGallery = React.lazy(() => import("../components/offerGallery/OfferGallery"));
 
 const Gallery = () => {
     return (
@@ -20,7 +21,9 @@ const Gallery = () => {
                 <Header/>
             </header>
             <Title/>
-            <OfferGallery/>
+            <Suspense fallback={<div>Wczytywanie...</div>}>
+                <OfferGallery/>
+            </Suspense>
             <Footer/>
         </section>
     )

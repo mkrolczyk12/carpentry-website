@@ -16,11 +16,11 @@ if (typeof window !== "undefined") {
     require("smooth-scroll")('a[href*="#"]')
 }
 
-const QuickQuery = () => {
+const QuickQuery = React.memo(() => {
     const data = useStaticQuery(
         graphql`
         query {
-          indexImage1: file(relativePath: { eq: "quick-query-image.jpg" }) {
+          indexImage1: file(relativePath: { eq: "section-title-image1.jpg" }) {
             childImageSharp {
               fluid(maxWidth: 1800, quality: 100) {
                 ...GatsbyImageSharpFluid
@@ -66,6 +66,6 @@ const QuickQuery = () => {
             </BackgroundImage>
         </section>
     )
-}
+})
 
 export default QuickQuery

@@ -2,11 +2,11 @@ import React, {useEffect} from "react"
 import { graphql, useStaticQuery } from "gatsby"
 
 // Vendor Components
+import BackgroundImage from "gatsby-background-image"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
     faAngleDown,
 } from '@fortawesome/free-solid-svg-icons'
-import BackgroundImage from "gatsby-background-image"
 
 const HomeStart = (props) => {
     const { handleHeaderDisplay } = props
@@ -39,10 +39,10 @@ const HomeStart = (props) => {
         >
             <div className="home__start-content">
               <h1 className="home__start-main-title">Usługi <b className="highlighted-text">Stolarskie</b></h1>
-              <h2 className="home__start-sub-text">Tu jest miejsce na inny tekst</h2>
-              <p className="home__start-invite-text">Zapraszam</p>
+              <h2 className="home__start-sub-text">The most important ingredient to success in systems</h2>
+              <p className="home__start-invite-text">Zapraszamy</p>
               <a className="home__start-action-button move-animation"  href="#meetMe" onClick={handleHeaderDisplay}>
-                  <FontAwesomeIcon className="#" icon={faAngleDown}/>
+                  <FontAwesomeIcon className="fontawesome-i2svg-pending" icon={faAngleDown}/>
               </a>
             </div>
         </BackgroundImage>

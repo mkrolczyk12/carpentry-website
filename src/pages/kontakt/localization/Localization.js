@@ -4,9 +4,8 @@ import React from "react";
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 
 const Localization = (props) => {
-    const position = [51.505, -0.09]
     const mapSettings = {
-        center: [51.505, -0.09],
+        center: [49.61411, 20.70370],   // localization co-ordinates
         zoom: 13,
         scrollWheelZoom: false
     }
@@ -19,9 +18,9 @@ const Localization = (props) => {
                         attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                     />
-                    <Marker position={position}>
+                    <Marker position={mapSettings.center}>
                         <Popup>
-                            A pretty CSS3 popup. <br /> Easily customizable.
+                            Usługi stolarskie Zagórowski
                         </Popup>
                     </Marker>
                 </MapContainer>
