@@ -1,5 +1,5 @@
-import * as React from "react"
-import {useState, Suspense} from "react";
+import React from "react"
+import {useState} from "react";
 
 import "../styles/main.scss"
 
@@ -7,6 +7,7 @@ import "../styles/main.scss"
 import HomeStart from "./home/home-start/HomeStart"
 import MeetMe from "./home/meet-me/MeetMe"
 import Offer from "./home/offer/Offer"
+import Realizations from "./home/realizations/Realizations"
 import QuickQuery from "./home/quick-query/QuickQuery"
 
 // Common compontents
@@ -14,8 +15,6 @@ import QuickInfo from "./components/quickInfo/QuickInfo"
 import Menu from "./components/menu/Menu"
 import Contact from "./components/contact/Contact"
 import Footer from "./components/footer/Footer"
-
-const Realizations = React.lazy(() => import("./home/realizations/Realizations"))
 
 const IndexPage = () => {
   const [displayHeader, setDisplayHeader] = useState(false)
@@ -38,9 +37,7 @@ const IndexPage = () => {
       <Contact
         parentClassName="home"
       />
-      <Suspense fallback={<div>Wczytywanie...</div>}>
-        <Realizations/>
-      </Suspense>
+      <Realizations/>
       <QuickQuery/>
       <Footer/>
     </section>
