@@ -1,8 +1,9 @@
 import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 
-// Vendor Components
-import BackgroundImage from "gatsby-background-image"
+// Common components
+import SectionTitle from "../../components/sectionTitle/SectionTitle";
+
 
 const Title = () => {
     const data = useStaticQuery(
@@ -22,14 +23,12 @@ const Title = () => {
     const imageData = data.indexImage.childImageSharp.fluid
 
     return (
-      <section className="about-me__title">
-        <BackgroundImage
-            className="about-me__title-image"
-            fluid={imageData}
-        >
-          <h1 className="about-me__title-content-main-text">Kim <b className="highlighted-text">Jestem?</b></h1>
-        </BackgroundImage>
-      </section>
+        <SectionTitle
+           parentClassName="about-me"
+           image={imageData}
+           text="Kim "
+           boldText="Jestem?"
+        />
     )
 }
 
