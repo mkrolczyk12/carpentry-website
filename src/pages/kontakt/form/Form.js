@@ -31,7 +31,8 @@ const Form = () => {
             fluid={imageData}
             style={{opacity: 0.6}}
         >
-            <h1 className="contact__form-title">Zapytaj o co chcesz</h1>
+            <h1 className="contact__form-title">Lorem Ipsum passages, and more recently with desktop
+                publishing software like Aldus PageMaker including versions of Lorem Ipsum.</h1>
             <ContactForm
                 formId="contact-form"
             />

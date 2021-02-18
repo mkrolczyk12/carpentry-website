@@ -5,7 +5,7 @@
 .offer {
   display: grid;
   grid-template-columns: auto;
-  grid-template-rows: minmax(100px, auto) minmax(30vh, auto) auto minmax(100vh, auto) auto 100vh minmax(500px, auto);
+  grid-template-rows: minmax(100px, auto) minmax(30vh, auto) auto minmax(100vh, auto) auto 75vh minmax(500px, auto);
   grid-template-areas:
   'menu'
   'title'
@@ -115,64 +115,32 @@
     font-size: $xsm-third-category-text-size;
   }
 
-  &__contact {
+  .section-contact {
     grid-area: contact;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    background-color: $orange;
+    background-color: $brown;
     color: $white;
-  }
 
-  &__contact-content {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    padding: $xsm_margin;
-  }
-
-  &__contact-title {
-    @include first-category-text-appearance;
-    font-size: $xsm_first-category-text-size;
-    color: $white;
-    text-align: center;
-  }
-
-  &__contact-action-space {
-    display: flex;
-    flex-direction: column;
-    width: 75%;
-    height: 25%;
-    justify-content: center;
-    align-items: center;
-
-    .action-button {
-      background: inherit;
+    &__title {
       color: $white;
-      border: 2px solid $white;
-      height: inherit;
-      width: inherit;
     }
-  }
-
-  &__contact-text {
-    @include second-category-text-appearance;
-    font-size: $xsm_second-category-text-size;
-    color: $white;
-  }
-
-  &__contact-number {
-    @include first-category-text-appearance;
-    font-size: $xsm_first-category-text-size;
-    color: $brown;
-    font-weight: $default-bold;
-    text-align: center;
+    &__action-space {
+      //
+      .action-button {
+        color: $white;
+        border: 2px solid $white;
+      }
+    }
+    &__text {
+      color: $white;
+    }
+    &__number {
+      color: $orange;
+    }
   }
 
   & .footer {
     grid-area: footer;
+    background-color: $black;
   }
 
 }

@@ -7,14 +7,14 @@ const Contact = React.memo(({parentClassName,
                 number = "(+48) 502 482 762"}) => {
 
     return (
-        <section className={`${parentClassName}__contact`}>
-            <div className={`${parentClassName}__contact-content`}>
-                <h1 className={`${parentClassName}__contact-title`}>{title}</h1>
-                <div className={`${parentClassName}__contact-action-space`}>
+        <section className="section-contact">
+            <div className="section-contact__content">
+                <h1 className="section-contact__title">{title}</h1>
+                <div className="section-contact__action-space">
                     <a className="action-button" href="/kontakt">{buttonContent}</a>
                 </div>
-                <p className={`${parentClassName}__contact-text`}>{text}</p>
-                <p className={`${parentClassName}__contact-number`}>{number}</p>
+                <p className="section-contact__text">{text}</p>
+                <p className="section-contact__number">{number}</p>
             </div>
         </section>
     )

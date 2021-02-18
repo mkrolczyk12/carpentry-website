@@ -52,10 +52,10 @@
   }
   &__form-title {
     @include second-category-text-appearance;
-    font-size: $xsm_second-category-text-size;
-    margin-top: $xsm_margin * 2;
-    text-transform: uppercase;
+    font-size: $xsm_third-category-text-size;
+    margin: $xsm_margin * 2 $xsm_margin * 2 0 $xsm_margin * 2;
   }
+
   &__form-image {
     grid-area: form;
     display: flex;
