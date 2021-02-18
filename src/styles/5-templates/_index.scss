@@ -282,6 +282,8 @@
         grid-area: realizations;
         background-color: darken($white, 2%);
         color: $white;
+        justify-content: center;
+        align-items: center;
     }
 
     &__realizations-content {
@@ -305,21 +307,9 @@
         text-align: center;
     }
 
-    &__realizations-gallery {
+    #ReactGridGallery {
         grid-area: gallery;
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
-        margin-top: $xsm_margin;
-        margin-left: $xsm_margin;
-        margin-right: $xsm_margin;
-        gap: $xsm_margin;
-
-        .image-gallery {
-            justify-content: center;
-            display: flex;
-            flex-direction: column;
-            z-index: 0;
-        }
+        margin: $xsm_margin;
     }
 
     &__realizations-action-space {
@@ -328,6 +318,7 @@
         flex-grow: 1;
         display: flex;
         justify-content: center;
+        align-items: center;
         margin-bottom: $xsm_margin;
 
         .action-button {
@@ -344,7 +335,6 @@
         grid-area: quick_query;
         display: flex;
         flex-direction: column;
-
     }
 
     &__quick-query-image {

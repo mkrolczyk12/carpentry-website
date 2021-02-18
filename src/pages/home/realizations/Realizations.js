@@ -1,9 +1,8 @@
 import React from 'react'
-import { graphql, useStaticQuery} from "gatsby"
+import { graphql, useStaticQuery, Link} from "gatsby"
 
-// https://www.npmjs.com/package/react-image-gallery
-import ImageGallery from 'react-image-gallery';
-import "react-image-gallery/styles/scss/image-gallery.scss";
+// https://reactjsexample.com/justified-image-gallery-component-for-react/
+import Gallery from 'react-grid-gallery';
 
 const Realizations = React.memo(() => {
 
@@ -11,42 +10,53 @@ const Realizations = React.memo(() => {
         <section className="home__realizations">
             <div className="home__realizations-content">
                 <h1 className="home__realizations-title">Przykładowe realizacje</h1>
-                <section className="home__realizations-gallery">
-                    <ImageGallery items={images} showPlayButton={false} />;
-                </section>
+                <Gallery
+                    images={images}
+                    enableImageSelection={false}
+                    tagStyle={{color: 'white'}}
+                />
                 <div className="home__realizations-action-space">
-                    <a className="action-button" href="/galeria">Zobacz więcej</a>
+                    <Link className="action-button" to="/galeria">Zobacz więcej</Link>
                 </div>
             </div>
         </section>
     );
 })
 
-const images = [
+let thumbnailWidth = 320
+let thumbnailHeight = 212
+
+const images =
+[
     {
-      original: 'https://picsum.photos/id/1018/1000/600/',
-      thumbnail: 'https://picsum.photos/id/1018/250/150/',
+        src: "https://picsum.photos/id/1018/1000/600/",
+        thumbnail: "https://picsum.photos/id/1018/1000/600/",
+        thumbnailWidth: thumbnailWidth,
+        thumbnailHeight: thumbnailHeight,
+        caption: "After Rain (Jeshu John - designerspics.com)"
     },
     {
-      original: 'https://picsum.photos/id/1015/1000/600/',
-      thumbnail: 'https://picsum.photos/id/1015/250/150/',
+        src: "https://picsum.photos/id/1018/1000/600/",
+        thumbnail: "https://picsum.photos/id/1015/1000/600/",
+        thumbnailWidth: thumbnailWidth,
+        thumbnailHeight: thumbnailHeight,
+        tags: [{value: "Ocean", title: "Ocean"}, {value: "People", title: "People"}],
+        caption: "Boats (Jeshu John - designerspics.com)"
     },
     {
-      original: 'https://picsum.photos/id/1019/1000/600/',
-      thumbnail: 'https://picsum.photos/id/1019/250/150/',
+        src: "https://c4.staticflickr.com/9/8887/28897124891_98c4fdd82b_b.jpg",
+        thumbnail: "https://c4.staticflickr.com/9/8887/28897124891_98c4fdd82b_n.jpg",
+        thumbnailWidth: thumbnailWidth,
+        thumbnailHeight: thumbnailHeight
     },
     {
-        original: 'https://picsum.photos/id/1018/1000/600/',
-        thumbnail: 'https://picsum.photos/id/1018/250/150/',
-    },
-    {
-        original: 'https://picsum.photos/id/1015/1000/600/',
-        thumbnail: 'https://picsum.photos/id/1015/250/150/',
-    },
-    {
-        original: 'https://picsum.photos/id/1019/1000/600/',
-        thumbnail: 'https://picsum.photos/id/1019/250/150/',
-    },
-  ];
+        src: "https://c2.staticflickr.com/9/8356/28897120681_3b2c0f43e0_b.jpg",
+        thumbnail: "https://c2.staticflickr.com/9/8356/28897120681_3b2c0f43e0_n.jpg",
+        thumbnailWidth: thumbnailWidth,
+        thumbnailHeight: thumbnailHeight,
+        tags: [{value: "Drzwi", title: "Drzwi dębowe"}],
+        caption: "Boats (Jeshu John - designerspics.com)"
+    }
+]
 
 export default Realizations

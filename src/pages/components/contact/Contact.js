@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'gatsby'
 
 const Contact = React.memo(({parentClassName,
                 title = "Potrzebujesz kontaktu?",
@@ -11,7 +12,7 @@ const Contact = React.memo(({parentClassName,
             <div className="section-contact__content">
                 <h1 className="section-contact__title">{title}</h1>
                 <div className="section-contact__action-space">
-                    <a className="action-button" href="/kontakt">{buttonContent}</a>
+                    <Link className="action-button" to="/kontakt">{buttonContent}</Link>
                 </div>
                 <p className="section-contact__text">{text}</p>
                 <p className="section-contact__number">{number}</p>

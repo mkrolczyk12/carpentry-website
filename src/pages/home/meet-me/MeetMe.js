@@ -1,5 +1,5 @@
 import React from 'react'
-import { graphql, useStaticQuery } from "gatsby"
+import { graphql, useStaticQuery, Link } from "gatsby"
 
 import Img from "gatsby-image"
 
@@ -30,7 +30,7 @@ const MeetMe = React.memo(() => {
                     aliqua. Ut enim ad minim veniam, quis nostrud exercitation
                 </p>
                 <div className="home__meet-me-action-space">
-                    <a className="action-button" href="/o-mnie">Poznaj mnie</a>
+                    <Link className="action-button" to="/o-mnie">Poznaj mnie</Link>
                 </div>
             </div>
         </section>

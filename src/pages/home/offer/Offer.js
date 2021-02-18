@@ -1,5 +1,5 @@
 import React from 'react'
-import { graphql, useStaticQuery } from "gatsby"
+import { graphql, useStaticQuery, Link } from "gatsby"
 
 import BackgroundImage from 'gatsby-background-image'
 
@@ -45,7 +45,7 @@ const Offer = React.memo(() => {
                         at Hampden-Sydney College in Virginia
                     </p>
                     <div className="home__offer-action">
-                        <a className="action-button" href="/oferta">Zobacz ofertę</a>
+                        <Link className="action-button" to="/oferta">Zobacz ofertę</Link>
                     </div>
                 </div>
             </BackgroundImage>

@@ -5,7 +5,7 @@
 .offer {
   display: grid;
   grid-template-columns: auto;
-  grid-template-rows: minmax(100px, auto) minmax(30vh, auto) auto minmax(100vh, auto) auto 75vh minmax(500px, auto);
+  grid-template-rows: minmax(100px, auto) minmax(30vh, auto) auto minmax(100vh, auto) auto 100vh minmax(500px, auto);
   grid-template-areas:
   'menu'
   'title'
