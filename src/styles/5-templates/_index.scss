@@ -282,6 +282,7 @@
         grid-area: realizations;
         background-color: darken($white, 2%);
         color: $white;
+        display: flex;
         justify-content: center;
         align-items: center;
     }
@@ -310,6 +311,10 @@
     #ReactGridGallery {
         grid-area: gallery;
         margin: $xsm_margin;
+
+    }
+    .ReactGridGallery_tile {
+        //
     }
 
     &__realizations-action-space {

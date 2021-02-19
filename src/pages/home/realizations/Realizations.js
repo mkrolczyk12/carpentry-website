@@ -1,10 +1,45 @@
 import React from 'react'
+
 import { graphql, useStaticQuery, Link} from "gatsby"
 
-// https://reactjsexample.com/justified-image-gallery-component-for-react/
-import Gallery from 'react-grid-gallery';
+import Gallery from 'react-grid-gallery'; // documentation: https://reactjsexample.com/justified-image-gallery-component-for-react/
 
 const Realizations = React.memo(() => {
+    const { datoCmsSampleRealization } = useStaticQuery(    // GraphQl query for images placed in CMS
+        graphql`
+            query {
+                datoCmsSampleRealization {
+                    id
+                    realization {
+                        id
+                        tag
+                        description
+                        image {
+                            fluid(maxWidth: 1800) {
+                                src
+                            }
+                        }
+                    }
+                }
+            }
+        `
+    )
+    const photoHeight = 212
+    const photoWidth = 320
+    const images = []
+
+    datoCmsSampleRealization.realization.map((each) => {
+        images
+            .push(
+                {
+                    src: each.image.fluid.src,
+                    thumbnail: each.image.fluid.src,
+                    thumbnailHeight: photoHeight,
+                    thumbnailWidth: photoWidth,
+                    tags: [{value: each.tag, title: each.tag}],
+                    caption: each.description
+                })
+    })
 
     return(
         <section className="home__realizations">
@@ -14,6 +49,7 @@ const Realizations = React.memo(() => {
                     images={images}
                     enableImageSelection={false}
                     tagStyle={{color: 'white'}}
+                    rowHeight={240}
                 />
                 <div className="home__realizations-action-space">
                     <Link className="action-button" to="/galeria">Zobacz więcej</Link>
@@ -22,41 +58,5 @@ const Realizations = React.memo(() => {
         </section>
     );
 })
-
-let thumbnailWidth = 320
-let thumbnailHeight = 212
-
-const images =
-[
-    {
-        src: "https://picsum.photos/id/1018/1000/600/",
-        thumbnail: "https://picsum.photos/id/1018/1000/600/",
-        thumbnailWidth: thumbnailWidth,
-        thumbnailHeight: thumbnailHeight,
-        caption: "After Rain (Jeshu John - designerspics.com)"
-    },
-    {
-        src: "https://picsum.photos/id/1018/1000/600/",
-        thumbnail: "https://picsum.photos/id/1015/1000/600/",
-        thumbnailWidth: thumbnailWidth,
-        thumbnailHeight: thumbnailHeight,
-        tags: [{value: "Ocean", title: "Ocean"}, {value: "People", title: "People"}],
-        caption: "Boats (Jeshu John - designerspics.com)"
-    },
-    {
-        src: "https://c4.staticflickr.com/9/8887/28897124891_98c4fdd82b_b.jpg",
-        thumbnail: "https://c4.staticflickr.com/9/8887/28897124891_98c4fdd82b_n.jpg",
-        thumbnailWidth: thumbnailWidth,
-        thumbnailHeight: thumbnailHeight
-    },
-    {
-        src: "https://c2.staticflickr.com/9/8356/28897120681_3b2c0f43e0_b.jpg",
-        thumbnail: "https://c2.staticflickr.com/9/8356/28897120681_3b2c0f43e0_n.jpg",
-        thumbnailWidth: thumbnailWidth,
-        thumbnailHeight: thumbnailHeight,
-        tags: [{value: "Drzwi", title: "Drzwi dębowe"}],
-        caption: "Boats (Jeshu John - designerspics.com)"
-    }
-]
 
 export default Realizations

@@ -6,19 +6,19 @@ import Img from "gatsby-image"
 
 
 const OfferGallery = () => {
-    const { datoCmsOffer } = useStaticQuery(    // GraphQl query for images placed in CMS
+    const { datoCmsOffer } = useStaticQuery(    // GraphQl query for images in offer and gallery section
         graphql`
             query {
                 datoCmsOffer {
-                    offerItem {
+                    id
+                    product {
+                        description
                         id
                         image {
-                            url
-                            fluid(maxWidth: 1800) {
+                            fluid {
                                 ...GatsbyDatoCmsFluid
                             }
                         }
-                        title
                     }
                 }
             }
@@ -27,10 +27,10 @@ const OfferGallery = () => {
 
     return(
         <section className="offer-gallery">
-            {datoCmsOffer.offerItem.map((each) => (
+            {datoCmsOffer.product.map((each) => (
                 <div className="offer-gallery__item">
                     <Img className="offer-gallery__item-image" fluid={each.image.fluid} />
-                    <p className="offer-gallery__item-title">{each.title}</p>
+                    <p className="offer-gallery__item-title">{each.description}</p>
                 </div>
             ))}
         </section>
