@@ -4,7 +4,7 @@ import { graphql, useStaticQuery } from "gatsby"
 // Common components
 import SectionTitle from "../../components/sectionTitle/SectionTitle";
 
-const Title = () => {
+const Title = ({title = "Galeria"}) => {
     const data = useStaticQuery(
         graphql`
             query {
@@ -23,9 +23,8 @@ const Title = () => {
 
     return (
         <SectionTitle
-            parentClassName="gallery"
             image={imageData}
-            boldText="Galeria"
+            boldText={title}
         />
     )
 }

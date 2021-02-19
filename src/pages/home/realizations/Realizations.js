@@ -49,7 +49,8 @@ const Realizations = React.memo(() => {
                     images={images}
                     enableImageSelection={false}
                     tagStyle={{color: 'white'}}
-                    rowHeight={240}
+                    // rowHeight={240}
+                    margin={5}
                 />
                 <div className="home__realizations-action-space">
                     <Link className="action-button" to="/galeria">Zobacz więcej</Link>

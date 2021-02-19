@@ -297,6 +297,7 @@
             'title'
             'gallery'
             'button';
+        margin: 0 $xsm_margin;
     }
 
     &__realizations-title {
@@ -311,7 +312,6 @@
     #ReactGridGallery {
         grid-area: gallery;
         margin: $xsm_margin;
-
     }
     .ReactGridGallery_tile {
         //

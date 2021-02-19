@@ -12,8 +12,9 @@ const OfferGallery = () => {
                 datoCmsOffer {
                     id
                     product {
-                        description
                         id
+                        description
+                        permalink
                         image {
                             fluid {
                                 ...GatsbyDatoCmsFluid
@@ -28,10 +29,12 @@ const OfferGallery = () => {
     return(
         <section className="offer-gallery">
             {datoCmsOffer.product.map((each) => (
-                <div className="offer-gallery__item">
+                <Link
+                    to={`/galeria/${each.permalink}`}
+                    className="offer-gallery__item">
                     <Img className="offer-gallery__item-image" fluid={each.image.fluid} />
                     <p className="offer-gallery__item-title">{each.description}</p>
-                </div>
+                </Link>
             ))}
         </section>
     )

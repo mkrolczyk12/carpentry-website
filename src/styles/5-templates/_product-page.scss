@@ -1,0 +1,95 @@
+@import "../1-helpers/mixins";
+@import "../1-helpers/variables";
+@import "../2-base/typography";
+
+.product-page {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: minmax(100px, auto) minmax(30vh, auto) minmax(100vh, auto) 100vh minmax(500px, auto);
+  grid-template-areas:
+  'menu'
+  'title'
+  'gallery'
+  'contact'
+  'footer';
+
+  &__header {
+    grid-area: menu;
+    position: fixed;
+    z-index: 99;
+    width: 100%;
+
+    & .quick-info {
+      //
+    }
+
+    & .menu {
+      background-color: $white;
+      z-index: 99;
+    }
+  }
+
+  & .section-title {
+    grid-area: title;
+
+    &__main-text {
+      color: $white;
+      font-size: $xsm_first-category-text-size;
+      font-weight: $default-bold;
+      text-align: center;
+
+      .highlighted-text {
+          //
+      }
+    }
+  }
+
+  &__gallery {
+    grid-area: gallery;
+    background-color: darken($white, 2%);
+    color: $white;
+    display: grid;
+    grid-template-columns: minmax(120px, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas:
+            'gallery-item';
+    align-items: center;
+  }
+
+  & #ReactGridGallery {
+    grid-area: gallery-item;
+    margin: $xsm_margin * 2;
+  }
+
+  .ReactGridGallery_tile {
+    //
+  }
+
+  & .section-contact {
+    grid-area: contact;
+    background-color: $brown;
+    color: $white;
+
+    &__title {
+      color: $white;
+    }
+    &__action-space {
+
+      .action-button {
+        color: $white;
+        border: 2px solid $white;
+      }
+    }
+    &__text {
+      color: $white;
+    }
+    &__number {
+      color: $orange;
+    }
+  }
+
+  & .footer {
+    grid-area: footer;
+    background-color: $black;
+  }
+}
