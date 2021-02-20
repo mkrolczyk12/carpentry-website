@@ -34,7 +34,8 @@ exports.createPages = async ({ graphql, actions }) => {
             path: `/galeria/${item.permalink}`,
             component: require.resolve("./src/pages/templates/ProductPage.js"),
             context: {
-                product: item
+                product: item,
+                pageTitle: item.title
             },
         })
     );

@@ -48,9 +48,9 @@ const Realizations = React.memo(() => {
                 <Gallery
                     images={images}
                     enableImageSelection={false}
-                    tagStyle={{color: 'white'}}
-                    // rowHeight={240}
-                    margin={5}
+                    margin={5}      // distance between photos
+                    tagStyle={{color: ' #202020', fontStyle: "oblique", fontSize: "18px"}}
+
                 />
                 <div className="home__realizations-action-space">
                     <Link className="action-button" to="/galeria">Zobacz więcej</Link>
