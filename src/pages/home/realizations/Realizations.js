@@ -40,7 +40,7 @@ const Realizations = React.memo(() => {
                     caption: each.description
                 })
     })
-
+    // #202020
     return(
         <section className="home__realizations">
             <div className="home__realizations-content">
@@ -48,8 +48,9 @@ const Realizations = React.memo(() => {
                 <Gallery
                     images={images}
                     enableImageSelection={false}
+                    rowHeight={240}
                     margin={5}      // distance between photos
-                    tagStyle={{color: ' #202020', fontStyle: "oblique"}}
+                    tagStyle={{color: "white", fontStyle: "oblique"}}
                 />
                 <div className="home__realizations-action-space">
                     <Link className="action-button" to="/galeria">Zobacz więcej</Link>

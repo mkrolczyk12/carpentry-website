@@ -17,7 +17,7 @@ exports.createPages = async ({ graphql, actions }) => {
                             alt
                             title
                             fluid {
-                                src
+                                srcSet
                             }
                         }
                     }

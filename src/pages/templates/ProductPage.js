@@ -23,8 +23,8 @@ const ProductPage = React.memo(({ pageContext }) => {
             images
                 .push(
                     {
-                        src: each.fluid.src,
-                        thumbnail: each.fluid.src,
+                        src: each.fluid.srcSet,
+                        thumbnail: each.fluid.srcSet,
                         thumbnailHeight: photoHeight,
                         thumbnailWidth: photoWidth,
                         tags: [{value: each.title, title: each.title}],

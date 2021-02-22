@@ -55,14 +55,9 @@
         align-items: center;
         flex-grow: 1;
         letter-spacing: -2px;
-        //// start animation
-        //visibility: hidden;
-        //animation: 1.5s fadeIn;
-        //animation-delay: 1.5s;
-        //animation-fill-mode: forwards;
     }
 
-    @keyframes fadeIn {
+    @keyframes fadeIn {     // start page animation
         0% {
             opacity: 0;
         }
@@ -110,6 +105,7 @@
         color: $orange;
         text-align: center;
         margin-bottom: $xsm_margin;
+        font-weight: bolder;
 
         // start animation
         visibility: hidden;

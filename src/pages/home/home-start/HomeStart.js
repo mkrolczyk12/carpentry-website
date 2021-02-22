@@ -20,7 +20,7 @@ const HomeStart = (props) => {
         query {
           indexImage: file(relativePath: { eq: "home-start-image3.jpg" }) {
             childImageSharp {
-              fluid(maxWidth: 1800, quality: 100) {
+              fluid(quality: 100, maxWidth: 5000) {
                 ...GatsbyImageSharpFluid
               }
             }
