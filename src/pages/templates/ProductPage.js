@@ -8,6 +8,7 @@ import Header from "../components/menu/Menu";
 import Title from "../galeria/title/Title";
 import Contact from "../components/contact/Contact";
 import Footer from "../components/footer/Footer";
+import PreviousPageButton from "../components/previousPageButton/PreviousPageButton";
 
 // Vendor components
 import Gallery from 'react-grid-gallery';       // documentation: https://reactjsexample.com/justified-image-gallery-component-for-react/
@@ -47,6 +48,7 @@ const ProductPage = React.memo(({ pageContext }) => {
                 title={pageContext.pageTitle}
             />
             <div className="product-page__gallery">
+                <PreviousPageButton/>
                 <Gallery
                     images={images}
                     enableImageSelection={false}

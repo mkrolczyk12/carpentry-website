@@ -123,8 +123,8 @@
 
         // start animation
         visibility: hidden;
-        animation: 1.5s fadeIn, upDown 5s ease infinite;
-        animation-delay: 4s;
+        animation: 1.5s fadeIn, upDown 2s ease-in-out;
+        animation-delay: 3s;
         animation-fill-mode: forwards;
 
         &:hover {
