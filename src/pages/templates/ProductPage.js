@@ -1,4 +1,6 @@
-import React, {useEffect} from 'react'
+import React, {} from 'react'
+
+import "../../styles/main.scss"
 
 // Common components
 import QuickInfo from "../components/quickInfo/QuickInfo";
@@ -16,19 +18,17 @@ const ProductPage = ({ pageContext }) => {
     const photoWidth = 320
     const images = []
 
-    useEffect(() => {
-        product.imageGallery.map((each) => {
-            images
-                .push(
-                    {
-                        src: each.fluid.src,
-                        thumbnail: each.fluid.src,
-                        thumbnailHeight: photoHeight,
-                        thumbnailWidth: photoWidth,
-                        tags: [{value: each.title, title: each.title}],
-                        caption: each.alt
-                    })
-        })
+    product.imageGallery.map((each) => {
+        images
+            .push(
+                {
+                    src: each.fluid.src,
+                    thumbnail: each.fluid.src,
+                    thumbnailHeight: photoHeight,
+                    thumbnailWidth: photoWidth,
+                    tags: [{value: each.title, title: each.title}],
+                    caption: each.alt
+                })
     })
 
     return(
@@ -45,7 +45,7 @@ const ProductPage = ({ pageContext }) => {
                     images={images}
                     enableImageSelection={false}
                     margin={5}  // distance between photos
-                    tagStyle={{color: '#202020', fontStyle: "oblique", fontSize: "18px"}}
+                    tagStyle={{color: 'white', fontStyle: "oblique"}}
                 />
             </div>
             <Contact

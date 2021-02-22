@@ -10,9 +10,9 @@ import KeyFeatures from "./keyFeatures/KeyFeatures"
 // Common components
 import QuickInfo from "../components/quickInfo/QuickInfo"
 import Menu from "../components/menu/Menu"
-import OfferGallery from "../components/offerGallery/OfferGallery";
 import Contact from '../components/contact/Contact'
 import Footer from "../components/footer/Footer"
+import Product from "./product/Product";
 
 const ourOffer = () => {
     return (
@@ -23,7 +23,7 @@ const ourOffer = () => {
             </header>
             <Title/>
             <Description/>
-            <OfferGallery/>
+            <Product/>
             <KeyFeatures/>
             <Contact
                 parentClassName="offer"

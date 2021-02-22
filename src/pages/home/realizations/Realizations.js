@@ -49,8 +49,7 @@ const Realizations = React.memo(() => {
                     images={images}
                     enableImageSelection={false}
                     margin={5}      // distance between photos
-                    tagStyle={{color: ' #202020', fontStyle: "oblique", fontSize: "18px"}}
-
+                    tagStyle={{color: ' #202020', fontStyle: "oblique"}}
                 />
                 <div className="home__realizations-action-space">
                     <Link className="action-button" to="/galeria">Zobacz więcej</Link>

@@ -48,15 +48,18 @@
 
 
     &__start-content {
-        margin: $xsm_margin;
+        margin: $xsm_margin $xsm_margin 5vh $xsm_margin;
         display: flex;
         flex-direction: column;
-
-        // start animation
-        visibility: hidden;
-        animation: 1.5s fadeIn;
-        animation-delay: 1.5s;
-        animation-fill-mode: forwards;
+        justify-content: flex-end;
+        align-items: center;
+        flex-grow: 1;
+        letter-spacing: -2px;
+        //// start animation
+        //visibility: hidden;
+        //animation: 1.5s fadeIn;
+        //animation-delay: 1.5s;
+        //animation-fill-mode: forwards;
     }
 
     @keyframes fadeIn {
@@ -71,10 +74,16 @@
 
     &__start-main-title {
         @include first-category-text-appearance;
-        font-size: $xsm_first-category-text-size;
+        font-size: $xsm_first-category-text-size + 6;
         color: $white;
         text-align: center;
         margin-bottom: $xsm_margin;
+
+        // start animation
+        visibility: hidden;
+        animation: 2s fadeIn;
+        animation-delay: 2s;
+        animation-fill-mode: forwards;
 
         .highlighted-text {
             color: $orange;
@@ -83,18 +92,30 @@
 
     &__start-sub-text {
         @include second-category-text-appearance;
-        font-size: $xsm_second-category-text-size;
+        font-size: $xsm_second-category-text-size + 2;
         text-align: center;
         margin-bottom: $xsm_margin;
         color: $white;
+
+        // start animation
+        visibility: hidden;
+        animation: 1.5s fadeIn;
+        animation-delay: 4s;
+        animation-fill-mode: forwards;
     }
 
     &__start-invite-text {
         @include second-category-text-appearance;
-        font-size: $xsm_second-category-text-size;
+        font-size: $xsm_second-category-text-size + 2;
         color: $orange;
         text-align: center;
         margin-bottom: $xsm_margin;
+
+        // start animation
+        visibility: hidden;
+        animation: 1.5s fadeIn;
+        animation-delay: 4s;
+        animation-fill-mode: forwards;
     }
 
     &__start-action-button {
@@ -103,6 +124,12 @@
         text-align: center;
         margin-top: $xsm_margin * 2;
         color: $white;
+
+        // start animation
+        visibility: hidden;
+        animation: 1.5s fadeIn, upDown 5s ease infinite;
+        animation-delay: 4s;
+        animation-fill-mode: forwards;
 
         &:hover {
             cursor: pointer;

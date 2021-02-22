@@ -15,9 +15,30 @@
     flex-direction: column;
     align-items: center;
 
+    &:hover {
+      cursor: pointer;
+    }
+
     &:first-child {
       margin: 0 0 $xsm_margin 0;
     }
+  }
+
+  &__item--opening {
+    //
+  }
+
+  &__item--open {
+    @include third-category-text-appearance;
+    font-size: $xsm_third-category-text-size;
+  }
+
+  &__item &__item--opening {
+    display: none;
+  }
+
+  &__item--open &__item--opening {
+    display: block;
   }
 
   &__item-image {

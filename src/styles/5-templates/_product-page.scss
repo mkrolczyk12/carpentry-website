@@ -7,11 +7,11 @@
   grid-template-columns: auto;
   grid-template-rows: minmax(100px, auto) minmax(30vh, auto) minmax(100vh, auto) 100vh minmax(500px, auto);
   grid-template-areas:
-  'menu'
-  'title'
-  'gallery'
-  'contact'
-  'footer';
+    'menu'
+    'title'
+    'gallery'
+    'contact'
+    'footer';
 
   &__header {
     grid-area: menu;
@@ -39,7 +39,7 @@
       text-align: center;
 
       .highlighted-text {
-          //
+        //
       }
     }
   }
@@ -52,7 +52,7 @@
     grid-template-columns: minmax(120px, 1fr);
     grid-template-rows: auto;
     grid-template-areas:
-            'gallery-item';
+      'gallery-item';
     align-items: center;
   }
 
@@ -73,6 +73,7 @@
     &__title {
       color: $white;
     }
+
     &__action-space {
 
       .action-button {
@@ -80,9 +81,11 @@
         border: 2px solid $white;
       }
     }
+
     &__text {
       color: $white;
     }
+
     &__number {
       color: $orange;
     }

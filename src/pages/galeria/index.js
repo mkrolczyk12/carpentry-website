@@ -1,4 +1,5 @@
 import * as React from 'react'
+import {useStaticQuery} from 'gatsby'
 
 import "../../styles/main.scss"
 
@@ -12,6 +13,31 @@ import Footer from "../components/footer/Footer";
 import OfferGallery from "../components/offerGallery/OfferGallery"
 
 const Gallery = () => {
+    /*
+    * GraphQL query for product page generator
+    */
+    const { datoCmsGallery } = useStaticQuery(
+        graphql`
+            query {
+                datoCmsGallery {
+                    id
+                    eachProductGallery {
+                        id
+                        title
+                        description
+                        permalink
+                        imageGallery {
+                            alt
+                            title
+                            fluid {
+                                ...GatsbyDatoCmsFluid
+                            }
+                        }
+                    }
+                }
+            }
+        `
+    )
     return (
         <section className="gallery">
             <header className="gallery__header">
@@ -19,7 +45,10 @@ const Gallery = () => {
                 <Header/>
             </header>
             <Title/>
-            <OfferGallery/>
+            <OfferGallery
+                redirection={true}
+                productData={datoCmsGallery.eachProductGallery}
+            />
             <Footer/>
         </section>
     )
