@@ -1,4 +1,4 @@
-import React, {} from 'react'
+import React, {useEffect} from 'react'
 
 import "../../styles/main.scss"
 
@@ -12,24 +12,30 @@ import Footer from "../components/footer/Footer";
 // Vendor components
 import Gallery from 'react-grid-gallery';       // documentation: https://reactjsexample.com/justified-image-gallery-component-for-react/
 
-const ProductPage = ({ pageContext }) => {
+const ProductPage = React.memo(({ pageContext }) => {
     const { product } = pageContext
     const photoHeight = 212
     const photoWidth = 320
     const images = []
 
-    product.imageGallery.map((each) => {
-        images
-            .push(
-                {
-                    src: each.fluid.src,
-                    thumbnail: each.fluid.src,
-                    thumbnailHeight: photoHeight,
-                    thumbnailWidth: photoWidth,
-                    tags: [{value: each.title, title: each.title}],
-                    caption: each.alt
-                })
-    })
+    const prepareImages = (product) => {
+        product.imageGallery.map((each) => {
+            images
+                .push(
+                    {
+                        src: each.fluid.src,
+                        thumbnail: each.fluid.src,
+                        thumbnailHeight: photoHeight,
+                        thumbnailWidth: photoWidth,
+                        tags: [{value: each.title, title: each.title}],
+                        caption: each.alt
+                    })
+        })
+    }
+
+    useEffect(() => {
+        prepareImages(product)
+    });
 
     return(
         <section className="product-page">
@@ -54,5 +60,5 @@ const ProductPage = ({ pageContext }) => {
             <Footer />
         </section>
     )
-}
+})
 export default ProductPage

@@ -96,3 +96,7 @@
     background-color: $black;
   }
 }
+
+.footerCaption_2r5qf {    // active photo description appearance
+  @include third-category-text-appearance;
+}

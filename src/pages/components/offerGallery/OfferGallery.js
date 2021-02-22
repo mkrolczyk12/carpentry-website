@@ -13,7 +13,6 @@ const OfferGallery = ({productData = [], redirection = false}) => {
 
     return(
         <section className="offer-gallery">
-            {console.log(productData[0])}
             {redirection ?
                 productData.map((each) => (     // gallery
                 <Link
