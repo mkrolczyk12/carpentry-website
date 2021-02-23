@@ -14,17 +14,22 @@ const OfferGallery = ({productData = [], redirection = false}) => {
     return(
         <section className="offer-gallery">
             {redirection ?
-                productData.map((each) => (     // gallery
+                productData.map((each, index) => (     // gallery
                 <Link
                     to={`/galeria/${each.permalink}`}
-                    className="offer-gallery__item">
+                    className="offer-gallery__item"
+                    key={index}
+                >
                     <Img className="offer-gallery__item-image" fluid={each.imageGallery[0].fluid} />
                     <p className="offer-gallery__item-title">{each.title}</p>
                 </Link>
             ))
             :
-                productData.map((each) => (     // offer
-                    <div className="offer-gallery__item" onClick={handleOfferClick}>
+                productData.map((each, index) => (     // offer
+                    <div className="offer-gallery__item"
+                         onClick={handleOfferClick}
+                         key={index}
+                    >
                         <Img className="offer-gallery__item-image" fluid={each.image.fluid} />
                         <p className="offer-gallery__item-title">{each.title}</p>
                         <div

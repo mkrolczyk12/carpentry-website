@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 
 import { graphql, useStaticQuery, Link} from "gatsby"
 
@@ -24,29 +24,32 @@ const Realizations = React.memo(() => {
             }
         `
     )
-    const photoHeight = 212
-    const photoWidth = 320
-    const images = []
 
-    datoCmsSampleRealization.realization.map((each) => {
-        images
-            .push(
-                {
-                    src: each.image.fluid.src,
-                    thumbnail: each.image.fluid.src,
-                    thumbnailHeight: photoHeight,
-                    thumbnailWidth: photoWidth,
-                    tags: [{value: each.tag, title: each.tag}],
-                    caption: each.description
-                })
-    })
-    // #202020
+    const prepareImages = (product) => {
+        const photoHeight = 212
+        const photoWidth = 320
+        const images = []
+        product.map((each) => {
+            images
+                .push(
+                    {
+                        src: each.image.fluid.src,
+                        thumbnail: each.image.fluid.src,
+                        thumbnailHeight: photoHeight,
+                        thumbnailWidth: photoWidth,
+                        tags: [{value: each.tag, title: each.tag}],
+                        caption: each.description
+                    })
+        })
+        return images
+    }
+
     return(
         <section className="home__realizations">
             <div className="home__realizations-content">
                 <h1 className="home__realizations-title">Przykładowe realizacje</h1>
                 <Gallery
-                    images={images}
+                    images={prepareImages(datoCmsSampleRealization.realization)}
                     enableImageSelection={false}
                     rowHeight={240}
                     margin={5}      // distance between photos

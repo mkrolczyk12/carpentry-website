@@ -8,10 +8,16 @@ const Navbar = () => {
             {menuData.length && (
                 <div id="" className="menu__links">
                     {/* Menu links */}
-                    {menuData.map(each => (
-                        <Link to={each.url} className="menu__link-item" activeClassName="menu__link-item menu__link-item--active">{each.label}</Link>
+                    {menuData.map((each,index) => (
+                        <Link to={each.url}
+                              className="menu__link-item"
+                              activeClassName="menu__link-item menu__link-item--active"
+                              key={index}
+                        >
+                            {each.label}
+                        </Link>
                     ))}
-                </div> 
+                </div>
             )}
         </div>
     )
@@ -24,7 +30,7 @@ export const menuData = [
     {
         label: 'Strona główna',
         url: '/'
-    },   
+    },
     {
         label: 'O mnie',
         url: '/o-mnie'

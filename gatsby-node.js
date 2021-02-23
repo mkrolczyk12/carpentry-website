@@ -29,15 +29,16 @@ exports.createPages = async ({ graphql, actions }) => {
     /*
     * Product page generator
     */
-    result.data.datoCmsGallery.eachProductGallery.forEach( item =>
+    result.data.datoCmsGallery.eachProductGallery.forEach( item =>  {
+        const {permalink, title} = item
         actions.createPage({
-            path: `/galeria/${item.permalink}`,
+            path: `/galeria/${permalink}`,
             component: require.resolve("./src/pages/templates/ProductPage.js"),
             context: {
-                product: item,
-                pageTitle: item.title
+                permalink,
+                title
             },
-        })
+        })}
     );
 
 };

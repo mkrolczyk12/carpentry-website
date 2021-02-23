@@ -1,7 +1,7 @@
 @import "../1-helpers/variables";
 
-.move-animation {
-  animation: upDown 5s ease infinite;
+.upDownInfinite-animation {
+  animation: upDownInfinite 5s ease infinite;
 }
 
 @keyframes upDown {
@@ -11,7 +11,20 @@
 
   50% {
     transform: translateY(100%);
-    color: $black;
+  }
+
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+@keyframes upDownInfinite {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  50% {
+    transform: translateY(100%);
   }
 
   100% {

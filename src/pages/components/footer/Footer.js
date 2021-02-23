@@ -21,8 +21,14 @@ const Footer = () => {
                 </div>
                 <div className="footer__section">
                     <h1 className="footer__section-title">Menu</h1>
-                    {menuData.map(each => (
-                        <Link to={each.url} className="footer__section-paragraph" activeClassName="menu__link-item--active">{each.label}</Link>
+                    {menuData.map((each, index) => (
+                        <Link to={each.url}
+                              className="footer__section-paragraph"
+                              activeClassName="menu__link-item--active"
+                              key={index}
+                        >
+                            {each.label}
+                        </Link>
                     ))}
                 </div>
             </div>

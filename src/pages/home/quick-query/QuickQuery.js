@@ -41,6 +41,11 @@ const QuickQuery = React.memo(() => {
     const imageData1 = data.indexImage1.childImageSharp.fluid
     const imageData2 = data.indexImage2.childImageSharp.fluid
 
+    const handleActionButton = () => {
+        document.getElementById("quick-query-title").scrollIntoView()
+        document.getElementById("form-start").focus()
+    }
+
     return(
         <section className="home__quick-query">
             <BackgroundImage
@@ -48,11 +53,11 @@ const QuickQuery = React.memo(() => {
                 fluid={imageData1}
             >
                 <div className="home__quick-query-content">
-                    <h1 className="home__quick-query-main-title">Masz pytanie?</h1>
+                    <h1 id="quick-query-title" className="home__quick-query-main-title">Masz pytanie?</h1>
                     <h2 className="home__quick-query-sub-text">Zapytaj o co tylko chcesz!</h2>
-                    <Link className="home__quick-query-action-button move-animation"  to="/#menu-query-form">
+                    <a className="home__quick-query-action-button upDownInfinite-animation" to="/#menu-query-form" onClick={handleActionButton}>
                         <FontAwesomeIcon className="#" icon={faAngleDown}/>
-                    </Link>
+                    </a>
                 </div>
             </BackgroundImage>
             <BackgroundImage
