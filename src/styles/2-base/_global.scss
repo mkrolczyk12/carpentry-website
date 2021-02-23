@@ -8,24 +8,15 @@
 }
 
 html {
-    //
+    scroll-behavior: smooth;
 }
 
 body {
     font-family: $first-category-text-font;
-    scroll-behavior: smooth;
     overflow-x: hidden;
 }
 
 a {
     color: black;
     text-decoration: none;
-}
-
-.fontawesome-i2svg-pending {
-    //
-}
-
-.fontawesome-i2svg-active {
-    //
 }

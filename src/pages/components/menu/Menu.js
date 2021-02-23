@@ -1,39 +1,27 @@
 import React, { useState, useEffect } from 'react'
+
+// Vendor components
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
     faBars
 } from '@fortawesome/free-solid-svg-icons'
 
-import Logo from './Logo';
-import Navbar from './Navbar';
+// Components
+import Logo from './components/Logo';
+import NavbarMobile, {menuData} from './components/NavbarMobile';
+import NavbarDesktop from "./components/NavbarDesktop";
 
-const Header = (props) => {
+const Header = ({scrolledPage}) => {
     const [menuIsActive, setMenuIsActive] = useState(false);
-    const [scrolledPage, setScrolledPage] = useState(false);
-    const MENU_SIZE = 112; // menu height
-
-    useEffect(() => {
-        window.addEventListener("scroll", handleScroll)
-        return () => {
-            window.removeEventListener("scroll", handleScroll);
-        }
-    }, [scrolledPage]);
-
-    function handleScroll() {
-        if(window.pageYOffset > MENU_SIZE && !scrolledPage) {
-            setScrolledPage(true);
-        } else if(window.pageYOffset <= MENU_SIZE && scrolledPage) {
-            setScrolledPage(false);
-        }
-    }
 
     return (
-        <nav id={scrolledPage ? "sticky" : ""} className={menuIsActive ? "menu menu--open" : "menu"}>
+        <nav id={scrolledPage ? "menu" : ''} className={menuIsActive ? "menu menu--open" : "menu"}>
             <Logo/>
             <a className="menu__hamburger-menu"  onClick={() => setMenuIsActive(!menuIsActive)}>
                 <FontAwesomeIcon className="menu__hamburger-menu-icon" icon={faBars}/>
             </a>
-            {menuIsActive ? <Navbar/> : null}
+            {menuIsActive ? <NavbarMobile/> : null}
+            <NavbarDesktop/>
         </nav>
     )
 }

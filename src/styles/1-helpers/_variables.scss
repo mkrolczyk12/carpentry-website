@@ -2,13 +2,18 @@
 // BREAKPOINTS
 // ********************
 $breakpoints: ( //
-    sm: (min-width: 576px),
-    md: (min-width: 768px),
-    lg: (min-width: 992px),
-    xl: (min-width: 1200px),
-    xxl: (min-width: 1400px),
+        sm: 'min-width: 576px',
+        md: 'min-width: 768px',
+        lg: 'min-width: 992px',
+        xl: 'min-width: 1200px',
+        xxl: 'min-width: 1400px',
 );
-
+// ********************
+// Content
+// ********************
+$content-max-width: 1200px;
+$desktop-menu-on-top-height: 130px;
+$desktop-menu-on-scroll-height: $desktop-menu-on-top-height - 50px;
 // ********************
 // Color Variables
 // ********************
@@ -21,30 +26,31 @@ $gray: #707070;
 // ********************
 // Text variables
 // ********************
+
 // < sm
 $xsm_first-category-text-size: 10vw;
 $xsm_second-category-text-size: 7vw;
 $xsm_third-category-text-size: 4vw;
 // sm
-$sm_first-category-text-size: 60px;
-$sm_second-category-text-size: 60px;
-$sm_third-category-text-size: 60px;
+$sm_first-category-text-size: 6vw;
+$sm_second-category-text-size: 4vw;
+$sm_third-category-text-size: 3vw;
 // md
-$md_first-category-text-size: 60px;
-$md_second-category-text-size: 60px;
-$md_third-category-text-size: 60px;
+$md_first-category-text-size: 6vw;
+$md_second-category-text-size: 4vw;
+$md_third-category-text-size: 2vw;
 // lg
-$lg_first-category-text-size: 60px;
-$lg_second-category-text-size: 60px;
-$lg_third-category-text-size: 60px;
+$lg_first-category-text-size: 5vw;
+$lg_second-category-text-size: 3vw;
+$lg_third-category-text-size: 1.5vw;
 // xl
-$xl_first-category-text-size: 60px;
-$xl_second-category-text-size: 60px;
-$xl_third-category-text-size: 60px;
+$xl_first-category-text-size: 4vw;
+$xl_second-category-text-size: 2vw;
+$xl_third-category-text-size: 1vw;
 // xxl
-$xxl_first-category-text-size: 60px;
-$xxl_second-category-text-size: 60px;
-$xxl_third-category-text-size: 60px;
+$xxl_first-category-text-size: 4vw;
+$xxl_second-category-text-size: 1.5vw;
+$xxl_third-category-text-size: 1vw;
 
 // ********************
 // margins and paddings
@@ -53,20 +59,20 @@ $xxl_third-category-text-size: 60px;
 $xsm_margin: 15px;
 $xsm_padding: 10px;
 // sm
-$sm_margin: 15px;
-$sm_padding: 10px;
+$sm_margin: 20px;
+$sm_padding: 15px;
 // md
-$md_margin: 15px;
-$md_padding: 10px;
+$md_margin: 25px;
+$md_padding: 15px;
 // lg
-$lg_margin: 15px;
-$lg_padding: 10px;
+$lg_margin: 30px;
+$lg_padding: 20px;
 // xl
-$xl_margin: 15px;
-$xl_padding: 10px;
+$xl_margin: 35px;
+$xl_padding: 25px;
 // xxl
-$xxl_margin: 15px;
-$xxl_padding: 10px;
+$xxl_margin: 40px;
+$xxl_padding: 30px;
 
 // other
 $default-bold: bold;

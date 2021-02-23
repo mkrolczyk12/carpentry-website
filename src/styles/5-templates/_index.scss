@@ -25,7 +25,9 @@
         width: 100%;
 
         & .quick-info {
-            //
+            @include media-query(lg) {
+                display: none;
+            }
         }
 
         & .menu {
@@ -44,34 +46,34 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
+        align-items: center;
+        position: absolute;
     }
 
 
     &__start-content {
-        margin: $xsm_margin $xsm_margin 5vh $xsm_margin;
+        max-width: $content-max-width;
+        margin: 10vh 0;
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
         align-items: center;
         flex-grow: 1;
         letter-spacing: -2px;
-    }
 
-    @keyframes fadeIn {     // start page animation
-        0% {
-            opacity: 0;
-        }
-        100% {
-            visibility: visible;
-            opacity: 1;
+        @include media-query(sm) {
+            justify-content: center;
         }
     }
 
     &__start-main-title {
         @include first-category-text-appearance;
-        font-size: $xsm_first-category-text-size + 6;
+        $grow-param: 4;     // standard text size + grow-param
+        font-size: $xsm_first-category-text-size + $grow-param;
         color: $white;
         text-align: center;
+        margin-left: $xsm-margin;
+        margin-right: $xsm-margin;
         margin-bottom: $xsm_margin;
 
         // start animation
@@ -83,10 +85,32 @@
         .highlighted-text {
             color: $orange;
         }
+
+        @include media-query(sm) {
+            font-size: $sm_first-category-text-size + $grow-param;
+        }
+
+        @include media-query(md) {
+            font-size: $md_first-category-text-size + $grow-param;
+        }
+
+        @include media-query(lg) {
+            font-size: $lg_first-category-text-size;
+        }
+
+        @include media-query(xl) {
+            font-size: $xl_first-category-text-size;
+        }
+
+        @include media-query(xxl) {
+            font-size: $xxl_first-category-text-size;
+        }
     }
 
     &__start-sub-text {
+        $grow-param: 3;     // standard text size + grow-param
         @include second-category-text-appearance;
+        $grow-param: 5;
         font-size: $xsm_second-category-text-size + 2;
         text-align: center;
         margin-bottom: $xsm_margin;
@@ -97,9 +121,31 @@
         animation: 1.5s fadeIn;
         animation-delay: 4s;
         animation-fill-mode: forwards;
+
+        @include media-query(sm) {
+            font-size: $sm_second-category-text-size;
+            margin-bottom: $sm_margin;
+        }
+
+        @include media-query(md) {
+            font-size: $md_second-category-text-size;
+        }
+
+        @include media-query(lg) {
+            font-size: $lg_second-category-text-size;
+        }
+
+        @include media-query(xl) {
+            font-size: $xl_second-category-text-size;
+        }
+
+        @include media-query(xxl) {
+            font-size: $xxl_second-category-text-size;
+        }
     }
 
     &__start-invite-text {
+        $grow-param: 2;     // standard text size + grow-param
         @include second-category-text-appearance;
         font-size: $xsm_second-category-text-size + 2;
         color: $orange;
@@ -107,11 +153,36 @@
         margin-bottom: $xsm_margin;
         font-weight: bolder;
 
-        // start animation
+        //// start animation
         visibility: hidden;
         animation: 1.5s fadeIn;
         animation-delay: 4s;
         animation-fill-mode: forwards;
+
+        @include media-query(sm) {
+            font-size: $sm_second-category-text-size;
+            margin-bottom: $sm_margin;
+        }
+
+        @include media-query(md) {
+            font-size: $md_second-category-text-size;
+            margin-bottom: $md_margin;
+        }
+
+        @include media-query(lg) {
+            font-size: $lg_second-category-text-size;
+            margin-bottom: $lg_margin;
+        }
+
+        @include media-query(xl) {
+            font-size: $xl_second-category-text-size;
+            margin-bottom: $xl_margin;
+        }
+
+        @include media-query(xxl) {
+            font-size: $xxl_second-category-text-size;
+            margin-bottom: $xxl_margin;
+        }
     }
 
     &__start-action-button {
@@ -130,6 +201,40 @@
         &:hover {
             cursor: pointer;
             color: darken($white, 10%);
+        }
+
+        @include media-query(sm) {
+            font-size: $sm_second-category-text-size;
+            margin-bottom: $sm_margin;
+            margin-top: $sm_margin;
+        }
+
+        @include media-query(md) {
+            font-size: $md_second-category-text-size;
+            margin-bottom: $md_margin;
+            margin-top: $md_margin;
+        }
+
+        @include media-query(lg) {
+            font-size: $lg_second-category-text-size;
+            margin-bottom: $lg_margin;
+            margin-top: $lg_margin;
+
+            // start animation
+            visibility: hidden;
+            animation: 1.5s fadeIn, upDownInfinite 5s ease infinite;
+            animation-delay: 3s;
+            animation-fill-mode: forwards;
+        }
+
+        @include media-query(xl) {
+            font-size: $xl_second-category-text-size;
+            margin-bottom: $xl_margin;
+        }
+
+        @include media-query(xxl) {
+            font-size: $xxl_second-category-text-size;
+            margin-bottom: $xxl_margin;
         }
 
     }
@@ -424,6 +529,8 @@
         text-align: center;
         margin-top: $xsm_margin * 3;
         color: $white;
+
+        animation: upDownInfinite 5s ease infinite;
 
         &:hover {
             cursor: pointer;

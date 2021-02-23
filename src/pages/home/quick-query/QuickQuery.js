@@ -55,7 +55,7 @@ const QuickQuery = React.memo(() => {
                 <div className="home__quick-query-content">
                     <h1 id="quick-query-title" className="home__quick-query-main-title">Masz pytanie?</h1>
                     <h2 className="home__quick-query-sub-text">Zapytaj o co tylko chcesz!</h2>
-                    <a className="home__quick-query-action-button upDownInfinite-animation" to="/#menu-query-form" onClick={handleActionButton}>
+                    <a className="home__quick-query-action-button" to="/#formularz" onClick={handleActionButton}>
                         <FontAwesomeIcon className="#" icon={faAngleDown}/>
                     </a>
                 </div>
@@ -66,7 +66,7 @@ const QuickQuery = React.memo(() => {
                 style={{opacity: 0.6}}
             >
                 <ContactForm
-                    formId = "menu-query-form"
+                    formId = "formularz"
                 />
             </BackgroundImage>
         </section>

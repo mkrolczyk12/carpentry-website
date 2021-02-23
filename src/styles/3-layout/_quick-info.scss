@@ -7,6 +7,24 @@
     min-height: 40px;
     background-color: $black;
 
+    font-size: $xsm_third-category-text-size / 1.5;
+
+    @include media-query(sm) {
+        font-size: $sm_third-category-text-size / 1.5;
+    }
+
+    @include media-query(md) {
+        font-size: $md_third-category-text-size;
+    }
+
+    @include media-query(lg) {
+        font-size: $lg_third-category-text-size;
+    }
+
+    @include media-query(xl) {
+        font-size: $xl_third-category-text-size / 1.2;
+    }
+
     &__list {
         display: flex;
         width: 100%;
@@ -21,9 +39,18 @@
         font: $special-font;
         color: $white;
         margin: auto 0;
+        @include media-query(md) {
+            margin: auto $md_margin auto 0;
+        }
 
         &--mobile {
             display: none;
+        }
+
+        @include media-query(md) {
+            &--mobile {
+                display: flex;
+            }
         }
     }
 
@@ -33,6 +60,5 @@
 
     &__info {
         @include third-category-text-appearance;
-        font-size: $xsm_third-category-text-size / 1.5;
     }
 }

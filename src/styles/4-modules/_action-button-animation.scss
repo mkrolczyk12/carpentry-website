@@ -1,9 +1,5 @@
 @import "../1-helpers/variables";
 
-.upDownInfinite-animation {
-  animation: upDownInfinite 5s ease infinite;
-}
-
 @keyframes upDown {
   0% {
     transform: translateY(100%);
@@ -20,14 +16,24 @@
 
 @keyframes upDownInfinite {
   0% {
-    transform: translateY(-100%);
-  }
-
-  50% {
     transform: translateY(100%);
   }
 
-  100% {
+  50% {
     transform: translateY(-100%);
+  }
+
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+@keyframes fadeIn {     // start page animation
+  0% {
+    opacity: 0;
+  }
+  100% {
+    visibility: visible;
+    opacity: 1;
   }
 }

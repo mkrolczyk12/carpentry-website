@@ -2,7 +2,7 @@ import React from 'react'
 
 import { Link } from "gatsby"
 
-const Navbar = () => {
+const NavbarMobile = () => {
     return(
         <div className="menu__open">
             {menuData.length && (
@@ -23,7 +23,7 @@ const Navbar = () => {
     )
 }
 
-export default Navbar;
+export default NavbarMobile;
 
 
 export const menuData = [

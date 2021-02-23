@@ -4,17 +4,20 @@
 
 
 .footer {
+    @include third-category-text-appearance;
     background-color: $brown;
     height: auto;
     color: $white;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    // @include third-category-text-appearance;
     line-height: normal;
 
+    @include media-query(sm) {
+        padding: $sm_margin;
+    }
+
     &__content {
-        // @include third-category-text-appearance;
         display: flex;
         flex-direction: column;
         flex-grow: 3;
@@ -33,14 +36,12 @@
     }
 
     &__section-title {
-        // @include third-category-text-appearance;
         font-size: $xsm_third-category-text-size;
         color: $orange;
         margin-bottom: 5px;
     }
 
     &__section-paragraph {
-        // @include third-category-text-appearance;
         color: white;
         margin-bottom: 5px;
         font-size: $xsm_third-category-text-size;
@@ -61,14 +62,12 @@
     }
 
     &__copyright-company {
-        // @include third-category-text-appearance;
         margin-bottom: 5px;
         text-align: center;
         font-size: $xsm_third-category-text-size;
     }
 
     &__copyright-author {
-        // @include third-category-text-appearance;
         font-size: $xsm_third-category-text-size;
 
         .highlighted-text {
