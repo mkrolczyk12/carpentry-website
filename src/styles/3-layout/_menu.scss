@@ -50,6 +50,7 @@ $display: "false";
         font-size: $xsm_second-category-text-size;
         text-transform: uppercase;
         line-height: normal;
+        filter: grayscale(50%);
 
         @include media-query(sm) {
             font-size: $sm_second-category-text-size;
@@ -366,7 +367,7 @@ $display: "false";
 }
 
 .hidden {
-    visibility: visible;
+    visibility: hidden;
 
     @include media-query(lg) {
         visibility: hidden;

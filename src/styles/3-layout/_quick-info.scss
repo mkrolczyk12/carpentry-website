@@ -7,10 +7,10 @@
     min-height: 40px;
     background-color: $black;
 
-    font-size: $xsm_third-category-text-size / 1.5;
+    font-size: $xsm_third-category-text-size / 1.1;
 
     @include media-query(sm) {
-        font-size: $sm_third-category-text-size / 1.5;
+        font-size: $sm_third-category-text-size / 1.25;
     }
 
     @include media-query(md) {
