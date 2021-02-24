@@ -9,11 +9,6 @@ import {
 } from '@fortawesome/free-solid-svg-icons'
 
 const HomeStart = (props) => {
-    const { handleHeaderDisplay } = props
-
-    useEffect(() => {
-        window.addEventListener('scroll', handleHeaderDisplay)
-    }, [handleHeaderDisplay])
 
     const data = useStaticQuery(
         graphql`
@@ -41,7 +36,7 @@ const HomeStart = (props) => {
               <h1 className="home__start-main-title">Usługi <b className="highlighted-text">Stolarskie</b></h1>
               <h2 className="home__start-sub-text">The most important ingredient to success in systems</h2>
               <p className="home__start-invite-text">Zapraszamy</p>
-              <a className="home__start-action-button move-animation"  href="#meetMe" onClick={handleHeaderDisplay}>
+              <a className="home__start-action-button"  href="#poznaj-mnie">
                   <FontAwesomeIcon className="fontawesome-i2svg-pending" icon={faAngleDown}/>
               </a>
             </div>

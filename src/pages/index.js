@@ -11,54 +11,46 @@ import Realizations from "./home/realizations/Realizations"
 import QuickQuery from "./home/quick-query/QuickQuery"
 
 // Common compontents
-import QuickInfo from "./components/quickInfo/QuickInfo"
-import Menu from "./components/menu/Menu"
+import Header from "./components/header/Header"
 import Contact from "./components/contact/Contact"
 import Footer from "./components/footer/Footer"
 
 const IndexPage = () => {
     const [scrolledPage, setScrolledPage] = useState(false);
-    const [displayHeader, setDisplayHeader] = useState(false);
-
-    useEffect(() => {
-    window.addEventListener('scroll', (event) => toggleHeaderView(event))
-    }, [])
-
-
-    function handleHeaderDisplay() {
-      setDisplayHeader(true)
-    }
 
     const toggleHeaderView = (event) => {
-      const { classList } = document.getElementById("header");
-      if(window.pageYOffset === 0) {
-          classList.toggle("menu-on-top")
-          setScrolledPage(false)
-      } else {
-          classList.remove("menu-on-top")
-          setScrolledPage(true)
-      }
+        let { classList } = document.getElementById("header");
+        if(window.pageYOffset === 0) {
+            classList.add("menu-on-top")
+            setScrolledPage(false)
+        } else {
+            classList.remove("hidden")
+            classList.remove("menu-on-top")
+            classList.add("header")
+            setScrolledPage(true)
+        }
     }
+
+    useEffect(() => {
+        window.addEventListener('scroll', () => toggleHeaderView())
+
+        return () => {
+            window.removeEventListener('scroll', () => {})
+        }
+    })
 
     return (
         <section className="home">
-          {displayHeader && <header id="header" className="home__header">
-              <QuickInfo/>
-              <Menu
+            <Header
                 scrolledPage={scrolledPage}
-              />
-          </header>}
-          <HomeStart
-              handleHeaderDisplay={handleHeaderDisplay}
-          />
-          <MeetMe/>
-          <Offer/>
-          <Contact
-            parentClassName="home"
-          />
-          <Realizations/>
-          <QuickQuery/>
-          <Footer/>
+            />
+            <HomeStart/>
+            <MeetMe/>
+            <Offer/>
+            <Contact/>
+            <Realizations/>
+            <QuickQuery/>
+            <Footer/>
         </section>
     )
 }

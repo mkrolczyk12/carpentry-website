@@ -8,7 +8,7 @@ import Title from "./title/Title";
 
 // Common components
 import QuickInfo from "../components/quickInfo/QuickInfo";
-import Header from "../components/menu/Menu";
+import Header from "../components/header/Header";
 import Footer from "../components/footer/Footer";
 import OfferGallery from "../components/offerGallery/OfferGallery"
 

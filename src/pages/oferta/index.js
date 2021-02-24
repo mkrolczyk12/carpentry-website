@@ -9,7 +9,7 @@ import KeyFeatures from "./keyFeatures/KeyFeatures"
 
 // Common components
 import QuickInfo from "../components/quickInfo/QuickInfo"
-import Menu from "../components/menu/Menu"
+import Menu from "../components/header/Header"
 import Contact from '../components/contact/Contact'
 import Footer from "../components/footer/Footer"
 import Product from "./product/Product";

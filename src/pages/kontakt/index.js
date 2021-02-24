@@ -11,7 +11,7 @@ import CompanyInfo from "./companyInfo/CompanyInfo";
 import Localization from "./localization/Localization";
 
 // Common components
-import Header from "../components/menu/Menu";
+import Header from "../components/header/Header";
 import Footer from "../components/footer/Footer";
 
 const Contact = () => {

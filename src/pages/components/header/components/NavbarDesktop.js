@@ -6,11 +6,11 @@ import {menuData} from "./NavbarMobile";
 const NavbarDesktop = () => {
 
     return(
-        <div className="menu__desktop">
+        <div className="menu__desktop-links">
             {menuData.map((each, index) => (
                 <Link to={each.url}
                       className="menu__link-item"
-                      activeClassName="menu__desktop-link-item--active"
+                      activeClassName="menu__desktop-links-item--active"
                       key={index}
                 >
                     {each.label}

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
-import { menuData } from "../menu/components/NavbarMobile"
+import { menuData } from "../header/components/NavbarMobile"
 
 const Footer = () => {
 

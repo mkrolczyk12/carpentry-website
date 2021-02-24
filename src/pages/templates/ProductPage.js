@@ -5,7 +5,7 @@ import "../../styles/main.scss"
 
 // Common components
 import QuickInfo from "../components/quickInfo/QuickInfo";
-import Header from "../components/menu/Menu";
+import Header from "../components/header/Header";
 import Title from "../galeria/title/Title";
 import Contact from "../components/contact/Contact";
 import Footer from "../components/footer/Footer";

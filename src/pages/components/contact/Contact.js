@@ -1,7 +1,7 @@
 import React from 'react'
 import {Link} from 'gatsby'
 
-const Contact = React.memo(({parentClassName,
+const Contact = React.memo(({
                 title = "Potrzebujesz kontaktu?",
                 buttonContent = "Napisz do mnie",
                 text = "lub zadzwoń",

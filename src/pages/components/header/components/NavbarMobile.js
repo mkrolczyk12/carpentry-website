@@ -4,9 +4,9 @@ import { Link } from "gatsby"
 
 const NavbarMobile = () => {
     return(
-        <div className="menu__open">
+        <div className="menu__mobile">
             {menuData.length && (
-                <div id="" className="menu__links">
+                <div id="" className="menu__mobile-links">
                     {/* Menu links */}
                     {menuData.map((each,index) => (
                         <Link to={each.url}
