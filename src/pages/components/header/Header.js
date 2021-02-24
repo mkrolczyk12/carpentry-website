@@ -21,7 +21,9 @@ const Header = ({scrolledPage}) => {
         <header id="header" className="menu-on-top hidden">
             <QuickInfo/>
             <nav id={scrolledPage ? "navbar" : ''} className={menuIsActive ? "menu menu--mobile-open" : "menu"}>
-                <Logo/>
+                <Logo
+                    scrolledPage={scrolledPage}
+                />
                 <a className="menu__hamburger-menu"  onClick={() => setMenuIsActive(!menuIsActive)}>
                     <FontAwesomeIcon className="menu__hamburger-menu-icon" icon={faBars}/>
                 </a>

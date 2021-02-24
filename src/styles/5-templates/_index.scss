@@ -23,6 +23,7 @@
         position: fixed;
         z-index: 99;
         width: 100%;
+        filter: grayscale(50%);
 
         & .quick-info {
             @include media-query(lg) {
@@ -48,6 +49,12 @@
         justify-content: center;
         align-items: center;
         position: absolute;
+
+    }
+
+    &__start-image::before, &__start-image::after {
+        -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+        filter: grayscale(100%);
     }
 
 

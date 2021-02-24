@@ -35,6 +35,16 @@ $display: "false";
         }
     }
 
+    &__logo-image {
+        display: none;
+        width: 200px;
+        height: 200px;
+
+        @include media-query(lg) {
+            display: flex;
+        }
+    }
+
     &__title {
         @include second-category-text-appearance;
         font-size: $xsm_second-category-text-size;
@@ -51,6 +61,7 @@ $display: "false";
 
         @include media-query(lg) {
             font-size: $lg_second-category-text-size;
+            display: none;
         }
 
         @include media-query(xl) {
@@ -79,6 +90,7 @@ $display: "false";
         }
 
         @include media-query(lg) {
+            display: none;
             font-size: $lg_third-category-text-size;
             margin-left: 25%;
         }
@@ -299,7 +311,7 @@ $display: "false";
             background: none !important;
 
             &__title {
-                color: inherit;
+                color: $orange;
             }
             &__description {
                 color: inherit;
