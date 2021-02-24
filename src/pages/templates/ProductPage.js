@@ -1,10 +1,9 @@
 import React, {useEffect} from 'react'
-import {graphql, useStaticQuery} from "gatsby";
+import {graphql} from "gatsby";
 
 import "../../styles/main.scss"
 
 // Common components
-import QuickInfo from "../components/quickInfo/QuickInfo";
 import Header from "../components/header/Header";
 import Title from "../galeria/title/Title";
 import Contact from "../components/contact/Contact";
@@ -37,10 +36,7 @@ const ProductPage = ({ pageContext: {permalink, title}, data: {datoCmsEachProduc
 
     return(
         <section className="product-page">
-            <header className="product-page__header">
-                <QuickInfo/>
-                <Header/>
-            </header>
+            <Header/>
             <Title
                 title={title}
             />

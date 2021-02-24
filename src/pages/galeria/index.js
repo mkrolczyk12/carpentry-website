@@ -7,7 +7,6 @@ import "../../styles/main.scss"
 import Title from "./title/Title";
 
 // Common components
-import QuickInfo from "../components/quickInfo/QuickInfo";
 import Header from "../components/header/Header";
 import Footer from "../components/footer/Footer";
 import OfferGallery from "../components/offerGallery/OfferGallery"
@@ -40,10 +39,7 @@ const Gallery = () => {
     )
     return (
         <section className="gallery">
-            <header className="gallery__header">
-                <QuickInfo/>
-                <Header/>
-            </header>
+            <Header/>
             <Title/>
             <OfferGallery
                 redirection={true}

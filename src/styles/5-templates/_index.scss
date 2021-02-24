@@ -3,6 +3,10 @@
 @import "../2-base/typography";
 
 .home {
+    // container
+    min-height: 100vh;
+    width: 100vw;
+
     display: grid;
     grid-template-columns: auto;
     grid-template-rows: 100vh repeat(2, minmax(100vh, auto)) 100vh minmax(100px, auto) auto minmax(500px, auto);
@@ -14,16 +18,12 @@
         "realizations"
         "quick_query"
         "footer";
-    // container
-    min-height: 100vh;
-    width: 100vw;
 
     .header {
         grid-area: menu;
         position: fixed;
         z-index: 99;
         width: 100%;
-        filter: grayscale(50%);
 
         & .quick-info {
             @include media-query(lg) {
@@ -86,7 +86,7 @@
         // start animation
         visibility: hidden;
         animation: 2s fadeIn;
-        animation-delay: 2s;
+        animation-delay: 1s;
         animation-fill-mode: forwards;
 
         .highlighted-text {
@@ -126,7 +126,7 @@
         // start animation
         visibility: hidden;
         animation: 1.5s fadeIn;
-        animation-delay: 4s;
+        animation-delay: 3s;
         animation-fill-mode: forwards;
 
         @include media-query(sm) {
@@ -163,7 +163,7 @@
         //// start animation
         visibility: hidden;
         animation: 1.5s fadeIn;
-        animation-delay: 4s;
+        animation-delay: 3s;
         animation-fill-mode: forwards;
 
         @include media-query(sm) {

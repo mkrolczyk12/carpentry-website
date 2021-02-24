@@ -16,33 +16,11 @@ import Contact from "./components/contact/Contact"
 import Footer from "./components/footer/Footer"
 
 const IndexPage = () => {
-    const [scrolledPage, setScrolledPage] = useState(false);
-
-    const toggleHeaderView = (event) => {
-        let { classList } = document.getElementById("header");
-        if(window.pageYOffset === 0) {
-            classList.add("menu-on-top")
-            setScrolledPage(false)
-        } else {
-            classList.remove("hidden")
-            classList.remove("menu-on-top")
-            classList.add("header")
-            setScrolledPage(true)
-        }
-    }
-
-    useEffect(() => {
-        window.addEventListener('scroll', () => toggleHeaderView())
-
-        return () => {
-            window.removeEventListener('scroll', () => {})
-        }
-    })
 
     return (
-        <section className="home">
+        <div className="home">
             <Header
-                scrolledPage={scrolledPage}
+                hiddenOnFirstLoad={true}
             />
             <HomeStart/>
             <MeetMe/>
@@ -51,7 +29,7 @@ const IndexPage = () => {
             <Realizations/>
             <QuickQuery/>
             <Footer/>
-        </section>
+        </div>
     )
 }
 

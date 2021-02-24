@@ -18,9 +18,7 @@ const Contact = () => {
 
     return (
         <section className="contact">
-            <header className="contact__header">
-                <Header/>
-            </header>
+            <Header/>
             <Title/>
             <Form/>
             <CompanyInfo />

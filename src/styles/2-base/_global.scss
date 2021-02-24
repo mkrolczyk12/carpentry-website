@@ -8,12 +8,13 @@
 }
 
 html {
-    scroll-behavior: smooth;
+    //
 }
 
 body {
     font-family: $first-category-text-font;
     overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
 a {

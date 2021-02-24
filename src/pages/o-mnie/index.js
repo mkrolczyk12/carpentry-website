@@ -8,19 +8,15 @@ import Description from "./description/Description"
 import Achievements from "./achievements/Achievements"
 
 // Common components
-import QuickInfo from "../components/quickInfo/QuickInfo"
-import Menu from "../components/header/Header"
 import Contact from '../components/contact/Contact'
 import Footer from "../components/footer/Footer"
+import Header from "../components/header/Header";
 
 const AboutMe = () => {
     return (
         <div className="about-me">
-          <header className="about-me__header">
-            <QuickInfo/>
-            <Menu />
-          </header>
-          <Title />
+          <Header/>
+          <Title/>
           <Description/>
           <Achievements/>
           <Contact

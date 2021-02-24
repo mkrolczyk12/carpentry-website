@@ -118,6 +118,7 @@ $display: "false";
         width: 100%;
         $grid-style: "grid";
         display: grid;
+        border-bottom: 1px solid darken($white, 10);
         grid-template-columns: minmax(auto, 6fr) 1fr;
         grid-template-rows: auto auto;
         grid-template-areas:
@@ -176,6 +177,7 @@ $display: "false";
     */
     &__desktop-links {
         display: none;
+        filter: grayscale(50%);
 
         @include media-query(lg) {
             display: flex;
@@ -364,5 +366,9 @@ $display: "false";
 }
 
 .hidden {
-    visibility: hidden;
+    visibility: visible;
+
+    @include media-query(lg) {
+        visibility: hidden;
+    }
 }

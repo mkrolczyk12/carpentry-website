@@ -4,6 +4,15 @@
 
 .section-title {
   position: relative;
+  filter: grayscale(50%);
+
+  @include media-query(lg) {
+    height: 300px;
+  }
+
+  @include media-query(xl) {
+    height: 400px;
+  }
 
   &__image {
     width: 100%;
@@ -12,10 +21,43 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    @include media-query(lg) {
+        //
+    }
+
+    @include media-query(xl) {
+      //
+    }
+
   }
 
   &__main-text {
     @include first-category-text-appearance;
+    font-size: $xsm_first-category-text-size;
+    margin: $xsm_margin;
+
+    @include media-query(sm) {
+      font-size: $sm_first-category-text-size;
+    }
+
+    @include media-query(md) {
+      font-size: $md_first-category-text-size;
+    }
+
+    @include media-query(lg) {
+      font-size: $lg_first-category-text-size;
+      margin-top: $lg-margin * 3;
+    }
+
+    @include media-query(xl) {
+      font-size: $xl_first-category-text-size;
+    }
+
+    @include media-query(xxl) {
+      font-size: $xxl_first-category-text-size;
+    }
+
   }
 
 }

@@ -1,36 +1,46 @@
-import React, { useState } from 'react'
+import React, {useEffect, useState} from 'react'
 
 import "../../../styles/main.scss"
 
-// Vendor components
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {
-    faBars
-} from '@fortawesome/free-solid-svg-icons'
-
 // Components
-import Logo from './components/Logo';
-import NavbarMobile from './components/NavbarMobile';
-import NavbarDesktop from "./components/NavbarDesktop";
-import QuickInfo from "../quickInfo/QuickInfo";
+import HeaderStyleComponent from "./HeaderStyleComponent";
 
-const Header = ({scrolledPage}) => {
+const Header = ({hiddenOnFirstLoad = false}) => {
     const [menuIsActive, setMenuIsActive] = useState(false);
+    const [scrolledPage, setScrolledPage] = useState(false);
+
+    const handleMobileMenu = () => {
+        setMenuIsActive(!menuIsActive)
+    }
+
+    const toggleHeaderView = () => {
+        let { classList } = document.getElementById("header");
+        if(window.pageYOffset === 0) {
+            classList.add("menu-on-top")
+            setScrolledPage(false)
+        } else {
+            classList.remove("hidden")
+            classList.remove("menu-on-top")
+            classList.add("header")
+            setScrolledPage(true)
+        }
+    }
+
+    useEffect(() => {
+        window.addEventListener('scroll', () => toggleHeaderView())
+
+        return () => {
+            window.removeEventListener('scroll', () => {})
+        }
+    })
 
     return (
-        <header id="header" className="menu-on-top hidden">
-            <QuickInfo/>
-            <nav id={scrolledPage ? "navbar" : ''} className={menuIsActive ? "menu menu--mobile-open" : "menu"}>
-                <Logo
-                    scrolledPage={scrolledPage}
-                />
-                <a className="menu__hamburger-menu"  onClick={() => setMenuIsActive(!menuIsActive)}>
-                    <FontAwesomeIcon className="menu__hamburger-menu-icon" icon={faBars}/>
-                </a>
-                {menuIsActive ? <NavbarMobile/> : null}
-                <NavbarDesktop/>
-            </nav>
-        </header>
+        <HeaderStyleComponent
+            scrolledPage={scrolledPage}
+            menuIsOpen={menuIsActive}
+            openMenu={handleMobileMenu}
+            hiddenOnFirstLoad={hiddenOnFirstLoad}
+        />
     )
 }
 

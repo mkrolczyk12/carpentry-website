@@ -3,7 +3,14 @@
 @import "../2-base/typography";
 
 .contact {
+  // container
+  min-height: 100vh;
+  min-width: 100vw;
+
   display: grid;
+  /*
+    < lg
+  */
   grid-template-columns: auto;
   grid-template-rows: minmax(60px, auto) minmax(30vh, auto) auto auto 50vh minmax(500px, auto);
   grid-template-areas:
@@ -14,15 +21,33 @@
   'localization'
   'footer';
 
-  // container
-  min-height: 100vh;
-  min-width: 100vw;
+  /*
+    > lg
+  */
+  @include media-query(lg) {
+    grid-template-columns: auto;
+    grid-template-rows: auto auto auto 50vh minmax(500px, auto);
+    grid-template-areas:
+      'title'
+      'form'
+      'company-info'
+      'localization'
+      'footer';
+  }
 
-  &__header {
+  .header {
     grid-area: menu;
     position: fixed;
     z-index: 99;
     width: 100%;
+
+    & .quick-info {
+      display: none;
+
+      @include media-query(lg) {
+        display: none;
+      }
+    }
 
     & .menu {
       background-color: $white;
@@ -35,7 +60,6 @@
 
     &__main-text {
       color: $white;
-      font-size: $xsm_first-category-text-size;
       font-weight: $default-bold;
 
       .highlighted-text {

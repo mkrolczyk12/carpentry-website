@@ -3,7 +3,14 @@
 @import "../2-base/typography";
 
 .product-page {
+  //container
+  min-height: 100vh;
+  width: 100vw;
+
   display: grid;
+  /*
+    < lg
+  */
   grid-template-columns: auto;
   grid-template-rows: minmax(100px, auto) minmax(30vh, auto) auto 100vh minmax(500px, auto);
   grid-template-areas:
@@ -12,15 +19,29 @@
     'gallery'
     'contact'
     'footer';
+  /*
+    > lg
+  */
+  @include media-query(lg) {
+    grid-template-columns: auto;
+    grid-template-rows: auto auto 100vh minmax(500px, auto);
+    grid-template-areas:
+    'title'
+    'gallery'
+    'contact'
+    'footer';
+  }
 
-  &__header {
+  .header {
     grid-area: menu;
     position: fixed;
     z-index: 99;
     width: 100%;
 
     & .quick-info {
-      //
+      @include media-query(lg) {
+        display: none;
+      }
     }
 
     & .menu {
@@ -34,10 +55,8 @@
 
     &__main-text {
       color: $white;
-      font-size: $xsm_first-category-text-size;
       font-weight: $default-bold;
       text-align: center;
-      margin: $xsm_margin;
 
       .highlighted-text {
         //
