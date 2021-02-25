@@ -14,7 +14,7 @@
     line-height: normal;
 
     @include media-query(sm) {
-        padding: $sm_margin;
+        padding: $sm_padding;
     }
 
     &__content {

@@ -10,11 +10,11 @@
     font-size: $xsm_third-category-text-size / 1.1;
 
     @include media-query(sm) {
-        font-size: $sm_third-category-text-size / 1.25;
+        font-size: $sm_third-category-text-size - 1;
     }
 
     @include media-query(md) {
-        font-size: $md_third-category-text-size;
+        font-size: $md_third-category-text-size - 1;
     }
 
     @include media-query(lg) {
@@ -22,7 +22,7 @@
     }
 
     @include media-query(xl) {
-        font-size: $xl_third-category-text-size / 1.2;
+        font-size: $xl_third-category-text-size - 1;
     }
 
     &__list {

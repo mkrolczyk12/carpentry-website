@@ -9,7 +9,7 @@
 
     display: grid;
     grid-template-columns: auto;
-    grid-template-rows: 100vh repeat(2, minmax(100vh, auto)) 100vh minmax(100px, auto) auto minmax(500px, auto);
+    grid-template-rows: 100vh auto minmax(100vh, auto) 100vh minmax(100px, auto) auto minmax(500px, auto);
     grid-template-areas:
         "start"
         "meet_me"
@@ -18,6 +18,7 @@
         "realizations"
         "quick_query"
         "footer";
+
 
     .header {
         grid-area: menu;
@@ -248,20 +249,74 @@
 
     &__meet-me {
         grid-area: meet_me;
+        max-width: $content-max-width;
         background-color: $white;
+
         display: flex;
         flex-direction: column;
+        align-self: center;
+        justify-self: center;
+
+        @include media-query(lg) {
+            min-height: 50vh;
+            width: 80%;
+            border: 1px solid $brown;
+            margin: 80px;
+
+            position: relative;
+            display: grid;
+            grid-template-columns: minmax(400px, 600px) minmax(50%, 1fr);
+            grid-template-rows: auto auto;
+            grid-template-areas:
+                    'photo description'
+                    '. description';
+
+        }
+
+        @include media-query(xl) {
+            width: 75%;
+        }
     }
 
     &__meet-me-image {
-        height: 50%;
+        height: 50vh;
+
+        @include media-query(lg) {
+            grid-area: photo;
+            bottom: 30px;
+            right: 30px;
+            width: 100%;
+            height: 100%;
+        }
     }
 
     &__meet-me-content {
-        height: 50%;
+        min-height: 50vh;
         display: flex;
         flex-direction: column;
         margin: $xsm_margin;
+
+        @include media-query(sm) {
+            margin: $sm-margin * 2;
+        }
+
+        @include media-query(md) {
+            margin: $md_margin * 2;
+        }
+
+        @include media-query(lg) {
+            grid-area: description;
+            min-height: unset;
+            margin: $lg_margin;
+        }
+
+        @include media-query(xl) {
+            margin: $xl_margin;
+        }
+
+        @include media-query(xxl) {
+            margin: $xxl_margin;
+        }
     }
 
     &__meet-me-title {
@@ -270,6 +325,31 @@
         font-size: $xsm_first-category-text-size;
         margin-top: $xsm_margin;
         color: $orange;
+
+        @include media-query(sm) {
+            margin-top: $sm_margin;
+            font-size: $sm_first-category-text-size;
+        }
+
+        @include media-query(md) {
+            margin-top: $md_margin;
+            font-size: $md_first-category-text-size;
+        }
+
+        @include media-query(lg) {
+            margin-top: $lg_margin;
+            font-size: $lg_first-category-text-size;
+        }
+
+        @include media-query(xl) {
+            margin-top: $xl_margin;
+            font-size: $xl_first-category-text-size;
+        }
+
+        @include media-query(xxl) {
+            margin-top: $xxl_margin;
+            font-size: $xxl_first-category-text-size;
+        }
     }
 
     &__meet-me-subtitle {
@@ -277,14 +357,67 @@
         font-size: $xsm_second-category-text-size;
         margin-left: $xsm_margin;
         margin-bottom: $xsm_margin;
+
+        @include media-query(sm) {
+            margin-left: $sm_margin;
+            margin-bottom: $sm_margin;
+            font-size: $sm_second-category-text-size;
+        }
+
+        @include media-query(md) {
+            margin-left: $md_margin;
+            margin-bottom: $md_margin;
+            font-size: $md_second-category-text-size;
+        }
+
+        @include media-query(lg) {
+            margin-left: $lg_margin;
+            margin-bottom: $lg_margin;
+            font-size: $lg_second-category-text-size;
+        }
+
+        @include media-query(xl) {
+            margin-left: $xl_margin;
+            margin-bottom: $xl_margin;
+            font-size: $xl_second-category-text-size;
+        }
+
+        @include media-query(xxl) {
+            margin-left: $xxl_margin;
+            margin-bottom: $xxl_margin;
+            font-size: $xxl_second-category-text-size;
+        }
     }
 
     &__meet-me-text {
         @include third-category-text-appearance;
-        margin: $xsm_margin 0;
+        margin-bottom: $xsm_margin;
         text-justify: auto;
-        font-family: $special-font;
         font-size: $xsm_third-category-text-size;
+
+        @include media-query(sm) {
+            margin-bottom: $sm_margin;
+            font-size: $sm_third-category-text-size;
+        }
+
+        @include media-query(md) {
+            margin: $md_margin 0;
+            font-size: $md_third-category-text-size;
+        }
+
+        @include media-query(lg) {
+            margin-bottom: $lg_margin;
+            font-size: $lg_third-category-text-size;
+        }
+
+        @include media-query(xl) {
+            font-size: $xl_third-category-text-size;
+        }
+
+        @include media-query(xxl) {
+            font-size: $xxl_third-category-text-size;
+        }
+
     }
 
     &__meet-me-action-space {
@@ -294,12 +427,16 @@
         align-items: center;
         justify-content: center;
 
+        @include media-query(lg) {
+            flex-grow: 0;
+        }
+
         .action-button {
-            background-color: $white;
-            color: $orange;
-            border: 2px solid $orange;
-            height: 25%;
-            width: 50%;
+            @include btn-standard($orange, 2px, $default-bold);
+
+            @include media-query(lg) {
+                @include btn-standard($brown, 2px, $default-bold, $white);
+            }
         }
     }
 
@@ -319,8 +456,35 @@
 
     &__offer-quick-info-text {
         @include second-category-text-appearance;
+        max-width: $content-max-width;
         font-size: $xsm_second-category-text-size;
         margin: $xsm_margin;
+        text-align: left;
+
+        @include media-query(sm) {
+            margin: $sm_margin * 2;
+            font-size: $sm_second-category-text-size;
+        }
+
+        @include media-query(md) {
+            margin: $md_margin * 2;
+            font-size: $md_second-category-text-size;
+        }
+
+        @include media-query(lg) {
+            margin: $lg_margin * 2;
+            font-size: $lg_second-category-text-size;
+        }
+
+        @include media-query(xl) {
+            margin: $xl_margin * 2;
+            font-size: $xl_second-category-text-size;
+        }
+
+        @include media-query(xxl) {
+            margin: $xxl_margin * 2;
+            font-size: $xxl_second-category-text-size;
+        }
 
         .highlighted-text {
             color: inherit;

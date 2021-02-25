@@ -233,7 +233,7 @@ $display: "false";
         }
 
         @include media-query(xl) {
-            font-size: $xl_third-category-text-size * 1.25;
+            font-size: $xl_third-category-text-size / 1.1;
         }
 
         @include media-query(xxl) {
@@ -242,30 +242,11 @@ $display: "false";
 
         &:last-of-type {
             @include third-category-text-appearance;
-            $grow-param: 1.5;
             color: $orange;
-            font-size: $xsm-third-category-text-size * $grow-param;
             line-height: inherit;
 
-            @include media-query(sm) {
-                font-size: $sm_third-category-text-size * $grow-param;
-            }
-
-            @include media-query(md) {
-                font-size: $md_third-category-text-size * $grow-param;
-            }
-
             @include media-query(lg) {
-                font-size: $lg_third-category-text-size;
                 color: $orange;
-            }
-
-            @include media-query(xl) {
-                font-size: $xl_third-category-text-size * $grow-param;
-            }
-
-            @include media-query(xxl) {
-                font-size: $xxl_third-category-text-size;
             }
         }
 

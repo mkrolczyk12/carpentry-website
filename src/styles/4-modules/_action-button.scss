@@ -1,14 +1,42 @@
 @import "../1-helpers/variables";
+@import "../1-helpers/mixins";
 @import "../2-base/typography";
 
 .action-button {
     @include third-category-text-appearance;
-    display: flex; // to put button content at center
-    justify-content: center; // horizontal
-    align-items: center; // vertical
     min-height: 50px;
     min-width: 100px;
-    font-weight: $default-bold;
-    text-transform: uppercase;
+    height: 25%;
+    width: 50%;
     font-size: $xsm-third-category-text-size;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include media-query(sm) {
+        font-size: $sm_third-category-text-size - 1;
+        width: 230px;
+        height: 60px;
+    }
+
+    @include media-query(md) {
+        font-size: $md_third-category-text-size;
+        width: 270px;
+        height: 75px;
+    }
+
+    @include media-query(lg) {
+        font-size: $lg_third-category-text-size;
+        width: 270px;
+        height: 50px;
+    }
+
+    @include media-query(xl) {
+        font-size: $xl_third-category-text-size;
+    }
+
+    @include media-query(xxl) {
+        font-size: $xxl_third-category-text-size / 1.1;
+    }
 }
