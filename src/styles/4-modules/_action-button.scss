@@ -9,6 +9,7 @@
     height: 25%;
     width: 50%;
     font-size: $xsm-third-category-text-size;
+    background-color: inherit;
 
     display: flex;
     justify-content: center;
@@ -21,9 +22,9 @@
     }
 
     @include media-query(md) {
-        font-size: $md_third-category-text-size;
+        font-size: $md_third-category-text-size / 1.25;
         width: 270px;
-        height: 75px;
+        height: 60px;
     }
 
     @include media-query(lg) {
@@ -33,10 +34,10 @@
     }
 
     @include media-query(xl) {
-        font-size: $xl_third-category-text-size;
+        font-size: $xl_third-category-text-size / 1.25;
     }
 
     @include media-query(xxl) {
-        font-size: $xxl_third-category-text-size / 1.1;
+        font-size: $xxl_third-category-text-size / 1.25;
     }
 }

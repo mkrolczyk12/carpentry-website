@@ -215,7 +215,7 @@ $display: "false";
         }
 
         @include media-query(lg) {
-            font-size: $lg_third-category-text-size;
+            font-size: $lg_third-category-text-size / 1.25;
             letter-spacing: 1px;
 
             // hover animation
@@ -237,7 +237,7 @@ $display: "false";
         }
 
         @include media-query(xxl) {
-            font-size: $xxl_third-category-text-size;
+            font-size: $xxl_third-category-text-size / 1.25;
         }
 
         &:last-of-type {

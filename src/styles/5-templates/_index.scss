@@ -9,7 +9,7 @@
 
     display: grid;
     grid-template-columns: auto;
-    grid-template-rows: 100vh auto minmax(100vh, auto) 100vh minmax(100px, auto) auto minmax(500px, auto);
+    grid-template-rows: 100vh auto minmax(100vh, auto) auto minmax(100px, auto) auto minmax(500px, auto);
     grid-template-areas:
         "start"
         "meet_me"
@@ -460,6 +460,8 @@
         font-size: $xsm_second-category-text-size;
         margin: $xsm_margin;
         text-align: left;
+        color: $white;
+        font-weight: $default-bold;
 
         @include media-query(sm) {
             margin: $sm_margin * 2;
@@ -488,7 +490,6 @@
 
         .highlighted-text {
             color: inherit;
-            font-weight: $default-bold;
             font-size: inherit;
             font-family: inherit;
         }
@@ -512,11 +513,42 @@
 
     &__offer-content {
         height: 100%;
+        max-width: $content-max-width;
+        margin: $xsm_margin;
+        align-self: center;
+        justify-self: center;
+
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        margin: $xsm_margin;
+
+        @include media-query(sm) {
+            margin: $sm_margin * 2;
+            font-size: $sm_third-category-text-size;
+        }
+
+        @include media-query(md) {
+            margin: $md_margin * 2;
+            font-size: $md_third-category-text-size;
+        }
+
+        @include media-query(lg) {
+            margin: $lg_margin * 2;
+            font-size: $lg_third-category-text-size;
+            width: 75%;
+            min-height: 50vh;
+        }
+
+        @include media-query(xl) {
+            font-size: $xl_third-category-text-size;
+            min-height: 60vh;
+        }
+
+        @include media-query(xxl) {
+            font-size: $xxl_third-category-text-size;
+            min-height: 70vh;
+        }
     }
 
 
@@ -525,17 +557,67 @@
         width: 100%;
         font-size: $xsm_first-category-text-size;
         color: $white;
+
         text-align: center;
+
+        @include media-query(sm) {
+            font-size: $sm_first-category-text-size;
+            margin: 0 $sm_margin;
+        }
+
+        @include media-query(md) {
+            font-size: $md_first-category-text-size;
+        }
+
+        @include media-query(lg) {
+            font-size: $lg_first-category-text-size;
+            margin: 0;
+        }
+
+        @include media-query(xl) {
+            font-size: $xl_first-category-text-size;
+            width: 75%;
+        }
+
+        @include media-query(xxl) {
+            font-size: $xxl_first-category-text-size;
+        }
     }
 
     &__offer-text {
         @include third-category-text-appearance;
-        display: flex;
-        align-items: center;
         width: 100%;
         flex-grow: 2;
         font-family: $special-font;
         font-size: $xsm_third-category-text-size;
+
+        display: flex;
+        align-items: center;
+        text-align: center;
+
+        @include media-query(sm) {
+            font-size: $sm_third-category-text-size;
+            text-align: start;
+        }
+
+        @include media-query(md) {
+            font-size: $md_third-category-text-size;
+            padding: 0 $md_margin * 2;
+        }
+
+        @include media-query(lg) {
+            font-size: $lg_third-category-text-size;
+            width: 75%;
+        }
+
+        @include media-query(xl) {
+            font-size: $xl_third-category-text-size;
+            padding: 0 $xl_margin * 2;
+        }
+
+        @include media-query(xxl) {
+            font-size: $xxl_third-category-text-size;
+        }
     }
 
     &__offer-action {
@@ -546,14 +628,10 @@
         align-items: center;
 
         .action-button {
-            background: inherit;
-            color: $brown;
-            border: 2px solid $brown;
-            font-size: $xsm_third-category-text-size;
-            height: 25%;
-            width: 50%;
+            @include btn-border-animation($brown, $white, 2px, bottom, right);
         }
     }
+
     .section-contact {
         grid-area: question;
         background-color: $brown;
@@ -562,11 +640,16 @@
         &__title {
             color: $white;
         }
+
         &__action-space {
-            //
+
             .action-button {
-                color: $white;
-                border: 2px solid $white;
+                @include btn-standard($orange, 2px, $default-bold);
+
+                @include media-query(lg) {
+                    border: none;
+                    @include btn-border-animation($light-orange, $orange, 2px, top, left);
+                }
             }
         }
         &__text {
@@ -579,16 +662,20 @@
 
     &__realizations {
         grid-area: realizations;
-        background-color: darken($white, 2%);
+        background-color: darken($white, 3%);
         color: $white;
+
         display: flex;
         justify-content: center;
         align-items: center;
     }
 
     &__realizations-content {
+        max-width: $content-max-width;
         height: 100%;
         width: 100%;
+        margin: 0 $xsm_margin;
+
         display: grid;
         grid-template-columns: minmax(120px, 1fr);
         grid-template-rows: auto 1fr minmax(100px, auto);
@@ -596,7 +683,6 @@
             'title'
             'gallery'
             'button';
-        margin: 0 $xsm_margin;
     }
 
     &__realizations-title {
@@ -605,7 +691,35 @@
         font-size: $xsm_first-category-text-size;
         margin: $xsm_margin;
         color: $black;
+        //filter: grayscale(100%);
+
         text-align: center;
+
+        @include media-query(sm) {
+            font-size: $sm_first-category-text-size;
+            margin: $sm_margin;
+        }
+
+        @include media-query(md) {
+            font-size: $md_first-category-text-size;
+            margin: $md_margin;
+            //min-height: 20vh;
+        }
+
+        @include media-query(lg) {
+            font-size: $lg_first-category-text-size;
+            margin: $lg_margin;
+        }
+
+        @include media-query(xl) {
+            font-size: $xl_first-category-text-size;
+            margin: $xl_margin;
+        }
+
+        @include media-query(xxl) {
+            font-size: $xxl_first-category-text-size;
+            margin: $xxl_margin;
+        }
     }
 
     #ReactGridGallery {
@@ -620,18 +734,42 @@
         grid-area: button;
         width: 100%;
         flex-grow: 1;
+
         display: flex;
         justify-content: center;
         align-items: center;
         margin-bottom: $xsm_margin;
 
+        @include media-query(sm) {
+            margin: $sm_margin;
+        }
+
+        @include media-query(md) {
+            margin: $md_margin;
+        }
+
+        @include media-query(lg) {
+            margin: $lg_margin;
+        }
+
+        @include media-query(xl) {
+            margin: $xl_margin;
+        }
+
+        @include media-query(xxl) {
+            margin: $xxl_margin;
+        }
+
         .action-button {
             background-color: $white;
             color: $orange;
             border: 2px solid $orange;
-            width: 50%;
-            height: 25%;
-            font-size: $xsm_third-category-text-size;
+
+            @include media-query(lg) {
+                background-color: inherit;
+                border: none;
+                @include btn-border-animation($brown, $orange, 2px, bottom, right);
+            }
         }
     }
 
