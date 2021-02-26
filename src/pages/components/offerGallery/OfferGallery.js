@@ -19,9 +19,13 @@ const OfferGallery = ({productData = [], redirection = false}) => {
                     to={`/galeria/${each.permalink}`}
                     className="offer-gallery__item"
                     key={index}
+                    title="Kliknij aby zobaczyć opis produktu"
                 >
-                    <Img className="offer-gallery__item-image" fluid={each.imageGallery[0].fluid} />
-                    <p className="offer-gallery__item-title">{each.title}</p>
+                    <Img className="offer-gallery__item-image"
+                         fluid={each.imageGallery[0].fluid}
+                         title="Kliknij aby zobaczyć opis produktu"
+                    />
+                    <p className="offer-gallery__item-title" title="Kliknij aby zobaczyć opis produktu">{each.title}</p>
                 </Link>
             ))
             :

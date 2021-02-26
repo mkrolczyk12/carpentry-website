@@ -12,6 +12,7 @@ import Contact from '../components/contact/Contact'
 import Footer from "../components/footer/Footer"
 import Product from "./product/Product";
 import Header from "../components/header/Header";
+import ScrollToTopButton from "../components/scrollToTopButton/ScrollToTopButton";
 
 const ourOffer = () => {
     return (
@@ -25,6 +26,7 @@ const ourOffer = () => {
                 title="Zapraszam do kontaktu"
             />
             <Footer/>
+            <ScrollToTopButton/>
         </div>
     )
 }

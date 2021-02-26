@@ -276,14 +276,6 @@
         flex-direction: column;
         justify-content: center;
 
-        @include media-query(sm) {
-            //
-        }
-
-        @include media-query(md) {
-            //
-        }
-
         @include media-query(lg) {
             width: 75%;
         }

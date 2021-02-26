@@ -10,6 +10,7 @@ import Title from "./title/Title";
 import Header from "../components/header/Header";
 import Footer from "../components/footer/Footer";
 import OfferGallery from "../components/offerGallery/OfferGallery"
+import ScrollToTopButton from "../components/scrollToTopButton/ScrollToTopButton";
 
 const Gallery = () => {
     /*
@@ -46,6 +47,7 @@ const Gallery = () => {
                 productData={datoCmsGallery.eachProductGallery}
             />
             <Footer/>
+            <ScrollToTopButton/>
         </section>
     )
 }

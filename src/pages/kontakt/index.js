@@ -13,6 +13,7 @@ import Localization from "./localization/Localization";
 // Common components
 import Header from "../components/header/Header";
 import Footer from "../components/footer/Footer";
+import ScrollToTopButton from "../components/scrollToTopButton/ScrollToTopButton";
 
 const Contact = () => {
 
@@ -24,6 +25,7 @@ const Contact = () => {
             <CompanyInfo />
             <Localization/>
             <Footer/>
+            <ScrollToTopButton/>
         </section>
     )
 }

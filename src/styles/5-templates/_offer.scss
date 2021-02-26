@@ -11,7 +11,7 @@
   */
   display: grid;
   grid-template-columns: auto;
-  grid-template-rows: minmax(100px, auto) minmax(30vh, auto) auto minmax(100vh, auto) auto 100vh minmax(500px, auto);
+  grid-template-rows: minmax(100px, auto) minmax(30vh, auto) auto minmax(100vh, auto) auto auto minmax(500px, auto);
   grid-template-areas:
   'menu'
   'title'
@@ -26,7 +26,7 @@
   */
   @include media-query(lg) {
     grid-template-columns: auto;
-    grid-template-rows: auto auto minmax(100vh, auto) auto 100vh minmax(500px, auto);
+    grid-template-rows: auto auto auto auto auto minmax(500px, auto);
     grid-template-areas:
       'title'
       'description'
@@ -77,51 +77,134 @@
 
   &__description {
     grid-area: description;
+    align-self: center;
+    justify-self: center;
+
     display: flex;
   }
 
   &__description-content {
     margin: $xsm_margin;
     padding: $xsm_padding;
+
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    align-items: center;
+
+    @include media-query(xl) {
+      max-width: $content-max-width;
+    }
+
   }
 
   &__description-title {
     @include second-category-text-appearance;
     font-size: $xsm_second-category-text-size;
     align-self: flex-start;
+
+    @include media-query(sm) {
+      font-size: $sm_second-category-text-size;
+    }
+
+    @include media-query(md) {
+      font-size: $md_second-category-text-size;
+    }
+
+    @include media-query(lg) {
+      font-size: $lg_second-category-text-size;
+    }
+
+    @include media-query(xl) {
+      font-size: $xl_second-category-text-size;
+    }
+
+    @include media-query(xxl) {
+      font-size: $xxl_second-category-text-size;
+    }
   }
 
   &__description-text {
     @include third-category-text-appearance;
     font-size: $xsm_third-category-text-size;
     margin: $xsm_margin 0;
+
+    @include media-query(sm) {
+      font-size: $sm_third-category-text-size;
+    }
+
+    @include media-query(md) {
+      font-size: $md_third-category-text-size;
+    }
+
+    @include media-query(lg) {
+      font-size: $lg_third-category-text-size;
+    }
+
+    @include media-query(xl) {
+      font-size: $xl_third-category-text-size;
+    }
+
+    @include media-query(xxl) {
+      font-size: $xxl_third-category-text-size;
+    }
   }
 
   &__description-text2 {
     @include second-category-text-appearance;
     font-size: $xsm_second-category-text-size;
+
+    @include media-query(sm) {
+      font-size: $sm_second-category-text-size;
+    }
+
+    @include media-query(md) {
+      font-size: $md_second-category-text-size;
+    }
+
+    @include media-query(lg) {
+      font-size: $lg_second-category-text-size;
+    }
+
+    @include media-query(xl) {
+      font-size: $xl_second-category-text-size;
+    }
+
+    @include media-query(xxl) {
+      font-size: $xxl_second-category-text-size;
+    }
   }
 
   & .offer-gallery {
+    background-color: #707070;
     grid-area: products;
   }
 
   &__key-features {
     grid-area: key-features;
     background-color: $white;
+
+    @include media-query(lg) {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
   }
 
   &__key-features-content {
     margin: $xsm_margin;
     padding: $xsm_padding;
+
+
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
+
+    @include media-query(xl) {
+      max-width: $content-max-width;
+    }
+
   }
 
   &__key-features-content-item {
@@ -134,11 +217,51 @@
     text-transform: uppercase;
     margin-bottom: $xsm_margin / 3;
     color: $orange;
+
+    @include media-query(sm) {
+      font-size: $sm_second-category-text-size;
+    }
+
+    @include media-query(md) {
+      font-size: $md_second-category-text-size;
+    }
+
+    @include media-query(lg) {
+      font-size: $lg_second-category-text-size;
+    }
+
+    @include media-query(xl) {
+      font-size: $xl_second-category-text-size;
+    }
+
+    @include media-query(xxl) {
+      font-size: $xxl_second-category-text-size;
+    }
   }
 
   &__key-features-content-item-description {
     @include third-category-text-appearance;
     font-size: $xsm-third-category-text-size;
+
+    @include media-query(sm) {
+      font-size: $sm_third-category-text-size;
+    }
+
+    @include media-query(md) {
+      font-size: $md_third-category-text-size;
+    }
+
+    @include media-query(lg) {
+      font-size: $lg_third-category-text-size;
+    }
+
+    @include media-query(xl) {
+      font-size: $xl_third-category-text-size;
+    }
+
+    @include media-query(xxl) {
+      font-size: $xxl_third-category-text-size;
+    }
   }
 
   .section-contact {
@@ -152,6 +275,11 @@
     &__action-space {
       .action-button {
         @include btn-standard($red, 2px, $default-bold);
+
+        @include media-query(lg) {
+          border: none;
+          @include btn-border-animation($red, $white, 2px, bottom, right);
+        }
       }
     }
     &__text {
