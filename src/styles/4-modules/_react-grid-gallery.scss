@@ -11,6 +11,8 @@
   margin: $xsm_margin;
 
   &_tile {    // each photo
+
+    // hover effect
     opacity: 1;
     -webkit-transition: .3s ease-in-out;
     transition: .3s ease-in-out;

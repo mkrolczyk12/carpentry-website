@@ -92,7 +92,17 @@
     justify-content: space-evenly;
 
     @include media-query(xl) {
+      width: 75%;
+    }
+
+    @include media-query(xl) {
       max-width: $content-max-width;
+      width: 75%;
+      justify-content: center;
+    }
+
+    @include media-query(xxl) {
+      width: unset;
     }
 
   }
@@ -175,8 +185,12 @@
   }
 
   & .offer-gallery {
-    background-color: #707070;
     grid-area: products;
+
+    @include media-query(lg) {
+      background-color: darken($white, 10);
+      padding: 50px 0;
+    }
   }
 
   &__key-features {
@@ -200,6 +214,10 @@
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
+
+    @include media-query(lg) {
+      width: 75%;
+    }
 
     @include media-query(xl) {
       max-width: $content-max-width;

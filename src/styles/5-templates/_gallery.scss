@@ -60,7 +60,19 @@
 
   & .offer-gallery {
     grid-area: products;
-    margin-top: $xsm-margin * 3;
+    margin: $xsm-margin * 3 0;
+
+    @include media-query(lg) {
+      margin: $lg-margin * 3 0;
+    }
+
+    @include media-query(xl) {
+      margin: $xl-margin * 3 0;
+    }
+
+    @include media-query(xxl) {
+      margin: $xxl-margin * 3 0;
+    }
   }
 
   & .footer {

@@ -3,34 +3,39 @@
 @import "../2-base/typography";
 
 .offer-gallery {
-  align-self: center;
+  align-content: center;
 
-  display: flex;
-  flex-direction: column;
-  justify-items: center;
-  align-items: center;
+  &__wrapper {
+    align-self: center;
 
-  @include media-query(md) {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: $md_margin;
-    margin: 0 30px;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
 
-    align-items: unset;
-    justify-items: unset;
-
-    @include media-query(lg) {
+    @include media-query(md) {
+      display: grid;
       grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    }
+      gap: 20px;
+      margin: 0 60px;
 
-    @include media-query(xl) {
-      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-      margin: 0 5%;
-    }
+      align-items: unset;
+      justify-items: unset;
 
-    @include media-query(xxl) {
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      margin: 0 10%;
+      @include media-query(lg) {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        margin: 0 60px;
+      }
+
+      @include media-query(xl) {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        margin: 0 5%;
+      }
+
+      @include media-query(xxl) {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        margin: 0 10%;
+      }
     }
   }
 
@@ -41,8 +46,14 @@
     flex-direction: column;
     align-items: center;
 
+    // hover effect
+    opacity: 1;
+    -webkit-transition: .3s ease-in-out;
+    transition: .2s ease-in-out;
+
     &:hover {
       cursor: pointer;
+      opacity: .5;
     }
 
     &:first-child {
