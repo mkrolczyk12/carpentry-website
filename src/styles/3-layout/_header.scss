@@ -3,6 +3,8 @@
 @import "../2-base/typography";
 
 .header {
+    border-bottom: 0.2px solid darken(rgba(255,255,255,0.25), 40);
+
     .quick-info {
         display: none;
     }
@@ -12,4 +14,5 @@
     .quick-info {
         display: flex;
     }
+
 }

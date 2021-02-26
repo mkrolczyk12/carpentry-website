@@ -1,0 +1,54 @@
+@import "../1-helpers/mixins";
+@import "../1-helpers/variables";
+@import "../2-base/typography";
+
+/*
+    documentation: https://reactjsexample.com/justified-image-gallery-component-for-react/
+*/
+
+
+.ReactGridGallery {   // react gallery container
+  margin: $xsm_margin;
+
+  &_tile {    // each photo
+    opacity: 1;
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+
+    &:hover {
+      opacity: .5;
+    }
+
+    &-bottom-bar {  // each photo bottom-bar
+
+      & div span {  // each photo subtitle
+
+        @include third-category-text-appearance;
+        color: $white !important;
+        font-size: $xsm_third-category-text-size / 1.5 !important;
+        font-family: "oblique" !important;
+
+        @include media-query(sm) {
+          font-size: $sm_third-category-text-size / 1.5 !important;
+        }
+
+        @include media-query(md) {
+          margin: unset;
+          font-size: $md_third-category-text-size / 1.5 !important;
+        }
+
+        @include media-query(lg) {
+          font-size: $lg_third-category-text-size / 1.5 !important;
+        }
+
+        @include media-query(xl) {
+          font-size: $xl_third-category-text-size / 1.5 !important;
+        }
+
+        @include media-query(xxl) {
+          font-size: $xxl_third-category-text-size / 1.75 !important;
+        }
+      }
+    }
+  }
+}

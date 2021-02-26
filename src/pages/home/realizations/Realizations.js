@@ -1,8 +1,8 @@
-import React, {useEffect} from 'react'
+import React from 'react'
 
 import { graphql, useStaticQuery, Link} from "gatsby"
 
-import Gallery from 'react-grid-gallery'; // documentation: https://reactjsexample.com/justified-image-gallery-component-for-react/
+import Gallery from 'react-grid-gallery';
 
 const Realizations = React.memo(() => {
     const { datoCmsSampleRealization } = useStaticQuery(    // GraphQl query for images placed in CMS
@@ -38,7 +38,7 @@ const Realizations = React.memo(() => {
                         thumbnailHeight: photoHeight,
                         thumbnailWidth: photoWidth,
                         tags: [{value: each.tag, title: each.tag}],
-                        caption: each.description
+                        caption: each.description,
                     })
         })
         return images
@@ -53,7 +53,8 @@ const Realizations = React.memo(() => {
                     enableImageSelection={false}
                     rowHeight={240}
                     margin={5}      // distance between photos
-                    tagStyle={{color: "white", fontStyle: "oblique"}}
+                    backdropClosesModal={true}
+                    lightboxWidth={1024}
                 />
                 <div className="home__realizations-action-space">
                     <Link className="action-button" to="/galeria">Zobacz więcej</Link>

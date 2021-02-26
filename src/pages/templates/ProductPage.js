@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React from 'react'
 import {graphql} from "gatsby";
 
 import "../../styles/main.scss"
@@ -46,7 +46,8 @@ const ProductPage = ({ pageContext: {permalink, title}, data: {datoCmsEachProduc
                     images={prepareImages(datoCmsEachProductGallery.imageGallery)}
                     enableImageSelection={false}
                     margin={5}  // distance between photos
-                    tagStyle={{color: 'white', fontStyle: "oblique"}}
+                    backdropClosesModal={true}
+                    lightboxWidth={1024}
                 />
             </div>
             <Contact

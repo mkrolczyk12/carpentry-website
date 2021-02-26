@@ -14,6 +14,7 @@ import QuickQuery from "./home/quick-query/QuickQuery"
 import Header from "./components/header/Header"
 import Contact from "./components/contact/Contact"
 import Footer from "./components/footer/Footer"
+import ScrollToTopButton from "./components/scrollToTopButton/ScrollToTopButton";
 
 const IndexPage = () => {
 
@@ -29,6 +30,7 @@ const IndexPage = () => {
             <Realizations/>
             <QuickQuery/>
             <Footer/>
+            <ScrollToTopButton/>
         </div>
     )
 }

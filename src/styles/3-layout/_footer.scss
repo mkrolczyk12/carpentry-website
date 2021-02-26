@@ -5,27 +5,64 @@
 
 .footer {
     @include third-category-text-appearance;
-    background-color: $brown;
+    min-height: 500px;
     height: auto;
+    padding: $xsm_padding;
+    background-color: $brown;
     color: $white;
+    line-height: normal;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
-    line-height: normal;
 
     @include media-query(sm) {
         padding: $sm_padding;
     }
 
+    @include media-query(xl) {
+        align-items: center;
+    }
+
+
     &__content {
+        max-width: $content-max-width;
+        flex-grow: 3;
+        margin: $xsm_margin 5%;
+        font-family: $first-category-text-font;
+
         display: flex;
         flex-direction: column;
-        flex-grow: 3;
         justify-content: space-evenly;
         align-items: flex-start;
-        margin-left: 5%;
-        font-family: $first-category-text-font;
-        font-size: $xsm_third-category-text-size;
+
+        @include media-query(sm) {
+
+        }
+
+        @include media-query(md) {
+            margin: $md_margin;
+
+            justify-content: space-between;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+
+        @include media-query(lg) {
+            margin: $lg_margin;
+            flex-wrap: nowrap;
+        }
+
+        @include media-query(xl) {
+            justify-content: space-evenly;
+            margin: $xl_margin;
+            padding: $xl_padding;
+            width: 1200px;
+        }
+
+        @include media-query(xxl) {
+
+        }
     }
 
     &__section {
@@ -33,18 +70,62 @@
         height: auto;
         display: flex;
         flex-direction: column;
+
+        @include media-query(xl) {
+            flex-grow: 1;
+        }
     }
 
     &__section-title {
         font-size: $xsm_third-category-text-size;
         color: $orange;
         margin-bottom: 5px;
+
+        @include media-query(sm) {
+            font-size: $sm_third-category-text-size;
+        }
+
+        @include media-query(md) {
+            font-size: $md_third-category-text-size;
+        }
+
+        @include media-query(lg) {
+            font-size: $lg_third-category-text-size;
+        }
+
+        @include media-query(xl) {
+            font-size: $xl_third-category-text-size;
+        }
+
+        @include media-query(xxl) {
+            font-size: $xxl_third-category-text-size / 1.25;
+        }
     }
 
     &__section-paragraph {
         color: white;
         margin-bottom: 5px;
         font-size: $xsm_third-category-text-size;
+
+        @include media-query(sm) {
+            font-size: $sm_third-category-text-size;
+        }
+
+        @include media-query(md) {
+            font-size: $md_third-category-text-size;
+        }
+
+        @include media-query(lg) {
+            font-size: $lg_third-category-text-size;
+        }
+
+        @include media-query(xl) {
+            font-size: $xl_third-category-text-size;
+        }
+
+        @include media-query(xxl) {
+            font-size: $xxl_third-category-text-size / 1.25;
+        }
 
         .highlighted-text {
             color: $white;
@@ -53,22 +134,66 @@
     }
 
     &__copyright {
+        flex-grow: 1;
+        font-family: $first-category-text-font;
+        width: 100%;
+
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        flex-grow: 1;
-        font-family: $first-category-text-font;
     }
 
     &__copyright-company {
         margin-bottom: 5px;
-        text-align: center;
         font-size: $xsm_third-category-text-size;
+
+        text-align: center;
+
+        @include media-query(sm) {
+            font-size: $sm_third-category-text-size;
+        }
+
+        @include media-query(md) {
+            font-size: $md_third-category-text-size;
+        }
+
+        @include media-query(lg) {
+            font-size: $lg_third-category-text-size;
+        }
+
+        @include media-query(xl) {
+            font-size: $xl_third-category-text-size;
+        }
+
+        @include media-query(xxl) {
+            font-size: $xxl_third-category-text-size;
+        }
+
     }
 
     &__copyright-author {
-        font-size: $xsm_third-category-text-size;
+        font-size: $xsm_third-category-text-size / 1.25;
+
+        @include media-query(sm) {
+            font-size: $sm_third-category-text-size / 1.25;
+        }
+
+        @include media-query(md) {
+            font-size: $md_third-category-text-size / 1.25;
+        }
+
+        @include media-query(lg) {
+            font-size: $lg_third-category-text-size / 1.25;
+        }
+
+        @include media-query(xl) {
+            font-size: $xl_third-category-text-size / 1.25;
+        }
+
+        @include media-query(xxl) {
+            font-size: $xxl_third-category-text-size / 1.25;
+        }
 
         .highlighted-text {
             color: $orange;

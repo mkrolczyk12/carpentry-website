@@ -9,7 +9,7 @@
 
     display: grid;
     grid-template-columns: auto;
-    grid-template-rows: 100vh auto minmax(100vh, auto) auto minmax(100px, auto) auto minmax(500px, auto);
+    grid-template-rows: 100vh auto minmax(100vh, auto) auto minmax(100px, auto) auto auto;
     grid-template-areas:
         "start"
         "meet_me"
@@ -214,13 +214,20 @@
         @include media-query(sm) {
             font-size: $sm_second-category-text-size;
             margin-bottom: $sm_margin;
-            margin-top: $sm_margin;
+            margin-top: $sm_margin * 2;
+
+            // start animation
+            visibility: hidden;
+            animation: 1.5s fadeIn, upDownInfinite 5s ease infinite;
+            animation-delay: 3s;
+            animation-fill-mode: forwards;
         }
 
         @include media-query(md) {
             font-size: $md_second-category-text-size;
             margin-bottom: $md_margin;
             margin-top: $md_margin;
+
         }
 
         @include media-query(lg) {
@@ -228,11 +235,6 @@
             margin-bottom: $lg_margin;
             margin-top: $lg_margin;
 
-            // start animation
-            visibility: hidden;
-            animation: 1.5s fadeIn, upDownInfinite 5s ease infinite;
-            animation-delay: 3s;
-            animation-fill-mode: forwards;
         }
 
         @include media-query(xl) {
@@ -683,6 +685,10 @@
             'title'
             'gallery'
             'button';
+
+        @include media-query(xl) {
+            margin: 0 $xl_margin;
+        }
     }
 
     &__realizations-title {
@@ -691,7 +697,6 @@
         font-size: $xsm_first-category-text-size;
         margin: $xsm_margin;
         color: $black;
-        //filter: grayscale(100%);
 
         text-align: center;
 
@@ -703,7 +708,6 @@
         @include media-query(md) {
             font-size: $md_first-category-text-size;
             margin: $md_margin;
-            //min-height: 20vh;
         }
 
         @include media-query(lg) {
@@ -722,18 +726,15 @@
         }
     }
 
-    #ReactGridGallery {
+    .ReactGridGallery {
         grid-area: gallery;
-        margin: $xsm_margin;
-    }
-    .ReactGridGallery_tile {
-        //
+        align-self: center;
     }
 
     &__realizations-action-space {
         grid-area: button;
         width: 100%;
-        flex-grow: 1;
+        align-self: center;
 
         display: flex;
         justify-content: center;
@@ -741,29 +742,27 @@
         margin-bottom: $xsm_margin;
 
         @include media-query(sm) {
-            margin: $sm_margin;
+            margin-bottom: $sm_margin;
         }
 
         @include media-query(md) {
-            margin: $md_margin;
+            margin-bottom: $md_margin;
         }
 
         @include media-query(lg) {
-            margin: $lg_margin;
+            margin-bottom: $lg_margin;
         }
 
         @include media-query(xl) {
-            margin: $xl_margin;
+            margin-bottom: $xl_margin;
         }
 
-        @include media-query(xxl) {
-            margin: $xxl_margin;
+        @include media-query(xl) {
+            margin-bottom: $xl_margin;
         }
 
         .action-button {
-            background-color: $white;
-            color: $orange;
-            border: 2px solid $orange;
+            @include btn-standard($orange, 2px, $default-bold);
 
             @include media-query(lg) {
                 background-color: inherit;
@@ -775,43 +774,25 @@
 
     &__quick-query {
         grid-area: quick_query;
+
         display: flex;
         flex-direction: column;
     }
 
     &__quick-query-image {
         min-height: 40vh;
+
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-    }
-
-    &__quick-query-form-image {
-        height: auto;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        opacity: 0.6;
-
-        & .contact-form {
-            margin: $xsm-margin 0;
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-        }
-    }
-
-    &__quick-query-form-image::before {
-        opacity: $default-background-opacity !important;
-    }
-
-    &__quick-query-form-image::after {
-        opacity: $default-background-opacity !important;
+        text-align: center;
     }
 
     &__quick-query-content {
+        max-width: $content-max-width;
         margin: $xsm_margin;
+
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -823,6 +804,26 @@
         font-weight: $default-bold;
         color: $white;
         margin: $xsm_margin;
+
+        @include media-query(sm) {
+            font-size: $sm_first-category-text-size;
+        }
+
+        @include media-query(md) {
+            font-size: $md_first-category-text-size;
+        }
+
+        @include media-query(lg) {
+            font-size: $lg_first-category-text-size;
+        }
+
+        @include media-query(xl) {
+            font-size: $xl_first-category-text-size;
+        }
+
+        @include media-query(xxl) {
+            font-size: $xxl_first-category-text-size;
+        }
     }
 
     &__quick-query-sub-text {
@@ -830,6 +831,27 @@
         font-size: $xsm_second-category-text-size;
         margin: 0 $xsm_margin;
         color: $orange;
+
+        @include media-query(sm) {
+            font-size: $sm_second-category-text-size;
+        }
+
+        @include media-query(md) {
+            font-size: $md_second-category-text-size;
+        }
+
+        @include media-query(lg) {
+            font-size: $lg_second-category-text-size;
+        }
+
+        @include media-query(xl) {
+            font-size: $xl_second-category-text-size;
+        }
+
+        @include media-query(xxl) {
+            font-size: $xxl_second-category-text-size;
+        }
+
     }
 
     &__quick-query-action-button {
@@ -845,6 +867,97 @@
             cursor: pointer;
             color: darken($white, 10%);
         }
+
+        @include media-query(sm) {
+            font-size: $sm_second-category-text-size;
+        }
+
+        @include media-query(md) {
+            font-size: $md_second-category-text-size;
+        }
+
+        @include media-query(lg) {
+            font-size: $lg_second-category-text-size;
+        }
+
+        @include media-query(xl) {
+            font-size: $xl_second-category-text-size;
+        }
+
+        @include media-query(xxl) {
+            font-size: $xxl_second-category-text-size;
+        }
+
+    }
+
+    &__quick-query-form-image {
+        height: auto;
+        opacity: 0.6;
+        padding: $xsm-padding * 2 0;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        @include media-query(sm) {
+            padding: $sm-padding * 2;
+        }
+
+        @include media-query(md) {
+            padding: $md-padding * 2;
+        }
+
+        @include media-query(lg) {
+            padding: $lg-padding * 2 0;
+            min-height: 100vh;
+        }
+
+        @include media-query(xl) {
+            //
+        }
+
+        @include media-query(xxl) {
+            //
+        }
+
+        & .contact-form {
+            margin: $xsm-margin 0;
+            width: 75%;
+
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+
+            @include media-query(sm) {
+                width: 75%;
+            }
+
+            @include media-query(md) {
+                height: auto;
+                width: 500px;
+            }
+
+            @include media-query(lg) {
+                //
+            }
+
+            @include media-query(xl) {
+                //
+            }
+
+            @include media-query(xxl) {
+                //
+            }
+
+        }
+    }
+
+    &__quick-query-form-image::before {
+        opacity: $default-background-opacity !important;
+    }
+
+    &__quick-query-form-image::after {
+        opacity: $default-background-opacity !important;
     }
 
     & .footer {

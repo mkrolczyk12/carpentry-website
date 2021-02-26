@@ -3,15 +3,37 @@
 @import "../1-helpers/mixins";
 
 .contact-form {
+
     &__fieldset {
         @include third-category-text-appearance;
-        margin-top: $xsm_margin;
+        width: 100%;
         height: auto;
-        width: 75%;
+        margin-top: $xsm_margin;
+        font-size: $xsm_third-category-text-size / 1.25;
+
         display: flex;
         flex-direction: column;
         justify-content: center;
-        font-size: $xsm_third-category-text-size;
+
+        @include media-query(sm) {
+            font-size: $sm_third-category-text-size / 1.25;
+        }
+
+        @include media-query(md) {
+            font-size: $md_third-category-text-size / 1.25;
+        }
+
+        @include media-query(lg) {
+            font-size: $lg_third-category-text-size / 1.25;
+        }
+
+        @include media-query(xl) {
+            font-size: $xl_third-category-text-size / 1.5;
+        }
+
+        @include media-query(xxl) {
+            font-size: $xxl_third-category-text-size / 1.5;
+        }
     }
 
     &__name {
@@ -62,36 +84,66 @@
     }
 
     &__consent {
+        margin: $xsm_margin 0;
+
         display: flex;
         flex-direction: row;
         font-size: inherit;
-        margin: $xsm_margin 0;
+        position: relative;
     }
 
     &__checkbox {
         align-self: flex-start;
-        font-size: inherit;
         margin-right: 5px;
+        margin-top: 4px;
+        font-size: inherit;
+
+        @include media-query(sm) {
+            //
+        }
     }
 
     &__checkbox-label {
         font-size: $xsm_third-category-text-size / 2;
         font-family: inherit;
+
+        @include media-query(sm) {
+            font-size: $sm_third-category-text-size / 2;
+        }
+
+        @include media-query(md) {
+            font-size: $md_third-category-text-size / 2;
+        }
+
+        @include media-query(lg) {
+            font-size: $lg_third-category-text-size / 2;
+        }
+
+        @include media-query(xl) {
+            font-size: $xl_third-category-text-size / 2;
+        }
+
+        @include media-query(xxl) {
+            font-size: $xxl_third-category-text-size / 2;
+        }
     }
 
     &__action-space {
         width: 100%;
         margin: $xsm_margin 0;
+
         display: flex;
         align-items: center;
         justify-content: center;
 
         .action-button {
-            background-color: $white;
-            color: $orange;
-            border: 2px solid $orange;
-            height: 25%;
-            width: 75%;
+            @include btn-standard($orange, 2px, $default-bold);
+
+            @include media-query(lg) {
+                border: none;
+                cursor: pointer;
+                @include btn-border-animation($orange, $red, 2px, top, left);
+            }
         }
     }
 }

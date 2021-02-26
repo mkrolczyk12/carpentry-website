@@ -5,7 +5,7 @@
 .action-button {
     @include third-category-text-appearance;
     min-height: 50px;
-    min-width: 100px;
+    min-width: 150px;
     height: 25%;
     width: 50%;
     font-size: $xsm-third-category-text-size;
@@ -16,7 +16,7 @@
     align-items: center;
 
     @include media-query(sm) {
-        font-size: $sm_third-category-text-size - 1;
+        font-size: $sm_third-category-text-size;
         width: 230px;
         height: 60px;
     }

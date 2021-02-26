@@ -1,0 +1,47 @@
+@import "../1-helpers/mixins";
+@import "../1-helpers/variables";
+@import "../2-base/typography";
+
+.btn-top {
+  display: none;
+  position: fixed;
+  bottom: 60px;
+  right: 60px;
+  //font-size: 50px;
+  z-index: 99;
+  border: none;
+  outline: none;
+  background-color: inherit;
+  cursor: pointer;
+  color: $black;
+  transition: 0.25s font-size;
+
+  visibility: hidden;
+
+  @include media-query(lg) {
+    //
+  }
+
+  @include media-query(xl) {
+    visibility: visible;
+    font-size: 30px;
+
+    &:hover {
+      font-size: 50px;
+    }
+  }
+
+  @include media-query(xxl) {
+    font-size: 40px;
+
+    &:hover {
+      font-size: 60px;
+    }
+  }
+
+
+  &__icon {
+    //
+  }
+
+}

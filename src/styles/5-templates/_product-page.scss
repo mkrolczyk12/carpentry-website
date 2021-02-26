@@ -80,7 +80,7 @@
     grid-area: previous-page;
   }
 
-  & #ReactGridGallery {
+  & .ReactGridGallery {
     grid-area: gallery-item;
     margin: $xsm_margin * 2;
   }

@@ -237,7 +237,7 @@ $display: "false";
         }
 
         @include media-query(xxl) {
-            font-size: $xxl_third-category-text-size / 1.25;
+            font-size: $xxl_third-category-text-size / 1.5;
         }
 
         &:last-of-type {
@@ -252,9 +252,10 @@ $display: "false";
 
         &--active {
             width: fit-content;
-            border-left: 2px solid $orange;
+            border-left: 3px solid $orange;
             margin-left: 0;
             padding-left: 4px;
+
         }
     }
 }
@@ -263,7 +264,7 @@ $display: "false";
     Menu on top of the page
 */
 .menu-on-top {
-    border-bottom: 0.2px solid rgba(255,255,255,0.25);
+    border-bottom: 0.2px solid rgba(255,255,255,0.25) !important;
 
     @include media-query(lg) {
         display: flex;
@@ -306,6 +307,7 @@ $display: "false";
                 &-item--active {
                     border-bottom: 2px solid $orange;
                     pointer-events: none;
+
                 }
 
                 .menu__link-item {
