@@ -203,19 +203,18 @@ $display: "false";
         text-transform: uppercase;
         margin: $xsm_margin / 2;
         line-height: normal;
-        font-size: $xsm_third-category-text-size + 1;
-
+        font-size: 20px;
 
         @include media-query(sm) {
-            font-size: $sm_third-category-text-size;
+            font-size: 20px;
         }
 
         @include media-query(md) {
-            font-size: $md_third-category-text-size;
+            font-size: 23px;
         }
 
         @include media-query(lg) {
-            font-size: $lg_third-category-text-size / 1.25;
+            font-size: 18px;
             letter-spacing: 1px;
 
             // hover animation
@@ -233,11 +232,11 @@ $display: "false";
         }
 
         @include media-query(xl) {
-            font-size: $xl_third-category-text-size / 1.1;
+            font-size: 20px;
         }
 
         @include media-query(xxl) {
-            font-size: $xxl_third-category-text-size / 1.5;
+            font-size: 23px;
         }
 
         &:last-of-type {

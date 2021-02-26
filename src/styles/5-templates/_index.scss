@@ -253,6 +253,7 @@
         grid-area: meet_me;
         max-width: $content-max-width;
         background-color: $white;
+        max-height: 100vh;
 
         display: flex;
         flex-direction: column;
@@ -281,7 +282,11 @@
     }
 
     &__meet-me-image {
-        height: 50vh;
+        height: 40vh;
+
+        @include media-query(sm) {
+            height: 50vh;
+        }
 
         @include media-query(lg) {
             grid-area: photo;
@@ -462,8 +467,7 @@
         font-size: $xsm_second-category-text-size;
         margin: $xsm_margin;
         text-align: left;
-        color: $white;
-        font-weight: $default-bold;
+        color: $black;
 
         @include media-query(sm) {
             margin: $sm_margin * 2;
@@ -476,8 +480,10 @@
         }
 
         @include media-query(lg) {
+            color: $white;
             margin: $lg_margin * 2;
             font-size: $lg_second-category-text-size;
+            font-weight: $default-bold;
         }
 
         @include media-query(xl) {
@@ -762,7 +768,7 @@
         }
 
         .action-button {
-            @include btn-standard($orange, 2px, $default-bold);
+            @include btn-standard($brown, 2px, $default-bold);
 
             @include media-query(lg) {
                 background-color: inherit;
@@ -912,14 +918,6 @@
             min-height: 100vh;
         }
 
-        @include media-query(xl) {
-            //
-        }
-
-        @include media-query(xxl) {
-            //
-        }
-
         & .contact-form {
             margin: $xsm-margin 0;
             width: 75%;
@@ -936,19 +934,6 @@
                 height: auto;
                 width: 500px;
             }
-
-            @include media-query(lg) {
-                //
-            }
-
-            @include media-query(xl) {
-                //
-            }
-
-            @include media-query(xxl) {
-                //
-            }
-
         }
     }
 

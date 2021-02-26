@@ -150,10 +150,8 @@
       color: $white;
     }
     &__action-space {
-      //
       .action-button {
-        color: $white;
-        border: 2px solid $white;
+        @include btn-standard($red, 2px, $default-bold);
       }
     }
     &__text {

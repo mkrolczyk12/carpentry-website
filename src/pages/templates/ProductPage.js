@@ -11,7 +11,7 @@ import Footer from "../components/footer/Footer";
 import PreviousPageButton from "../components/previousPageButton/PreviousPageButton";
 
 // Vendor components
-import Gallery from 'react-grid-gallery';        // documentation: https://reactjsexample.com/justified-image-gallery-component-for-react/
+import Gallery from 'react-grid-gallery';
 
 const ProductPage = ({ pageContext: {permalink, title}, data: {datoCmsEachProductGallery} }) => {
 
@@ -48,6 +48,7 @@ const ProductPage = ({ pageContext: {permalink, title}, data: {datoCmsEachProduc
                     margin={5}  // distance between photos
                     backdropClosesModal={true}
                     lightboxWidth={1024}
+                    tagStyle={{visibility: "hidden"}}
                 />
             </div>
             <Contact

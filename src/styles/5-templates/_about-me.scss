@@ -12,8 +12,7 @@
     */
     display: grid;
     grid-template-columns: auto;
-    grid-template-rows: minmax(100px, auto) minmax(30vh, auto) minmax(100vh, auto) auto 100vh auto;
-    //grid-template-rows: minmax(40vh, auto) minmax(100vh, auto) auto 100vh auto;
+    grid-template-rows: minmax(100px, auto) minmax(30vh, auto) minmax(100vh, auto) auto auto auto;
     grid-template-areas:
         'menu'
         'title'
@@ -27,7 +26,7 @@
      */
     @include media-query(lg) {
         grid-template-columns: auto;
-        grid-template-rows: auto minmax(100vh, auto) auto 100vh auto;
+        grid-template-rows: auto minmax(100vh, auto) repeat(3, auto);
         grid-template-areas:
         'title'
         'description'
@@ -71,22 +70,68 @@
     &__description {
         grid-area: description;
         overflow: hidden;
+
+        @include media-query(lg) {
+
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        @include media-query(xl) {
+            max-width: $content-max-width;
+            justify-self: center;
+        }
     }
 
     &__description-content {
         height: auto;
         margin: $xsm_margin;
         padding: $xsm_padding;
+
+        @include media-query(lg) {
+            width: 50%;
+            height: 50%;
+        }
+
+        @include media-query(xl) {
+            margin: $xl_margin;
+            padding: $xl_padding;
+        }
+
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+
     }
 
     &__description-title {
         @include second-category-text-appearance;
         font-size: $xsm_second-category-text-size;
         align-self: flex-start;
+
+        @include media-query(sm) {
+            font-size: $sm_second-category-text-size;
+        }
+
+        @include media-query(md) {
+            font-size: $md_second-category-text-size;
+        }
+
+        @include media-query(lg) {
+            font-size: $lg_second-category-text-size;
+        }
+
+        @include media-query(xl) {
+            font-size: $xl_second-category-text-size;
+        }
+
+        @include media-query(xxl) {
+            font-size: $xxl_second-category-text-size;
+        }
     }
 
     &__description-name {
@@ -97,59 +142,207 @@
         .highlighted-text {
             color: $orange;
         }
+
+        @include media-query(sm) {
+            font-size: $sm_first-category-text-size;
+        }
+
+        @include media-query(md) {
+            font-size: $md_first-category-text-size;
+            width: 75%;
+        }
+
+        @include media-query(lg) {
+            font-size: $lg_first-category-text-size;
+
+        }
+
+        @include media-query(xl) {
+            font-size: $xl_first-category-text-size;
+        }
+
+        @include media-query(xxl) {
+            font-size: $xxl_first-category-text-size;
+        }
     }
 
     &__description-text {
         @include third-category-text-appearance;
-        justify-items: center;
         font-size: $xsm_third-category-text-size;
         margin: $xsm_margin;
+
+
+        justify-items: center;
         text-justify: auto;
+
+        @include media-query(sm) {
+            font-size: $sm_third-category-text-size;
+        }
+
+        @include media-query(md) {
+            font-size: $md_third-category-text-size;
+        }
+
+        @include media-query(lg) {
+            font-size: $lg_third-category-text-size;
+            align-self: flex-start;
+        }
+
+        @include media-query(xl) {
+            font-size: $xl_third-category-text-size;
+        }
+
+        @include media-query(xxl) {
+            font-size: $xxl_third-category-text-size;
+            width: 75%;
+        }
     }
 
     &__description-image {
         height: 70%;
+
+        @include media-query(lg) {
+            width: 50%;
+            height: 50%;
+            margin: $lg_margin;
+        }
+
+        @include media-query(xl) {
+            width: 50%;
+            height: 50%;
+            margin: $xl_margin * 2;
+        }
+
+        @include media-query(xxl) {
+            height: 600px;
+            width: 600px;
+            //margin: $xxl_margin * 2;
+            margin: unset;
+        }
     }
 
     &__achievements {
+        justify-self: center;
         margin: $xsm_margin * 2;
         grid-area: achievements;
         min-height: 1000px;
         height: auto;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
 
-        .achievements-block {
-            width: 100%;
-            height: 350px;
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: repeat(4, auto);
+        grid-template-areas:
+                'block1'
+                'trait1'
+                'trait2'
+                'block2';
+
+        @include media-query(lg) {
+            grid-template-columns: 50% 50%;
+            grid-template-rows: repeat(2, auto);
+            grid-template-areas:
+                'block1 trait1'
+                'trait2 block2';
+
+            justify-items: center;
+            //grid-gap: $lg_margin;
         }
+
+        @include media-query(xl) {
+            max-width: $content-max-width;
+        }
+
+        #block1 {
+            grid-area: block1;
+        }
+        #trait1 {
+            grid-area: trait1;
+        }
+        #block2 {
+            grid-area: block2;
+        }
+        #trait2 {
+            grid-area: trait2;
+        }
+
     }
 
     &__achievements-trait-section {
-        padding-top: $xsm_padding;
         min-height: 130px;
         height: auto;
+        padding-top: $xsm_padding;
+
         display: flex;
         flex-direction: column;
         justify-content: center;
 
+        @include media-query(sm) {
+            //
+        }
+
+        @include media-query(md) {
+            //
+        }
+
+        @include media-query(lg) {
+            width: 75%;
+        }
     }
 
     &__achievements-trait-section-title {
         @include second-category-text-appearance;
-        font-size: $xsm_second-category-text-size;
         align-self: flex-start;
+        font-size: $xsm_second-category-text-size;
         margin-bottom: $xsm_margin - 5;
         text-transform: uppercase;
         color: $orange;
+
+        @include media-query(sm) {
+            font-size: $sm_second-category-text-size;
+        }
+
+        @include media-query(md) {
+            font-size: $md_second-category-text-size;
+        }
+
+        @include media-query(lg) {
+            font-size: $lg_first-category-text-size;
+        }
+
+        @include media-query(xl) {
+            font-size: $xl_first-category-text-size;
+        }
+
+        @include media-query(xxl) {
+            font-size: $xxl_first-category-text-size;
+        }
 
     }
 
     &__achievements-trait-section-text {
         @include third-category-text-appearance;
         text-align: justify;
+        font-size: $xsm_third-category-text-size;
+
+        @include media-query(sm) {
+            font-size: $sm_third-category-text-size;
+        }
+
+        @include media-query(md) {
+            font-size: $md_third-category-text-size;
+        }
+
+        @include media-query(lg) {
+            font-size: $lg_third-category-text-size;
+        }
+
+        @include media-query(xl) {
+            font-size: $xl_third-category-text-size;
+        }
+
+        @include media-query(xxl) {
+            font-size: $xxl_third-category-text-size;
+        }
     }
 
     .section-contact {
@@ -160,11 +353,18 @@
         &__title {
             color: $white;
         }
+
         &__action-space {
             //
             .action-button {
                 color: $white;
                 border: 2px solid $white;
+                @include btn-standard($red, 2px, $default-bold);
+
+                @include media-query(lg) {
+                    border: none;
+                    @include btn-border-animation($red, $white, 2px, bottom, right);
+                }
             }
         }
         &__text {

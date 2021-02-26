@@ -11,6 +11,7 @@ import Achievements from "./achievements/Achievements"
 import Contact from '../components/contact/Contact'
 import Footer from "../components/footer/Footer"
 import Header from "../components/header/Header";
+import ScrollToTopButton from "../components/scrollToTopButton/ScrollToTopButton";
 
 const AboutMe = () => {
     return (
@@ -24,6 +25,7 @@ const AboutMe = () => {
             title="Pogadajmy"
           />
           <Footer/>
+          <ScrollToTopButton/>
         </div>
       )
 }
