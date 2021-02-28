@@ -12,7 +12,7 @@
     < lg
   */
   grid-template-columns: auto;
-  grid-template-rows: minmax(100px, auto) minmax(30vh, auto) auto 100vh minmax(500px, auto);
+  grid-template-rows: minmax(100px, auto) minmax(30vh, auto) auto auto minmax(500px, auto);
   grid-template-areas:
     'menu'
     'title'
@@ -23,8 +23,8 @@
     > lg
   */
   @include media-query(lg) {
-    grid-template-columns: auto;
-    grid-template-rows: auto auto 100vh minmax(500px, auto);
+    grid-template-columns: 100vw;
+    grid-template-rows: auto auto auto minmax(500px, auto);
     grid-template-areas:
     'title'
     'gallery'
@@ -68,21 +68,41 @@
     grid-area: gallery;
     background-color: darken($white, 2%);
     color: $white;
+
+    // children
     display: grid;
-    grid-template-columns: minmax(120px, 1fr);
-    grid-template-rows: auto auto;
+    grid-template-columns: minmax(300px, $content-max-width); // TODO
+    grid-template-rows: auto minmax(25vh, auto);
     grid-template-areas:
       'previous-page'
-      'gallery-item';
+      'gallery-content';
     align-items: center;
+    justify-content: center;
   }
+
+  &__gallery-content {
+    grid-area: gallery-content;
+    width: 100%;
+    height: 100%;
+    align-self: center;
+    justify-self: center;
+    //margin: $xsm_margin * 2;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
+
   & .previous-page-button {
     grid-area: previous-page;
+    align-self: flex-start;
   }
 
   & .ReactGridGallery {
-    grid-area: gallery-item;
-    margin: $xsm_margin * 2;
+    //align-self: center;
+    height: 100%;
+    width: 100%;
   }
 
   .ReactGridGallery_tile {
@@ -103,6 +123,12 @@
       .action-button {
         color: $white;
         border: 2px solid $white;
+        @include btn-standard($light-orange, 2px, $default-bold);
+
+        @include media-query(lg) {
+          border: none;
+          @include btn-border-animation($light-orange, $red, 2px, bottom, right);
+        }
       }
     }
 

@@ -6,8 +6,7 @@ import "../../styles/main.scss"
 
 // Contact components
 import Title from "./title/Title";
-import Form from "./form/Form";
-import CompanyInfo from "./companyInfo/CompanyInfo";
+import ContactSection from "./contact/ContactSection";
 import Localization from "./localization/Localization";
 
 // Common components
@@ -21,8 +20,7 @@ const Contact = () => {
         <section className="contact">
             <Header/>
             <Title/>
-            <Form/>
-            <CompanyInfo />
+            <ContactSection/>
             <Localization/>
             <Footer/>
             <ScrollToTopButton/>

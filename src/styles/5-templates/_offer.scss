@@ -188,7 +188,7 @@
     grid-area: products;
 
     @include media-query(lg) {
-      background-color: darken($white, 10);
+      background-color: darken($white, 3%);
       padding: 50px 0;
     }
   }
@@ -313,4 +313,7 @@
     background-color: $black;
   }
 
+  & .btn-top {
+    color: $red;
+  }
 }

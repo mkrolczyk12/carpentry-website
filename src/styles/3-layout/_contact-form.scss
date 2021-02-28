@@ -8,14 +8,17 @@
         @include third-category-text-appearance;
         width: 100%;
         height: auto;
-        margin-top: $xsm_margin;
+        margin: $xsm_margin 0;
         font-size: $xsm_third-category-text-size / 1.25;
+        padding: 20px;
 
         display: flex;
         flex-direction: column;
         justify-content: center;
 
+
         @include media-query(sm) {
+            border: 1px solid darken($light-brown, 2%);
             font-size: $sm_third-category-text-size / 1.25;
         }
 
@@ -33,6 +36,33 @@
 
         @include media-query(xxl) {
             font-size: $xxl_third-category-text-size / 1.5;
+        }
+    }
+
+    &__legend {
+        @include second-category-text-appearance;
+        font-size: $xsm_second-category-text-size;
+        margin: auto;
+        padding: $xsm-padding;
+
+        @include media-query(sm) {
+            font-size: $sm_second-category-text-size;
+        }
+
+        @include media-query(md) {
+            font-size: $md_second-category-text-size;
+        }
+
+        @include media-query(lg) {
+            font-size: $lg_second-category-text-size;
+        }
+
+        @include media-query(xl) {
+            font-size: $xl_second-category-text-size;
+        }
+
+        @include media-query(xxl) {
+            font-size: $xxl_second-category-text-size;
         }
     }
 
@@ -142,7 +172,7 @@
             @include media-query(lg) {
                 border: none;
                 cursor: pointer;
-                @include btn-border-animation($orange, $red, 2px, top, left);
+                @include btn-border-animation($orange, $red, 3px, bottom, right);
             }
         }
     }

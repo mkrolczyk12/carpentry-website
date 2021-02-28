@@ -26,7 +26,7 @@
      */
     @include media-query(lg) {
         grid-template-columns: auto;
-        grid-template-rows: auto minmax(100vh, auto) repeat(3, auto);
+        grid-template-rows: auto auto repeat(3, auto);
         grid-template-areas:
         'title'
         'description'
@@ -81,7 +81,7 @@
         }
 
         @include media-query(xl) {
-            max-width: $content-max-width;
+            max-width: $content-max-width + 300px;
             justify-self: center;
         }
     }
@@ -216,8 +216,6 @@
         @include media-query(xxl) {
             height: 600px;
             width: 600px;
-            //margin: $xxl_margin * 2;
-            margin: unset;
         }
     }
 
@@ -371,5 +369,9 @@
         grid-area: footer;
         min-height: 500px;
         background-color: $black;
+    }
+
+    & .btn-top {
+        color: $red;
     }
 }

@@ -77,7 +77,11 @@ const ContactForm = (props) => {
         data-netlify="true"
         data-netlify-honeypot="bot-field">
             <input type="hidden" name="form-name" value="contact" />
-            <fieldset className="contact-form__fieldset" onChange={() => formChanged = true}>
+            <fieldset className="contact-form__fieldset"
+                      onChange={() => formChanged = true}
+
+            >
+                <legend className="contact-form__legend">Formularz kontaktowy</legend>
                 <input id="form-start" name="name" className={(name.length !== 0 && name.length < 3) ? "contact-form__name input-error" : "contact-form__name"} value={name} onChange={handleInputValues} placeholder={namePlaceholder} required/>
                 <input name="surname" className={(surname.length !== 0 && surname.length < 3) ? "contact-form__surname input-error" : "contact-form__surname"} value={surname} onChange={handleInputValues} placeholder={surnamePlaceholder} required/>
                 <input name="email" className={(email === '') || (email !==0 && validateEmail(email)) ? "contact-form__email" : "contact-form__email input-error"} value={email} onChange={handleInputValues} placeholder={emailPlaceholder} required/>

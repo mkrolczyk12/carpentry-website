@@ -18,13 +18,14 @@
 
 // mixin for contact-form component input elements
 @mixin form-input-style() {
+    @include third-category-text-appearance;
     display: block;
     width: 100%;
     border: 1px solid $white;
     padding: 11px 20px;
-    font-family: 'Montserrat';
     font-weight: 500;
     margin-bottom: $xsm_margin / 2;
+    border: 1px solid $white;
 
     box-sizing: border-box;
 }

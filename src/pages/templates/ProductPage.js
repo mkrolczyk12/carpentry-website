@@ -12,6 +12,7 @@ import PreviousPageButton from "../components/previousPageButton/PreviousPageBut
 
 // Vendor components
 import Gallery from 'react-grid-gallery';
+import ScrollToTopButton from "../components/scrollToTopButton/ScrollToTopButton";
 
 const ProductPage = ({ pageContext: {permalink, title}, data: {datoCmsEachProductGallery} }) => {
 
@@ -40,21 +41,24 @@ const ProductPage = ({ pageContext: {permalink, title}, data: {datoCmsEachProduc
             <Title
                 title={title}
             />
-            <div className="product-page__gallery">
+            <section className="product-page__gallery">
                 <PreviousPageButton/>
-                <Gallery
-                    images={prepareImages(datoCmsEachProductGallery.imageGallery)}
-                    enableImageSelection={false}
-                    margin={5}  // distance between photos
-                    backdropClosesModal={true}
-                    lightboxWidth={1024}
-                    tagStyle={{visibility: "hidden"}}
-                />
-            </div>
+                <div className="product-page__gallery-content">
+                    <Gallery
+                        images={prepareImages(datoCmsEachProductGallery.imageGallery)}
+                        enableImageSelection={false}
+                        margin={5}  // distance between photos
+                        backdropClosesModal={true}
+                        lightboxWidth={1024}
+                        tagStyle={{visibility: "hidden"}}
+                    />
+                </div>
+            </section>
             <Contact
                 title="Potrzebujesz więcej zdjęć?"
             />
             <Footer />
+            <ScrollToTopButton/>
         </section>
     )
 }

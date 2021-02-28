@@ -34,6 +34,7 @@ const OfferGallery = ({productData = [], redirection = false}) => {
                         <div className="offer-gallery__item"
                              onClick={handleOfferClick}
                              key={index}
+                             title="Kliknij aby zobaczyć opis produktu"
                         >
                             <Img className="offer-gallery__item-image" fluid={each.image.fluid} />
                             <p className="offer-gallery__item-title">{each.title}</p>

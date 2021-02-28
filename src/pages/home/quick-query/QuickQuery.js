@@ -1,5 +1,6 @@
 import React from 'react'
-import { graphql, Link, useStaticQuery } from "gatsby"
+
+import { graphql, useStaticQuery } from "gatsby"
 
 
 import ContactForm from "../../components/contactForm/ContactForm"
@@ -42,8 +43,15 @@ const QuickQuery = React.memo(() => {
     const imageData2 = data.indexImage2.childImageSharp.fluid
 
     const handleActionButton = () => {
-        document.getElementById("quick-query-title").scrollIntoView()
+        const yOffset = window.pageYOffset
+        const ref = document.getElementsByClassName("home__quick-query-form-image")[0].getBoundingClientRect().top
+
         document.getElementById("form-start").focus()
+        window.scroll({
+            top: yOffset + ref,
+            left: 0,
+            behavior: "smooth",
+        })
     }
 
     return(
@@ -55,7 +63,7 @@ const QuickQuery = React.memo(() => {
                 <div className="home__quick-query-content">
                     <h1 id="quick-query-title" className="home__quick-query-main-title">Masz pytanie?</h1>
                     <h2 className="home__quick-query-sub-text">Zapytaj o co tylko chcesz!</h2>
-                    <a className="home__quick-query-action-button" to="/#formularz" onClick={handleActionButton}>
+                    <a className="home__quick-query-action-button" onClick={() => handleActionButton("formularz")}>
                         <FontAwesomeIcon className="#" icon={faAngleDown}/>
                     </a>
                 </div>
@@ -66,7 +74,7 @@ const QuickQuery = React.memo(() => {
                 style={{opacity: 0.6}}
             >
                 <ContactForm
-                    formId = "formularz"
+                    formId = "form"
                 />
             </BackgroundImage>
         </section>

@@ -34,7 +34,14 @@ const Footer = () => {
             </div>
             <div className="footer__copyright">
                 <h1 className="footer__copyright-company">© 2021 Usługi Stolarskie ZAGÓROWSKI.</h1>
-                <p className="footer__copyright-author">Projekt i realizacja strony: <b className="highlighted-text">Marcin Królczyk</b></p>
+                <p
+                    className="footer__copyright-author"
+                >
+                    Projekt i realizacja strony:
+                    <a href="https://marcinkrolczyk.herokuapp.com/pl" target="_blank">
+                        <b className="highlighted-text"> Marcin Królczyk</b>
+                    </a>
+                </p>
             </div>
         </footer>
     )

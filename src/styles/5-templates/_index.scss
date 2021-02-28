@@ -9,7 +9,7 @@
 
     display: grid;
     grid-template-columns: auto;
-    grid-template-rows: 100vh auto minmax(100vh, auto) auto minmax(100px, auto) auto auto;
+    grid-template-rows: 100vh minmax(100vh, auto) minmax(100vh, auto) auto minmax(100px, auto) auto auto;
     grid-template-areas:
         "start"
         "meet_me"
@@ -86,7 +86,7 @@
 
         // start animation
         visibility: hidden;
-        animation: 2s fadeIn;
+        animation: 1s fadeIn;
         animation-delay: 1s;
         animation-fill-mode: forwards;
 
@@ -127,7 +127,7 @@
         // start animation
         visibility: hidden;
         animation: 1.5s fadeIn;
-        animation-delay: 3s;
+        animation-delay: 2s;
         animation-fill-mode: forwards;
 
         @include media-query(sm) {
@@ -164,7 +164,7 @@
         //// start animation
         visibility: hidden;
         animation: 1.5s fadeIn;
-        animation-delay: 3s;
+        animation-delay: 2s;
         animation-fill-mode: forwards;
 
         @include media-query(sm) {
@@ -203,7 +203,7 @@
         // start animation
         visibility: hidden;
         animation: 1.5s fadeIn, upDown 2s ease-in-out;
-        animation-delay: 3s;
+        animation-delay: 2s;
         animation-fill-mode: forwards;
 
         &:hover {
@@ -253,7 +253,6 @@
         grid-area: meet_me;
         max-width: $content-max-width;
         background-color: $white;
-        max-height: 100vh;
 
         display: flex;
         flex-direction: column;
@@ -282,11 +281,7 @@
     }
 
     &__meet-me-image {
-        height: 40vh;
-
-        @include media-query(sm) {
-            height: 50vh;
-        }
+        height: 50vh;
 
         @include media-query(lg) {
             grid-area: photo;
@@ -398,12 +393,11 @@
 
     &__meet-me-text {
         @include third-category-text-appearance;
-        margin-bottom: $xsm_margin;
         text-justify: auto;
         font-size: $xsm_third-category-text-size;
+        margin: 30px 0;
 
         @include media-query(sm) {
-            margin-bottom: $sm_margin;
             font-size: $sm_third-category-text-size;
         }
 
@@ -509,6 +503,10 @@
         flex-direction: column;
         justify-content: center;
         opacity: 0.6;
+
+        @include media-query(lg) {
+            min-height: 100vh;
+        }
     }
 
     &__offer-image::before {
@@ -598,10 +596,11 @@
         flex-grow: 2;
         font-family: $special-font;
         font-size: $xsm_third-category-text-size;
+        margin: 40px 0;
 
         display: flex;
         align-items: center;
-        text-align: center;
+        text-align: left;
 
         @include media-query(sm) {
             font-size: $sm_third-category-text-size;
@@ -611,11 +610,13 @@
         @include media-query(md) {
             font-size: $md_third-category-text-size;
             padding: 0 $md_margin * 2;
+            margin: 20px 0;
         }
 
         @include media-query(lg) {
-            font-size: $lg_third-category-text-size;
             width: 75%;
+            margin: unset;
+            font-size: $lg_third-category-text-size;
         }
 
         @include media-query(xl) {
@@ -634,6 +635,10 @@
         display: flex;
         justify-content: center;
         align-items: center;
+
+        @include media-query(lg) {
+            flex-grow: 2;
+        }
 
         .action-button {
             @include btn-border-animation($brown, $white, 2px, bottom, right);
@@ -920,7 +925,7 @@
 
         & .contact-form {
             margin: $xsm-margin 0;
-            width: 75%;
+            width: 90%;
 
             display: flex;
             flex-direction: row;

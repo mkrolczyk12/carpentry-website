@@ -12,12 +12,11 @@
     < lg
   */
   grid-template-columns: auto;
-  grid-template-rows: minmax(60px, auto) minmax(30vh, auto) auto auto 50vh minmax(500px, auto);
+  grid-template-rows: minmax(60px, auto) minmax(30vh, auto) auto 50vh minmax(500px, auto);
   grid-template-areas:
   'menu'
   'title'
-  'form'
-  'company-info'
+  'contact'
   'localization'
   'footer';
 
@@ -26,11 +25,10 @@
   */
   @include media-query(lg) {
     grid-template-columns: auto;
-    grid-template-rows: auto auto auto 50vh minmax(500px, auto);
+    grid-template-rows: auto minmax(100vh, auto) 50vh minmax(500px, auto);
     grid-template-areas:
       'title'
-      'form'
-      'company-info'
+      'contact'
       'localization'
       'footer';
   }
@@ -68,95 +66,153 @@
     }
   }
 
-  & .contact-form {
+  &__contact-section {
+    grid-area: contact;
+  }
+
+  /*
+    Mobile contact section
+  */
+
+  &__contact-section-mobile {
+
+    @include media-query(lg) {
+      display: none;
+    }
+  }
+
+  &__contact-section-mobile-form-image {
+
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: $xsm_margin 0;
+
+    & .contact-form {
+      margin: $xsm-margin 0;
+      max-width: 350px;
+
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+
+      @include media-query(sm) {
+        max-width: unset;
+        width: 75%;
+      }
+
+      @include media-query(md) {
+        height: auto;
+        width: 600px;
+      }
+    }
   }
-  &__form-title {
-    @include second-category-text-appearance;
+
+  &__contact-section-mobile-form-image::before {
+    opacity: $default-background-opacity !important;
+  }
+
+  &__contact-section-mobile-form-image::after {
+    opacity: $default-background-opacity !important;
+  }
+
+  &__contact-section-mobile-form-title {
+    @include third-category-text-appearance;
     font-size: $xsm_third-category-text-size;
     margin: $xsm_margin * 2 $xsm_margin * 2 0 $xsm_margin * 2;
+
+    @include media-query(sm) {
+      width: 75%;
+      font-size: $sm_third-category-text-size;
+    }
+
+    @include media-query(md) {
+      font-size: $md_third-category-text-size;
+    }
   }
 
-  &__form-image {
-    grid-area: form;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  /*
+    Desktop contact section
+  */
+  &__contact-section-desktop {
+    display: none;
+
+    @include media-query(lg) {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+  }
+
+  &__contact-section-desktop-form-image {
+
     align-items: center;
-  }
-
-  &__form-image::before {
-    opacity: $default-background-opacity !important;
-  }
-
-  &__form-image::after {
-    opacity: $default-background-opacity !important;
-  }
-
-  &__company-info {
-    grid-area: company-info;
-    display: flex;
-    flex-direction: column;
     justify-content: center;
-    align-items: center;
-    padding: $xsm-margin * 2 0;
-  }
 
-  &__company-info-content {
-    display: flex;
-    width: 75%;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    border-bottom: 1px solid $black;
-  }
+    @include media-query(lg) {
+      width: 100%;
+      height: 100%;
+      display: grid;
+      grid-template-columns: 50% 50%;
+      grid-template-rows: auto auto;
+      grid-template-areas:
+        'title title'
+        'info form';
+    }
 
-  &__company-info-content-media {
-    display: flex;
-    flex-direction: column;
-  }
+    & .contact-form {
+      grid-area: form;
+      width: 100%;
+      height: 100%;
+      max-width: $content-max-width / 2;
 
-  &__company-info-content-media-title {
-    @include second-category-text-appearance;
-    font-size: $xsm_second-category-text-size;
-    margin-bottom: $xsm-margin / 2;
-    text-align: left;
-
-      .highlighted-text {
-        text-transform: uppercase;
+      @include media-query(lg) {
+        max-width: 500px;
+        justify-self: flex-start;
       }
+      @include media-query(xl) {
+        max-width: 600px;
+      }
+    }
+
+    & .company-info {
+      grid-area: info;
+      width: 75%;
+      max-width: $content-max-width / 2;
+      justify-self: flex-end;
+      align-self: flex-start;
+      margin: 0 60px;
+    }
   }
 
-  &__company-info-content-media-item {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    margin: $xsm-margin / 3 0;
+  &__contact-section-desktop-form-image::before {
+    opacity: $default-background-opacity - 0.2 !important;
   }
 
-  &__company-info-icon {
-    margin-right: $xsm-margin / 2;
+  &__contact-section-desktop-form-image::after {
+    opacity: $default-background-opacity - 0.2 !important;
   }
 
-  &__company-info-text {
+  &__contact-section-desktop-form-title {
     @include third-category-text-appearance;
-    font-size: $xsm_third-category-text-size / 1.25;
-  }
+    grid-area: title;
+    align-self: center;
+    justify-self: center;
 
-  &__company-info-other {
-    width: 75%;
-    margin-top: $xsm-margin / 2;
-  }
+    @include media-query(lg) {
+      font-size: $lg_third-category-text-size;
+      max-width: 500px;
+    }
 
-  &__company-info-content-other-item {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
+    @include media-query(xl) {
+      max-width: $content-max-width;
+      font-size: $xl_third-category-text-size;
+      width: 50%;
+    }
+
+    @include media-query(xxl) {
+      font-size: $xxl_third-category-text-size;
+    }
   }
 
   &__localization {
@@ -171,5 +227,11 @@
 
   & .footer {
     grid-area: footer;
+    //background-color: $black;
   }
+
+  & .btn-top {
+    color: $red;
+  }
+
 }

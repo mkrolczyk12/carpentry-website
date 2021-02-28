@@ -10,6 +10,26 @@
   justify-content: flex-start;
   align-items: center;
 
+  @include media-query(sm) {
+    font-size: $sm_second-category-text-size / 1.25;
+  }
+
+  @include media-query(md) {
+    font-size: $md_second-category-text-size / 1.25;
+  }
+
+  @include media-query(lg) {
+    font-size: 20px;
+  }
+
+  @include media-query(xl) {
+    font-size: 22px;
+  }
+
+  @include media-query(xxl) {
+    font-size: 25px;
+  }
+
   &:hover {
     cursor: pointer;
   }

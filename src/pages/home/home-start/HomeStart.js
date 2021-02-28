@@ -8,7 +8,16 @@ import {
     faAngleDown,
 } from '@fortawesome/free-solid-svg-icons'
 
-const HomeStart = (props) => {
+const scrollDown = (id) => {
+    const ref = document.getElementById(id).scrollHeight
+    window.scroll({
+        left: 0,
+        top: ref,
+        behavior: "smooth"
+    })
+}
+
+const HomeStart = () => {
 
     const data = useStaticQuery(
         graphql`
@@ -27,7 +36,7 @@ const HomeStart = (props) => {
     const imageData = data.indexImage.childImageSharp.fluid
 
     return (
-      <section className="home__start">
+      <section id="home-start" className="home__start">
         <BackgroundImage
             className="home__start-image"
             fluid={imageData}
@@ -36,7 +45,7 @@ const HomeStart = (props) => {
               <h1 className="home__start-main-title">Usługi <b className="highlighted-text">Stolarskie</b></h1>
               <h2 className="home__start-sub-text">The most important ingredient to success in systems</h2>
               <p className="home__start-invite-text">Zapraszamy</p>
-              <a className="home__start-action-button"  href="#poznaj-mnie">
+              <a className="home__start-action-button" onClick={() => scrollDown("home-start")}>
                   <FontAwesomeIcon className="fontawesome-i2svg-pending" icon={faAngleDown}/>
               </a>
             </div>

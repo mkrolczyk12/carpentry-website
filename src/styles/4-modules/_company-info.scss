@@ -1,0 +1,150 @@
+@import "../1-helpers/variables";
+@import "../1-helpers/mixins";
+@import "../2-base/typography";
+
+.company-info {
+
+  // children
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: $xsm-margin * 2 0;
+
+  @include media-query(lg) {
+    grid-area: info;
+    width: 50%;
+  }
+
+  &__content {
+    width: 75%;
+    border-bottom: 1px solid $black;
+    color: $black;
+
+    // children
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+
+    @include media-query(lg) {
+      width: 100%;
+    }
+  }
+
+  &__content-media {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__content-media-title {
+    @include second-category-text-appearance;
+    font-size: $xsm_second-category-text-size;
+    margin-bottom: $xsm-margin / 2;
+
+    text-align: left;
+
+    .highlighted-text {
+      text-transform: uppercase;
+    }
+
+    @include media-query(sm) {
+      font-size: $sm_second-category-text-size;
+    }
+
+    @include media-query(md) {
+      font-size: $md_second-category-text-size;
+    }
+
+    @include media-query(lg) {
+      font-size: $lg_second-category-text-size;
+    }
+
+    @include media-query(xl) {
+      font-size: $xl_second-category-text-size;
+    }
+
+    @include media-query(xxl) {
+      font-size: $xxl_second-category-text-size;
+    }
+  }
+
+  &__content-media-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin: $xsm-margin / 3 0;
+  }
+
+  &__icon {
+    margin-right: $xsm-margin / 2;
+    color: $red;
+
+    @include media-query(sm) {
+      font-size: $sm_second-category-text-size;
+      margin-right: $sm-margin / 2;
+    }
+
+    @include media-query(md) {
+      font-size: $md_second-category-text-size;
+      margin-right: $md-margin / 2;
+    }
+
+    @include media-query(lg) {
+      font-size: $lg_second-category-text-size;
+      margin-right: $lg-margin / 2;
+    }
+
+    @include media-query(xl) {
+      font-size: $xl_second-category-text-size;
+      margin-right: $xl-margin / 2;
+    }
+
+    @include media-query(xxl) {
+      font-size: $xxl_second-category-text-size;
+      margin-right: $xxl-margin / 2;
+    }
+  }
+
+  &__text {
+    @include third-category-text-appearance;
+    font-size: $xsm_third-category-text-size / 1.25;
+
+    @include media-query(sm) {
+      font-size: $sm_third-category-text-size;
+    }
+
+    @include media-query(md) {
+      font-size: $md_third-category-text-size;
+    }
+
+    @include media-query(lg) {
+      font-size: $lg_third-category-text-size;
+    }
+
+    @include media-query(xl) {
+      font-size: $xl_third-category-text-size;
+    }
+
+    @include media-query(xxl) {
+      font-size: $xxl_third-category-text-size;
+    }
+  }
+
+  &__other {
+    width: 75%;
+    margin-top: $xsm-margin / 2;
+
+    @include media-query(lg) {
+      align-self: flex-start;
+    }
+  }
+
+  &__content-other-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+  }
+}
