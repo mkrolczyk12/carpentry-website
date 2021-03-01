@@ -1,4 +1,7 @@
 import React from 'react'
+
+import "../../../styles/main.scss"
+
 import {Link} from 'gatsby'
 
 const Contact = React.memo(({

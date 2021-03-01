@@ -20,6 +20,10 @@
         padding: $sm_padding;
     }
 
+    @include media-query(lg) {
+        min-height: 300px;
+    }
+
     @include media-query(xl) {
         align-items: center;
     }

@@ -79,7 +79,7 @@
     margin: auto;
     padding: 10px 0;
     color: $white;
-    font-size: $xsm-third-category-text-size / 1.25;
+    font-size: $xsm-third-category-text-size;
 
     text-align: left;
 
@@ -122,9 +122,13 @@
     top: 15px;
     right: 35px;
     color: white;
-    font-size: 60px;
+    font-size: 40px;
     font-weight: bold;
     transition: 0.3s;
+
+    @include media-query(md) {
+      font-size: 60px;
+    }
 
     &:hover,
     &:focus {

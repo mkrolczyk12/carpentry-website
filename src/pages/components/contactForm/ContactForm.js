@@ -3,7 +3,6 @@ import isFormCorrect, {validateEmail, validatePhoneNumber, validateMessage} from
 
 const initialState = {
     name: '',
-    surname: '',
     email: '',
     phone: '',
     message: '',
@@ -16,12 +15,10 @@ function reducer(state, { field, value}) {
     }
 }
 
-// Main component
 const ContactForm = (props) => {
     const {
         formId,
-        namePlaceholder = "Imie",
-        surnamePlaceholder = "Nazwisko",
+        namePlaceholder = "Imie i nazwisko",
         emailPlaceholder = "Email",
         phonePlaceholder = "Telefon (opcjonalnie)",
         messagePlaceholder = "Treść wiadomości",
@@ -29,7 +26,7 @@ const ContactForm = (props) => {
     } = props
     const [permission, setPermission] = useState(false); // for permission checkbox
     const [state, dispatch] = useReducer(reducer, initialState); // for other form input values
-    const { name, surname, email, phone, message } = state      // useReducer state attribute
+    const { name, email, phone, message } = state      // useReducer state attribute
     let formChanged = false;    // for form change event
 
     useEffect(() => {
@@ -83,7 +80,6 @@ const ContactForm = (props) => {
             >
                 <legend className="contact-form__legend">Formularz kontaktowy</legend>
                 <input id="form-start" name="name" className={(name.length !== 0 && name.length < 3) ? "contact-form__name input-error" : "contact-form__name"} value={name} onChange={handleInputValues} placeholder={namePlaceholder} required/>
-                <input name="surname" className={(surname.length !== 0 && surname.length < 3) ? "contact-form__surname input-error" : "contact-form__surname"} value={surname} onChange={handleInputValues} placeholder={surnamePlaceholder} required/>
                 <input name="email" className={(email === '') || (email !==0 && validateEmail(email)) ? "contact-form__email" : "contact-form__email input-error"} value={email} onChange={handleInputValues} placeholder={emailPlaceholder} required/>
                 <input name="phone" className={validatePhoneNumber(phone) ? "contact-form__phone" : "contact-form__phone input-error"} value={phone} onChange={handleInputValues} placeholder={phonePlaceholder}/>
                 <textarea name="message" className={(message === '') || (message !==0 && validateMessage(message)) ? "contact-form__message" : "contact-form__message input-error"} value={message} onChange={handleInputValues} placeholder={messagePlaceholder} required/>

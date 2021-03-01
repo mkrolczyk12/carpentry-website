@@ -10,7 +10,7 @@
         height: auto;
         margin: $xsm_margin 0;
         font-size: $xsm_third-category-text-size / 1.25;
-        padding: 20px;
+        padding: 25px 10%;
 
         display: flex;
         flex-direction: column;
@@ -45,6 +45,7 @@
         margin: auto;
         padding: $xsm-padding;
         text-align: center;
+        text-transform: uppercase;
 
         @include media-query(sm) {
             font-size: $sm_second-category-text-size;

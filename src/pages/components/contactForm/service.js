@@ -21,18 +21,8 @@ export function validateMessage(message) {
 
 export default function isFormCorrect(form) {
     if(validateNameAndSurname(form.name) &&
-        validateNameAndSurname(form.surname) &&
         validateEmail(form.email) &&
         validatePhoneNumber(form.phone) &&
         validateMessage(form.message)) return true
     else return false
 }
-
-// export function checkIfAnyInputIsFilled(...args) {
-//     for(let atr of args) {
-//         if(atr != '') {
-//             return true
-//         } else continue
-//     }
-//     return false
-// }
