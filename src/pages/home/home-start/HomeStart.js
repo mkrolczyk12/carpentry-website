@@ -1,14 +1,8 @@
 import React, {useEffect, useRef} from "react"
 import { graphql, useStaticQuery } from "gatsby"
 
-import inViewportObserver from "../../global/inViewportObserver";
-
-// Vendor Components
-import BackgroundImage from "gatsby-background-image"
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {
-    faAngleDown,
-} from '@fortawesome/free-solid-svg-icons'
+// Components
+import HomeStartView from "./HomeStartView";
 
 const scrollDown = (id) => {
     const ref = document.getElementById(id).scrollHeight
@@ -20,12 +14,12 @@ const scrollDown = (id) => {
 }
 
 const HomeStart = () => {
-    let observer = useRef({})
+    let ref = useRef({})
 
     const data = useStaticQuery(
         graphql`
         query {
-          indexImage: file(relativePath: { eq: "home-start-image3.jpg" }) {
+          indexImage: file(relativePath: { eq: "home-start-image.jpg" }) {
             childImageSharp {
               fluid(quality: 100, maxWidth: 5000) {
                 ...GatsbyImageSharpFluid
@@ -39,29 +33,27 @@ const HomeStart = () => {
     const imageData = data.indexImage.childImageSharp.fluid
 
     useEffect(() => {
-        inViewportObserver()
+        const inViewport = (entries, observer) => {
+            entries.forEach(entry => {
+                entry.target.classList.toggle("is-inViewport", entry.isIntersecting);
+            });
+        };
+
+        ref = new IntersectionObserver(inViewport);
+
+        // Attach observer to every [data-inviewport] element
+        const ELs_inViewport = document.querySelectorAll('[data-inviewport]');
+        ELs_inViewport.forEach(EL => {
+            ref.observe(EL);
+        });
     }, [])
 
-    return (
-      <section id="home-start" className="home__start">
-        <BackgroundImage
-            className="home__start-image"
-            fluid={imageData}
-        >
-            <div
-                className="home__start-content"
-                onClick={() => scrollDown("home-start")}
-                data-inviewport="scale-in"
-            >
-              <h1 className="home__start-main-title">Usługi <b className="highlighted-text">Stolarskie</b></h1>
-              <h2 className="home__start-sub-text">The most important ingredient to success in systems</h2>
-              <p className="home__start-invite-text">Zapraszamy</p>
-              <a className="home__start-action-button" >
-                  <FontAwesomeIcon className="fontawesome-i2svg-pending" icon={faAngleDown}/>
-              </a>
-            </div>
-        </BackgroundImage>
-      </section>
+    return(
+        <HomeStartView
+            image={imageData}
+            scrollDown={scrollDown}
+            id="home-start"
+        />
     )
 }
 
