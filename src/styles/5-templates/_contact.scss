@@ -103,7 +103,7 @@
 
       @include media-query(md) {
         height: auto;
-        width: 600px;
+        width: 500px;
       }
     }
   }
@@ -145,6 +145,7 @@
   }
 
   &__contact-section-desktop-form-image {
+    padding: 25px;
 
     align-items: center;
     justify-content: center;

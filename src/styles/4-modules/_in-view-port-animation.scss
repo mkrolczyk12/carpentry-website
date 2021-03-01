@@ -1,0 +1,24 @@
+/* inViewport */
+
+/*
+  SCALE-IN
+*/
+[data-inviewport="scale-in"] {
+  transition: 2s;
+  transform: scale(0.1);
+}
+
+[data-inviewport="scale-in"].is-inViewport {
+  transform: scale(1);
+}
+/*
+  FADE-ROTATE
+*/
+[data-inviewport="fade-rotate"] {
+  transition: 2s;
+  opacity: 0;
+}
+[data-inviewport="fade-rotate"].is-inViewport {
+  transform: rotate(-360deg);
+  opacity: 1;
+}

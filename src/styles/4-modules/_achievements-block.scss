@@ -19,6 +19,14 @@
         height: 450px;
     }
 
+    @include media-query(lg) {
+        &:hover {
+            transition: 0.25s;
+            color: $orange;
+            background-color: $white;
+        }
+    }
+
     &__main-text {
         position: absolute;
         font-size: $xsm_first-category-text-size * 3;

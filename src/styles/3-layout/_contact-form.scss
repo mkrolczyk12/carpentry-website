@@ -31,11 +31,11 @@
         }
 
         @include media-query(xl) {
-            font-size: $xl_third-category-text-size / 1.5;
+            font-size: $xl_third-category-text-size / 1.25;
         }
 
         @include media-query(xxl) {
-            font-size: $xxl_third-category-text-size / 1.5;
+            font-size: $xxl_third-category-text-size / 1.25;
         }
     }
 

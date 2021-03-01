@@ -12,13 +12,15 @@
 
   &_tile {    // each photo
 
-    // hover effect
-    opacity: 1;
-    -webkit-transition: .3s ease-in-out;
-    transition: .3s ease-in-out;
+    @include media-query(lg) {
+      // hover effect
+      opacity: 1;
+      -webkit-transition: .3s ease-in-out;
+      transition: .3s ease-in-out;
 
-    &:hover {
-      opacity: .5;
+      &:hover {
+        opacity: .5;
+      }
     }
 
     &-bottom-bar {  // each photo bottom-bar

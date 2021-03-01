@@ -232,11 +232,11 @@ $display: "false";
         }
 
         @include media-query(xl) {
-            font-size: 20px;
+            font-size: 18px;
         }
 
         @include media-query(xxl) {
-            font-size: 23px;
+            font-size: 20px;
         }
 
         &:last-of-type {

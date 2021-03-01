@@ -46,14 +46,16 @@
     flex-direction: column;
     align-items: center;
 
-    // hover effect
-    opacity: 1;
-    -webkit-transition: .3s ease-in-out;
-    transition: .2s ease-in-out;
+    @include media-query(lg) {
+      // hover effect
+      opacity: 1;
+      -webkit-transition: .3s ease-in-out;
+      transition: .2s ease-in-out;
 
-    &:hover {
-      cursor: pointer;
-      opacity: .5;
+      &:hover {
+        cursor: pointer;
+        opacity: .5;
+      }
     }
 
     &:first-child {
