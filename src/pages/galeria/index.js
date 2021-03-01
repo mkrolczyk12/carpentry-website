@@ -24,7 +24,6 @@ const Gallery = () => {
                     eachProductGallery {
                         id
                         title
-                        description
                         permalink
                         imageGallery {
                             alt

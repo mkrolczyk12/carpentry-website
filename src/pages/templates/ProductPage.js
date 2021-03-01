@@ -69,7 +69,6 @@ export const query = graphql`
         datoCmsEachProductGallery(permalink: {eq: $permalink}) {
             id
             title
-            description
             permalink
             imageGallery {
                 alt

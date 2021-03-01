@@ -72,6 +72,10 @@
         @include media-query(sm) {
             justify-content: center;
         }
+
+        &:hover {
+            cursor: pointer;
+        }
     }
 
     &__start-main-title {
@@ -938,6 +942,11 @@
             @include media-query(md) {
                 height: auto;
                 width: 500px;
+            }
+
+            @include media-query(lg) {
+                height: auto;
+                width: 600px;
             }
         }
     }

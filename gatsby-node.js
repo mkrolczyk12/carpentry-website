@@ -11,7 +11,6 @@ exports.createPages = async ({ graphql, actions }) => {
                     eachProductGallery {
                         id
                         title
-                        description
                         permalink
                         imageGallery {
                             alt
