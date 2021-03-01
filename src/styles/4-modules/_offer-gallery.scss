@@ -58,31 +58,6 @@
     }
   }
 
-  &__item--opening {
-    @include third-category-text-appearance;
-    font-size: $xsm_third-category-text-size;
-
-    @include media-query(sm) {
-      font-size: $sm_third-category-text-size;
-    }
-
-    @include media-query(md) {
-      font-size: $md_third-category-text-size;
-    }
-
-    @include media-query(lg) {
-      font-size: $lg_third-category-text-size / 1.5;
-    }
-
-    @include media-query(xl) {
-      font-size: $xl_third-category-text-size / 1.5;
-    }
-
-    @include media-query(xxl) {
-      font-size: $xxl_third-category-text-size / 1.5;
-    }
-  }
-
   &__item--open {
     @include third-category-text-appearance;
     font-size: $xsm_third-category-text-size;
@@ -107,19 +82,6 @@
 
     @include media-query(xxl) {
       font-size: $xxl_third-category-text-size;
-    }
-  }
-
-  &__item &__item--opening {
-    display: none;
-  }
-
-  &__item--open &__item--opening {
-    display: block;
-
-    @include media-query(md) {
-      margin: unset;
-      display: none;
     }
   }
 
@@ -168,5 +130,9 @@
     @include media-query(xxl) {
       font-size: $xxl_third-category-text-size;
     }
+  }
+
+  & .modal {
+    //
   }
 }

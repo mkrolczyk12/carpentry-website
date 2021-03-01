@@ -16,7 +16,7 @@ const ScrollToTopButton = () => {
         return () => {
             window.removeEventListener('scroll', () => {})
         }
-    })
+    },[])
 
     function scrollFunction(btn) {
         if (document.body.scrollTop > 250 || document.documentElement.scrollTop > 250) {

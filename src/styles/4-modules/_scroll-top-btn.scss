@@ -5,9 +5,10 @@
 .btn-top {
   display: none;
   position: fixed;
-  bottom: 60px;
-  right: 60px;
-  //font-size: 50px;
+
+  bottom: 3%;
+  right: 5%;
+  font-size: 20px;
   z-index: 99;
   border: none;
   outline: none;
@@ -16,19 +17,26 @@
   color: $black;
   transition: 0.25s font-size;
 
-  visibility: hidden;
-
-  @include media-query(lg) {
-    //
+  visibility: visible;
+  @include media-query(sm) {
+    font-size: 30px;
   }
 
-  @include media-query(xl) {
+  @include media-query(lg) {
     visibility: visible;
+    bottom: 40px;
+    right: 20px;
     font-size: 30px;
 
     &:hover {
       font-size: 50px;
     }
+  }
+
+  @include media-query(xl) {
+    bottom: 60px;
+    right: 40px;
+
   }
 
   @include media-query(xxl) {

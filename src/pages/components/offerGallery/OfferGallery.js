@@ -3,6 +3,7 @@ import { Link } from "gatsby"
 
 // Vendor components
 import Img from "gatsby-image"
+import PhotoModal from "../photoModal/PhotoModal";
 
 
 const OfferGallery = ({productData = [], redirection = false}) => {
@@ -31,18 +32,22 @@ const OfferGallery = ({productData = [], redirection = false}) => {
                 ))
                 :
                     productData.map((each, index) => (     // offer
-                        <div className="offer-gallery__item"
-                             onClick={handleOfferClick}
-                             key={index}
-                             title="Kliknij aby zobaczyć opis produktu"
-                        >
-                            <Img className="offer-gallery__item-image" fluid={each.image.fluid} />
-                            <p className="offer-gallery__item-title">{each.title}</p>
-                            <div
-                                className="offer-gallery__item--opening"
-                                dangerouslySetInnerHTML={{__html: each.description}}
+                        <>
+                            <div id={each.id} className="offer-gallery__item"
+                                 onClick={handleOfferClick}
+                                 key={index}
+                                 title="Kliknij aby zobaczyć opis produktu"
+                            >
+                                <Img className="offer-gallery__item-image" fluid={each.image.fluid} />
+                                <p className="offer-gallery__item-title">{each.title}</p>
+                            </div>
+                            <PhotoModal
+                                modalId="photoModal"
+                                id={each.id}
+                                title={each.title}
+                                description={each.description}
                             />
-                        </div>
+                        </>
                 ))}
             </div>
         </section>
