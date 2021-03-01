@@ -1,5 +1,7 @@
 import React from "react";
 
+import "../../../../styles/main.scss"
+
 // Vendor components
 import BackgroundImage from "gatsby-background-image/index";
 

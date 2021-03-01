@@ -27,19 +27,6 @@ const ContactForm = (props) => {
     const [permission, setPermission] = useState(false); // for permission checkbox
     const [state, dispatch] = useReducer(reducer, initialState); // for other form input values
     const { name, email, phone, message } = state      // useReducer state attribute
-    let formChanged = false;    // for form change event
-
-    useEffect(() => {
-        window.addEventListener('beforeunload', (event) => {
-            if(formChanged) {
-                event.preventDefault()
-                event.returnValue = "Czy na pewno chcesz opuścić tę stronę?"
-            }
-        })
-        return () => {
-            window.removeEventListener('beforeunload', () => (formChanged = false))
-        }
-    }, [])
 
     const handleInputValues = (event) => {
         dispatch({field: event.target.name, value: event.target.value})
@@ -74,9 +61,8 @@ const ContactForm = (props) => {
         data-netlify="true"
         data-netlify-honeypot="bot-field">
             <input type="hidden" name="form-name" value="contact" />
-            <fieldset className="contact-form__fieldset"
-                      onChange={() => formChanged = true}
-
+            <fieldset
+                className="contact-form__fieldset"
             >
                 <legend className="contact-form__legend">Formularz kontaktowy</legend>
                 <input id="form-start" name="name" className={(name.length !== 0 && name.length < 3) ? "contact-form__name input-error" : "contact-form__name"} value={name} onChange={handleInputValues} placeholder={namePlaceholder} required/>

@@ -43,7 +43,7 @@
         @include second-category-text-appearance;
         font-size: $xsm_second-category-text-size;
         margin: auto;
-        padding: $xsm-padding;
+        padding:  0 $xsm-padding;
         text-align: center;
         text-transform: uppercase;
 
@@ -57,10 +57,12 @@
 
         @include media-query(lg) {
             font-size: $lg_second-category-text-size;
+            padding: 0 30px;
         }
 
         @include media-query(xl) {
             font-size: $xl_second-category-text-size;
+            width: 75%;
         }
 
         @include media-query(xxl) {
