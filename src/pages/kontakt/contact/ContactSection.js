@@ -1,6 +1,8 @@
 import React from "react";
 import {graphql, useStaticQuery} from "gatsby";
 
+import "../../../styles/main.scss"
+
 // Common components
 import MobileStyleComponent from "./components/MobileStyleComponent";
 import DesktopStyleComponent from "./components/DesktopStyleComponent";

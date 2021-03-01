@@ -1,4 +1,7 @@
 import React, {useReducer, useState, useEffect} from 'react'
+
+import "../../../styles/main.scss"
+
 import isFormCorrect, {validateEmail, validatePhoneNumber, validateMessage} from "./service";
 
 const initialState = {
