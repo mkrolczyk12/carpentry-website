@@ -1,11 +1,12 @@
 import React from "react";
+
 import {graphql, useStaticQuery} from "gatsby";
 
 import "../../../styles/main.scss"
 
 // Common components
-import MobileStyleComponent from "./components/MobileStyleComponent";
-import DesktopStyleComponent from "./components/DesktopStyleComponent";
+import MobileView from "./components/MobileView";
+import DesktopView from "./components/DesktopView";
 
 
 const ContactSection = () => {
@@ -29,11 +30,11 @@ const ContactSection = () => {
                         "software like Aldus PageMaker including versions of Lorem Ipsum."
     return(
         <div className="contact__contact-section">
-            <MobileStyleComponent
+            <MobileView
                 description = {description}
                 imageData = {imageData}
             />
-            <DesktopStyleComponent
+            <DesktopView
                 description = {description}
                 imageData = {imageData}
             />

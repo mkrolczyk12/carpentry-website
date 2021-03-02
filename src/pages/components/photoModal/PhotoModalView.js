@@ -1,6 +1,6 @@
 import React from "react";
 
-const PhotoModalStyle = ({modalId, id}) => {
+const PhotoModalView = ({modalId, id}) => {
     return(
         <div id={modalId} className="modal" title="Zamknij okno">
             <span className="modal__close-btn">&times;</span>
@@ -19,4 +19,4 @@ const PhotoModalStyle = ({modalId, id}) => {
     )
 }
 
-export default PhotoModalStyle
+export default PhotoModalView

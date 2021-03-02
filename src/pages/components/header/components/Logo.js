@@ -1,4 +1,7 @@
 import React from 'react'
+
+import "../../../../styles/main.scss"
+
 import logoDark from "../../../../images/logoDark.png"
 import logoWhite from "../../../../images/logoWhite.png"
 

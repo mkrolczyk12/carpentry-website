@@ -1,5 +1,5 @@
 # Uslugi stolarskie
-
+https://zaklad-stolarski.netlify.app/ <br />
 Website created for the needs of a carpentry company.
 
 ## Table of contents
@@ -12,7 +12,7 @@ Website created for the needs of a carpentry company.
 - [Contact](#contact)
 
 ## General info
-A website based on the gatsby.js framework. The main purpose of page is to present the company's offer. A content management system is connected to the website, thanks to which the owners can change the agreed scope of the website content (photos, descriptions etc.) at any time. When the website owner changes its content, the website will be automatically rebuild without the need for the developer to intervention (content build trigger). The application also has an attached notification system (when the customer sends the completed form, the owner will receive an email notification). The website is fully responsive, prepared for 6 types of screen width (xsm < 576px sm > 576 px, md > 768px, lg > 992px, xl > 1200px, xxl > 1400px). The application is implemented on the Netlify platform.
+A website based on the gatsby.js framework. The main purpose of page is to present the company's offer. The website is connected to the headless DatoCMS system thanks to which the owners can change the agreed scope of the website content (photos, descriptions etc.) at any time. When the website owner changes its content, the website will be automatically rebuild without the need for the developer to intervention (content build trigger). The application also has an attached notification system (when the customer sends the completed form, the owner will receive an email notification). The website is fully responsive, prepared for 6 types of screen width (xsm < 576px, sm > 576 px, md > 768px, lg > 992px, xl > 1200px, xxl > 1400px). The final product is implemented on the Netlify platform.
 
 ## Technologies and dependencies
 
@@ -61,7 +61,7 @@ $ `gatsby develop`
 This script runs the app in the development mode.<br />
 
 5. After loading application is ready to use.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Open [http://localhost:8000](http://localhost:8000) to view it in the browser.
 
 ## Status
 
@@ -85,7 +85,7 @@ Install all project packages.<br />
 ### `gatsby develop`
 
 Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Open [http://localhost:8000](http://localhost:8000) to view it in the browser.
 
 The page will reload if you make edits.<br />
 You will also see any lint errors in the console.

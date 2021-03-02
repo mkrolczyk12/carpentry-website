@@ -1,8 +1,9 @@
 import React from 'react'
 
-import { graphql, useStaticQuery, Link} from "gatsby"
+import { graphql, useStaticQuery} from "gatsby"
 
-import Gallery from 'react-grid-gallery';
+// Components
+import RealizationsView from "./RealizationsView";
 
 const Realizations = React.memo(() => {
     const { datoCmsSampleRealization } = useStaticQuery(    // GraphQl query for images placed in CMS
@@ -45,22 +46,9 @@ const Realizations = React.memo(() => {
     }
 
     return(
-        <section className="home__realizations">
-            <div className="home__realizations-content">
-                <h1 className="home__realizations-title">Przykładowe realizacje</h1>
-                <Gallery
-                    images={prepareImages(datoCmsSampleRealization.realization)}
-                    enableImageSelection={false}
-                    rowHeight={240}
-                    margin={5}      // distance between photos
-                    backdropClosesModal={true}
-                    lightboxWidth={640}
-                />
-                <div className="home__realizations-action-space">
-                    <Link className="action-button" to="/galeria">Zobacz więcej</Link>
-                </div>
-            </div>
-        </section>
+        <RealizationsView
+            images = {prepareImages(datoCmsSampleRealization.realization)}
+        />
     );
 })
 

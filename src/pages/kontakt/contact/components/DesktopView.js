@@ -9,7 +9,7 @@ import BackgroundImage from "gatsby-background-image/index";
 import ContactForm from "../../../components/contactForm/ContactForm";
 import CompanyInfo from "../../../components/companyInfo/CompanyInfo";
 
-const DesktopStyleComponent = (data) => {
+const DesktopView = (data) => {
     const {description, imageData} = data
 
     return(
@@ -30,4 +30,4 @@ const DesktopStyleComponent = (data) => {
 }
 
 
-export default DesktopStyleComponent
+export default DesktopView

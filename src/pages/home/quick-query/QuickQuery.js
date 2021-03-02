@@ -2,15 +2,8 @@ import React from 'react'
 
 import { graphql, useStaticQuery } from "gatsby"
 
-
-import ContactForm from "../../components/contactForm/ContactForm"
-
-// Vendor Components
-import BackgroundImage from "gatsby-background-image"
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {
-    faAngleDown,
-} from '@fortawesome/free-solid-svg-icons'
+// Components
+import QuickQueryView from "./QuickQueryView";
 
 if (typeof window !== "undefined") {
     // eslint-disable-next-line global-require
@@ -55,29 +48,11 @@ const QuickQuery = React.memo(() => {
     }
 
     return(
-        <section className="home__quick-query">
-            <BackgroundImage
-                className="home__quick-query-image"
-                fluid={imageData1}
-            >
-                <div className="home__quick-query-content">
-                    <h1 id="quick-query-title" className="home__quick-query-main-title">Masz pytanie?</h1>
-                    <h2 className="home__quick-query-sub-text">Zapytaj o co tylko chcesz!</h2>
-                    <a className="home__quick-query-action-button" onClick={() => handleActionButton("formularz")}>
-                        <FontAwesomeIcon className="#" icon={faAngleDown}/>
-                    </a>
-                </div>
-            </BackgroundImage>
-            <BackgroundImage
-                className="home__quick-query-form-image"
-                fluid={imageData2}
-                style={{opacity: 0.6}}
-            >
-                <ContactForm
-                    formId = "form"
-                />
-            </BackgroundImage>
-        </section>
+        <QuickQueryView
+            image1 = {imageData1}
+            image2 = {imageData2}
+            handleActionButton = {handleActionButton}
+        />
     )
 })
 

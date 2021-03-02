@@ -11,6 +11,7 @@
         margin: $xsm_margin 0;
         font-size: $xsm_third-category-text-size / 1.25;
         padding: 25px 10%;
+        border: 1px solid darken($light-brown, 2%);
 
         display: flex;
         flex-direction: column;
@@ -18,7 +19,6 @@
 
 
         @include media-query(sm) {
-            border: 1px solid darken($light-brown, 2%);
             font-size: $sm_third-category-text-size / 1.25;
         }
 
@@ -131,10 +131,6 @@
         margin-right: 5px;
         margin-top: 4px;
         font-size: inherit;
-
-        @include media-query(sm) {
-            //
-        }
     }
 
     &__checkbox-label {

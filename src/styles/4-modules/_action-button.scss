@@ -29,12 +29,13 @@
 
     @include media-query(lg) {
         font-size: $lg_third-category-text-size;
-        width: 270px;
+        width: 250px;
         height: 50px;
     }
 
     @include media-query(xl) {
         font-size: $xl_third-category-text-size / 1.25;
+        width: 270px;
     }
 
     @include media-query(xxl) {

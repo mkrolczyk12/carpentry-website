@@ -1,9 +1,7 @@
 import React, {useEffect, useState} from 'react'
 
-import "../../../styles/main.scss"
-
 // Components
-import HeaderStyleComponent from "./HeaderStyleComponent";
+import HeaderView from "./HeaderView";
 
 const Header = ({hiddenOnFirstLoad = false}) => {
     const [menuIsActive, setMenuIsActive] = useState(false);
@@ -35,7 +33,7 @@ const Header = ({hiddenOnFirstLoad = false}) => {
     })
 
     return (
-        <HeaderStyleComponent
+        <HeaderView
             scrolledPage={scrolledPage}
             menuIsOpen={menuIsActive}
             openMenu={handleMobileMenu}

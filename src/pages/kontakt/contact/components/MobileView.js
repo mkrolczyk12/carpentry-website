@@ -9,7 +9,7 @@ import BackgroundImage from "gatsby-background-image/index";
 import ContactForm from "../../../components/contactForm/ContactForm";
 import CompanyInfo from "../../../components/companyInfo/CompanyInfo";
 
-const MobileStyleComponent = (data) => {
+const MobileView = (data) => {
     const { description, imageData } = data
     return(
         <div className="contact__contact-section-mobile">
@@ -28,4 +28,4 @@ const MobileStyleComponent = (data) => {
     )
 }
 
-export default MobileStyleComponent
+export default MobileView

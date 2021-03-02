@@ -1,18 +1,9 @@
 import React from 'react'
+
 import {graphql} from "gatsby";
 
-import "../../styles/main.scss"
-
-// Common components
-import Header from "../components/header/Header";
-import Title from "../galeria/title/Title";
-import Contact from "../components/contact/Contact";
-import Footer from "../components/footer/Footer";
-import PreviousPageButton from "../components/previousPageButton/PreviousPageButton";
-
-// Vendor components
-import Gallery from 'react-grid-gallery';
-import ScrollToTopButton from "../components/scrollToTopButton/ScrollToTopButton";
+// Components
+import ProductPageView from "./ProductPageView";
 
 const ProductPage = ({ pageContext: {permalink, title}, data: {datoCmsEachProductGallery} }) => {
 
@@ -36,30 +27,10 @@ const ProductPage = ({ pageContext: {permalink, title}, data: {datoCmsEachProduc
     }
 
     return(
-        <section className="product-page">
-            <Header/>
-            <Title
-                title={title}
-            />
-            <section className="product-page__gallery">
-                <PreviousPageButton/>
-                <div className="product-page__gallery-content">
-                    <Gallery
-                        images={prepareImages(datoCmsEachProductGallery.imageGallery)}
-                        enableImageSelection={false}
-                        margin={5}  // distance between photos
-                        backdropClosesModal={true}
-                        lightboxWidth={750}
-                        tagStyle={{visibility: "hidden"}}
-                    />
-                </div>
-            </section>
-            <Contact
-                title="Potrzebujesz więcej zdjęć?"
-            />
-            <Footer />
-            <ScrollToTopButton/>
-        </section>
+        <ProductPageView
+            title = {title}
+            images = {prepareImages(datoCmsEachProductGallery.imageGallery)}
+        />
     )
 }
 export default ProductPage

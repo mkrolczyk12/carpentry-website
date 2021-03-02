@@ -1,0 +1,103 @@
+@import "../1-helpers/mixins";
+@import "../1-helpers/variables";
+@import "../2-base/typography";
+
+.mainbox {
+  min-width: 200px;
+  height: auto;
+  max-width: 400px;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+
+  margin: auto;
+  color: $black;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto auto;
+  grid-template-areas:
+  'letter1 letter2 letter3'
+  'message message message';
+  justify-items: center;
+  align-items: center;
+
+  @include media-query(lg) {
+    width: 400px;
+  }
+
+  &__letter {
+    @include first-category-text-appearance;
+    color: $red;
+    font-size: $xsm_first-category-text-size * 2;
+
+    @include media-query(sm) {
+      font-size: $sm_first-category-text-size * 3;
+    }
+
+    @include media-query(md) {
+      font-size: $md_first-category-text-size * 3;
+    }
+
+    @include media-query(lg) {
+      font-size: $lg_first-category-text-size * 3;
+    }
+
+    @include media-query(xl) {
+      font-size: $xl_first-category-text-size * 3;
+    }
+
+    @include media-query(xxl) {
+      font-size: $xxl_first-category-text-size * 3;
+    }
+  }
+
+  &__letter1 {
+    grid-area: letter1;
+  }
+
+  &__letter2 {
+    grid-area: letter2;
+  }
+
+  &__letter3 {
+    grid-area: letter3;
+  }
+
+  &__message {
+    @include third-category-text-appearance;
+    grid-area: message;
+    font-size: $xsm_third-category-text-size;
+    width: 100%;
+    text-align: center;
+
+    @include media-query(sm) {
+      font-size: $sm_third-category-text-size;
+    }
+
+    @include media-query(md) {
+      font-size: $md_third-category-text-size;
+    }
+
+    @include media-query(lg) {
+      font-size: $lg_third-category-text-size;
+    }
+
+    @include media-query(xl) {
+      font-size: $xl_third-category-text-size;
+    }
+
+    @include media-query(xxl) {
+      font-size: $xxl_third-category-text-size;
+    }
+  }
+
+  .highlighted-text {
+    text-decoration: none;
+    color: $orange;
+  }
+}

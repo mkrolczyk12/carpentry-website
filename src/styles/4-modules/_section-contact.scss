@@ -146,10 +146,12 @@
 
     @include media-query(xl) {
       font-size: $xl_first-category-text-size / 1.25;
+      padding-right: $xl_padding * 2;
     }
 
     @include media-query(xxl) {
       font-size: $xxl_first-category-text-size / 1.25;
+      padding: unset;
     }
   }
 }

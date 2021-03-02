@@ -21,15 +21,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
-    @include media-query(lg) {
-        //
-    }
-
-    @include media-query(xl) {
-      //
-    }
-
   }
 
   &__main-text {

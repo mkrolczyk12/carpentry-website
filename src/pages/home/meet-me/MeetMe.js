@@ -19,6 +19,7 @@ const MeetMe = React.memo(() => {
     )
     // set imageData
     const imageData = data.indexImage.childImageSharp.fluid
+
     return (
         <section id="poznaj-mnie" className="home__meet-me">
             <Img className="home__meet-me-image" fluid={imageData} />

@@ -1,5 +1,5 @@
 import React, {useEffect} from "react";
-import PhotoModalStyle from "./PhotoModalStyle";
+import PhotoModalView from "./PhotoModalView";
 
 const openModal = (modalId, title, description) => {
     const modal = document.getElementById(modalId);
@@ -33,7 +33,7 @@ const PhotoModal = ({modalId, id, title, description}) => {
     },[id])
 
     return(
-        <PhotoModalStyle
+        <PhotoModalView
             modalId={modalId}
             id={id}
         />

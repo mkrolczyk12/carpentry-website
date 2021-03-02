@@ -12,7 +12,7 @@ import Logo from "./components/Logo";
 import NavbarMobile from "./components/NavbarMobile";
 import NavbarDesktop from "./components/NavbarDesktop";
 
-const HeaderStyleComponent = ({scrolledPage, menuIsOpen, openMenu, hiddenOnFirstLoad}) => {
+const HeaderView = ({scrolledPage, menuIsOpen, openMenu, hiddenOnFirstLoad}) => {
 
     return(
         <header id="header" className={hiddenOnFirstLoad ? "header menu-on-top hidden" : "header menu-on-top"}>
@@ -31,4 +31,4 @@ const HeaderStyleComponent = ({scrolledPage, menuIsOpen, openMenu, hiddenOnFirst
     )
 }
 
-export default HeaderStyleComponent
+export default HeaderView

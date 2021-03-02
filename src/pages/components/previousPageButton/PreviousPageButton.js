@@ -9,7 +9,6 @@ import {
 } from '@fortawesome/free-solid-svg-icons'
 
 const PreviousPageButton = () => {
-
     return(
         <Link
             className="previous-page-button"

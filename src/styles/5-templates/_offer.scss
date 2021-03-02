@@ -56,10 +56,6 @@
       background-color: $white;
       z-index: 99;
     }
-
-    @include media-query(lg) {
-        //
-    }
   }
 
   .section-title {

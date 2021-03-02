@@ -1,5 +1,4 @@
-import React, {useEffect, useRef, } from "react"
-import {useState} from "react";
+import React from "react"
 
 import "../styles/main.scss"
 

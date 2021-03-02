@@ -21,7 +21,6 @@ const AboutMe = () => {
           <Description/>
           <Achievements/>
           <Contact
-            parentClassName="about-me"
             title="Pogadajmy"
           />
           <Footer/>
