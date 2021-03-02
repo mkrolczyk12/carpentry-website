@@ -5,7 +5,15 @@
   "description": "Zagórowski usługi stolarskie",
   "author": "mkrolczyk12",
   "keywords": [
-    "gatsby"
+    "usługi stolarskie",
+    "stolarstwo",
+    "stolarz",
+    "meble",
+    "nowy sącz",
+    "zagórowski",
+    "kuchnie",
+    "meble na wymiar",
+    "meble z drewna"
   ],
   "scripts": {
     "develop": "gatsby develop",
