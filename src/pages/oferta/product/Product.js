@@ -16,7 +16,7 @@ const Product = () => {
                         description
                         permalink
                         image {
-                            fluid {
+                            fluid(maxWidth: 600) {
                                 ...GatsbyDatoCmsFluid
                             }
                         }

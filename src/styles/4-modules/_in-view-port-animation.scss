@@ -5,6 +5,7 @@
 */
 [data-inviewport="scale-in"] {
   transition: 2s;
+  transition-delay: 0.25s;
   transform: scale(0.1);
 }
 

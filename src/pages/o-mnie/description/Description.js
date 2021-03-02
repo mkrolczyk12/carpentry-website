@@ -9,7 +9,7 @@ const Description = () => {
         query {
           indexImage: file(relativePath: { eq: "about-me-owner-image.jpg" }) {
             childImageSharp {
-              fluid(maxWidth: 1800, quality: 100) {
+              fluid(maxWidth: 1024, quality: 100) {
                 ...GatsbyImageSharpFluid
               }
             }

@@ -28,7 +28,7 @@ const Gallery = () => {
                         imageGallery {
                             alt
                             title
-                            fluid {
+                            fluid(maxWidth: 600) {
                                 ...GatsbyDatoCmsFluid
                             }
                         }

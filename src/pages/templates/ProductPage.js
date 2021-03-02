@@ -49,7 +49,7 @@ const ProductPage = ({ pageContext: {permalink, title}, data: {datoCmsEachProduc
                         enableImageSelection={false}
                         margin={5}  // distance between photos
                         backdropClosesModal={true}
-                        lightboxWidth={1024}
+                        lightboxWidth={750}
                         tagStyle={{visibility: "hidden"}}
                     />
                 </div>
@@ -73,7 +73,7 @@ export const query = graphql`
             imageGallery {
                 alt
                 title
-                fluid {
+                fluid(maxWidth: 750) {
                     srcSet
                 }
             }

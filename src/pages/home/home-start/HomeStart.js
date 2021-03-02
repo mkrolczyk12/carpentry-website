@@ -21,7 +21,7 @@ const HomeStart = () => {
         query {
           indexImage: file(relativePath: { eq: "home-start-image.jpg" }) {
             childImageSharp {
-              fluid(quality: 100, maxWidth: 5000) {
+              fluid(quality: 100, maxWidth: 1920) {
                 ...GatsbyImageSharpFluid
               }
             }

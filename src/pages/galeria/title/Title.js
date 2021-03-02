@@ -10,7 +10,7 @@ const Title = ({title = "Galeria"}) => {
             query {
                 indexImage: file(relativePath: { eq: "section-title-image2.jpg" }) {
                     childImageSharp {
-                        fluid(maxWidth: 1800, quality: 100) {
+                        fluid(maxWidth: 1920, quality: 100) {
                             ...GatsbyImageSharpFluid
                         }
                     }

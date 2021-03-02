@@ -23,14 +23,14 @@ const QuickQuery = React.memo(() => {
         query {
           indexImage1: file(relativePath: { eq: "section-title-image1.jpg" }) {
             childImageSharp {
-              fluid(maxWidth: 1800, quality: 100) {
+              fluid(maxWidth: 1920, quality: 100) {
                 ...GatsbyImageSharpFluid
               }
             }
           }
         indexImage2: file(relativePath: { eq: "home-offer-image.jpg" }) {
             childImageSharp {
-                fluid(maxWidth: 1800, quality: 100) {
+                fluid(maxWidth: 1920, quality: 80) {
                     ...GatsbyImageSharpFluid
                 }
             }

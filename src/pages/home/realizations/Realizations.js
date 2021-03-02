@@ -15,8 +15,8 @@ const Realizations = React.memo(() => {
                         tag
                         description
                         image {
-                            fluid(maxWidth: 1800) {
-                                src
+                            fluid(maxWidth: 750) {
+                                srcSet
                             }
                         }
                     }
@@ -33,8 +33,8 @@ const Realizations = React.memo(() => {
             images
                 .push(
                     {
-                        src: each.image.fluid.src,
-                        thumbnail: each.image.fluid.src,
+                        src: each.image.fluid.srcSet,
+                        thumbnail: each.image.fluid.srcSet,
                         thumbnailHeight: photoHeight,
                         thumbnailWidth: photoWidth,
                         tags: [{value: each.tag, title: each.tag}],
@@ -54,7 +54,7 @@ const Realizations = React.memo(() => {
                     rowHeight={240}
                     margin={5}      // distance between photos
                     backdropClosesModal={true}
-                    lightboxWidth={1024}
+                    lightboxWidth={640}
                 />
                 <div className="home__realizations-action-space">
                     <Link className="action-button" to="/galeria">Zobacz więcej</Link>
