@@ -17,6 +17,7 @@ A website based on the gatsby.js framework. The main purpose of page is to prese
 ## Technologies and dependencies
 
 - Gatsby.js
+- GraphQL
 - React.js
 - Html5
 - Sass
