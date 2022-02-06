@@ -1,6 +1,6 @@
 # Uslugi stolarskie
 https://zaklad-stolarski.netlify.app/ <br />
-Website created for the needs of a carpentry company.
+Website created from scratch for learning purposes.
 
 ## Table of contents
 
