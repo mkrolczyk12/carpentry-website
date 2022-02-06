@@ -1,6 +1,6 @@
 # Uslugi stolarskie
 https://zaklad-stolarski.netlify.app/ <br />
-Website created from scratch for learning purposes.
+A website created from scratch for learning purposes.
 
 ## Table of contents
 
@@ -12,7 +12,7 @@ Website created from scratch for learning purposes.
 - [Contact](#contact)
 
 ## General info
-A website based on the gatsby.js framework. The main purpose of page is to present the company's offer. The website is connected to the headless DatoCMS system thanks to which the owners can change the agreed scope of the website content (photos, descriptions etc.) at any time. When the website owner changes its content, the website will be automatically rebuild without the need for the developer to intervention (content build trigger). The application also has an attached notification system (when the customer sends the completed form, the owner will receive an email notification). The website is fully responsive, prepared for 6 types of screen width (xsm < 576px, sm > 576 px, md > 768px, lg > 992px, xl > 1200px, xxl > 1400px). The final product is implemented on the Netlify platform.
+The application is based on the gatsby.js framework. The main purpose of page is to present the company's offer. The website is connected to the headless DatoCMS system thanks to which the owners can change the agreed scope of the website content (photos, descriptions etc.) at any time. When the website owner changes its content, the website will be automatically rebuild without the need for the developer to intervention (content build trigger). The application also has an attached notification system (when the customer sends the completed form, the owner will receive an email notification). The website is fully responsive, prepared for 6 types of screen width (xsm < 576px, sm > 576 px, md > 768px, lg > 992px, xl > 1200px, xxl > 1400px). The final product is implemented on the Netlify platform.
 
 ## Technologies and dependencies
 
